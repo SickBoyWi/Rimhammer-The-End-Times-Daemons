@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Rimhammer - The End Times - Daemons</name>
+  <author>SickBoyWI</author>
+	<supportedVersions><li>1.4</li></supportedVersions>
+	<packageId>SickBoyWi.TheEndTimes.Daemons</packageId>
+  <description>
+IF YOU HAVE ISSUES, YOU'LL GET A MUCH FASTER RESPONSE BY POSTING ON MY DISCORD ISSUES-AND-BUGS CHANNEL: https://discord.gg/UCmQbCT
+
+This mod adds Warhammer Daemons into Rimworld. These will start out as a non playable faction that functions similar to the Mechanoids in vanilla. They will be fleshed out to allow summoning and control of them over time.
+
+Dev Notes:
+
+0.0.0.1 2023-07-01
+========================
+Development started. 
+</description>
+</ModMetaData>

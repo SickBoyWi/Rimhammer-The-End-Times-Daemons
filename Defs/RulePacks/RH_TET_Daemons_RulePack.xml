@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<RulePackDef>
+		<defName>RH_TET_Daemons_NamerFactionDaemons</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>r_name->[msyl][msyl] [spawning]</li>
+
+				<li>spawning->spawning</li>
+		
+				<li>msyl->nyar</li>
+				<li>msyl->alg</li>
+				<li>msyl->xan</li>
+				<li>msyl->zel</li>
+				<li>msyl->kil</li>
+				<li>msyl->len</li>
+				<li>msyl->lax</li>
+				<li>msyl->alph</li>
+				<li>msyl->ome</li>
+				<li>msyl->iri</li>
+				<li>msyl->slin</li>
+				<li>msyl->toth</li>
+				<li>msyl->arth</li>
+				<li>msyl->unth</li>
+				<li>msyl->ox</li>
+				<li>msyl->arm</li>
+				<li>msyl->murd</li>
+				<li>msyl->zen</li>
+				<li>msyl->yoth</li>
+				<li>msyl->lite</li>
+
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+  <RulePackDef>
+    <defName>RH_TET_Daemons_Transition_DiedDaemon</defName>
+    <include>
+      <li>Transition_DiedInclude</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>die(p=3)->poof [flavor]</li>
+        <li>die(p=3)->dissipate [flavorsuffix]</li>
+        <li>die->dissolve [flavor]</li>
+        <li>die->dissolve [flavorsuffix]</li>
+        <li>die->burst [flavor]</li>
+        <li>die->implode [flavorsuffix]</li>
+        
+        <li>died(p=3)->poofed [flavor]</li>
+        <li>died->dissipated [flavor]</li>
+        <li>died->imploded [flavor]</li>
+
+        <li>flavor(p=0.2)->in a bright [fireball]</li>
+        <li>flavor->in a [Color] [fireball]</li>
+        <li>flavor->in a [AdjectiveLarge] [fireball]</li>
+        <li>flavor(p=4)->in a [fireball]</li>
+        <li>flavor(p=4)-></li>
+
+        <li>flavorsuffix->, scattering [pieces] [everywhere]</li>
+        <li>flavorsuffix(SUBJECT_flesh!=Mechanoid,p=2)->, scattering [Gore] [everywhere]</li>
+        <li>flavorsuffix(SUBJECT_flesh!=Mechanoid)->, leaving a small pile of [Gore]</li>
+        <li>flavorsuffix->, leaving a small crater</li>
+        <li>flavorsuffix(p=4)-></li>
+
+        <li>fireball(p=3)->flash</li>
+        <li>fireball->pop</li>
+        <li>fireball->shockwave</li>
+        <li>fireball->dissolution</li>
+
+        <li>pieces->goo</li>
+        <li>pieces->slime</li>
+
+        <li>everywhere->everywhere</li>
+        <li>everywhere->around</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+</Defs>

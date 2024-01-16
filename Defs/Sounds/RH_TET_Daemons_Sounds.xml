@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Death sound is the same for all daemons. -->
+	<SoundDef>
+		<defName>RH_TET_Pawn_Daemon_Death</defName>
+		<context>MapOnly</context>
+		<maxVoices>1</maxVoices>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Daemons/daemondeath</clipPath>
+					</li>
+				</grains>
+				<volumeRange>20~20</volumeRange>
+				<pitchRange>0.9541177~1.068824</pitchRange>
+				<repeatMode>NeverTwice</repeatMode>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>RH_TET_Pawn_Daemon_Bloodletter_Wounded</defName>
+		<context>MapOnly</context>
+		<maxVoices>1</maxVoices>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Daemons/Bloodletter/daemonwounded-bloodletter</clipPath>
+					</li>
+				</grains>
+				<volumeRange>20~20</volumeRange>
+				<pitchRange>0.9541177~1.068824</pitchRange>
+				<repeatMode>NeverTwice</repeatMode>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+  
+	<SoundDef>
+		<defName>RH_TET_Pawn_Daemon_Bloodletter_Call</defName>
+		<context>MapOnly</context>
+		<maxVoices>1</maxVoices>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Daemons/Bloodletter/daemoncall-bloodletter</clipPath>
+					</li>
+				</grains>
+				<volumeRange>20~20</volumeRange>
+				<pitchRange>0.9541177~1.068824</pitchRange>
+				<repeatMode>NeverTwice</repeatMode>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>RH_TET_Pawn_Daemon_Horror_Wounded</defName>
+		<context>MapOnly</context>
+		<maxVoices>1</maxVoices>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Daemons/Horror/daemonwounded-horror</clipPath>
+					</li>
+				</grains>
+				<volumeRange>20~20</volumeRange>
+				<pitchRange>0.9541177~1.068824</pitchRange>
+				<repeatMode>NeverTwice</repeatMode>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+  
+	<SoundDef>
+		<defName>RH_TET_Pawn_Daemon_Horror_Call</defName>
+		<context>MapOnly</context>
+		<maxVoices>1</maxVoices>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Daemons/Horror/daemoncall-horror</clipPath>
+					</li>
+				</grains>
+				<volumeRange>20~20</volumeRange>
+				<pitchRange>0.9541177~1.068824</pitchRange>
+				<repeatMode>NeverTwice</repeatMode>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<!-- Weapons -->
+	<SoundDef>
+		<defName>RH_TET_Daemons_TzeentchFireSound</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Weapons/RH_TET_Daemon_TzeentchFire</clipPath>
+					</li>
+				</grains>
+				<volumeRange>35~35</volumeRange>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+  
+</Defs>

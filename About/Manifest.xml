@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest>
+	<identifier>Rimhammer-The End Times-Daemons</identifier>
+	<version>1.0.0.0</version>
+	<dependencies/>
+	<incompatibleWith/>
+	<loadBefore>
+	</loadBefore>
+	<loadAfter>
+		<li>JecsTools</li>
+		<li>Rimhammer-TheEndTimes-Magic</li>
+	</loadAfter>
+	<manifestUri>http://www.nerdtournament.com/mods/rimworld/Rimhammer-TheEndTimes-Daemons/Manifest.xml</manifestUri>
+	<downloadUri>http://www.nerdtournament.com/mods/rimworld/Rimhammer-TheEndTimes-Daemons/releases</downloadUri>
+</Manifest>

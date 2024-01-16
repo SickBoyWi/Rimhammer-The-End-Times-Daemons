@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>RH_TET_Daemons_MagicEssence_Raw</defName>
+		<label>Raw magic essence</label>
+		<thingClass>ThingWithComps</thingClass>
+		<description>A small amount of the raw essence of magic (or chaos, depending upon whom you ask). Left behind when a daemon is destroyed.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/RH_TET_Daemons_MagicEssence_Raw</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>25</stackLimit>
+		<tickerType>Rare</tickerType>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>75</MarketValue>
+			<MaxHitPoints>60</MaxHitPoints>
+			<Mass>.05</Mass>
+			<Flammability>0.2</Flammability>
+			<DeteriorationRate>60</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+			<li>ItemsMisc</li>
+		</thingCategories>
+		<tradeability>Sellable</tradeability>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>3</glowRadius>
+				<glowColor>(255, 140, 247,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>0.50</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+	</ThingDef>
+  
+	<ThingDef ParentName="ResourceBase">
+		<defName>RH_TET_Daemons_MagicEssence_Refined</defName>
+		<label>Refined magic essence</label>
+		<thingClass>ThingWithComps</thingClass>
+		<description>A small amount of the refined essence of magic (or chaos, depending upon whom you ask). Processed by a wizard, at a wizard's workbench.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/RH_TET_Daemons_MagicEssence_Refined</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>25</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>100</MarketValue>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>.05</Mass>
+			<Flammability>0.2</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>ItemsMisc</li>
+		</thingCategories>
+		<tradeability>Sellable</tradeability>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+		<!--
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Use {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>CompUseEffect_FinishRandomResearchProject</compClass>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+	-->
+	</ThingDef>
+
+</Defs>

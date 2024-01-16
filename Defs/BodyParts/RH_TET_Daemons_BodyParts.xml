@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<BodyPartGroupDef>
+		<defName>RH_TET_LeftHandClaws</defName>
+		<label>left claw</label>
+		<labelShort>claw</labelShort>
+	</BodyPartGroupDef>
+  
+	<BodyPartGroupDef>
+		<defName>RH_TET_RightHandClaws</defName>
+		<label>right claw</label>
+		<labelShort>claw</labelShort>
+	</BodyPartGroupDef>
+
+	<BodyPartGroupDef>
+		<defName>RH_TET_LeftFootClaws</defName>
+		<label>left claw</label>
+		<labelShort>claw</labelShort>
+	</BodyPartGroupDef>
+  
+	<BodyPartGroupDef>
+		<defName>RH_TET_RightFootClaws</defName>
+		<label>right claw</label>
+		<labelShort>claw</labelShort>
+	</BodyPartGroupDef>
+	
+</Defs>

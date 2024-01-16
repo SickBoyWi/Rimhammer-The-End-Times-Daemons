@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<PawnKindDef Name="RH_TET_BaseDaemonKind" Abstract="True">
+		<defaultFactionType>RH_TET_Daemons_Faction</defaultFactionType>
+		<aiAvoidCover>true</aiAvoidCover>
+		<destroyGearOnDrop>true</destroyGearOnDrop>
+		<canStrip>false</canStrip>
+		<minGenerationAge MayRequire="Ludeon.Rimworld.Biotech">200</minGenerationAge>
+	</PawnKindDef>
+
+	<!-- Equivalent to scyther, but with a bit less armor, and weaker attacks. -->
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Bloodletter</defName>
+		<label>bloodletter</label>
+		<race>RH_TET_Daemon_Bloodletter</race>
+		<combatPower>115</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Bloodletter/Unarmed/Bloodletter</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>0~0</weaponMoney>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags>
+		</weaponTags>
+		<techHediffsChance>1</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Bloodletter_Armed</defName>
+		<label>bloodletter</label>
+		<race>RH_TET_Daemon_Bloodletter</race>
+		<combatPower>195</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Bloodletter/Unarmed/ExaltedBloodletter</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<defendPointRadius>0</defendPointRadius>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>RH_TET_Daemons_Khorne_Bloodletter</li>
+		</weaponTags>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Horror_Pink</defName>
+		<label>pink horror</label>
+		<race>RH_TET_Daemon_HorrorPink</race>
+		<combatPower>155</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Horror/Pink/PinkHorror</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<defendPointRadius>0</defendPointRadius>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>RH_TET_Daemons_Tzeentch_Horror_Pink</li>
+		</weaponTags>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Horror_Blue</defName>
+		<label>blue horror</label>
+		<race>RH_TET_Daemon_HorrorBlue</race>
+		<combatPower>50</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Horror/Blue/BlueHorror</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<defendPointRadius>0</defendPointRadius>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>RH_TET_Daemons_Tzeentch_Horror_Blue</li>
+		</weaponTags>
+	</PawnKindDef>
+
+</Defs>

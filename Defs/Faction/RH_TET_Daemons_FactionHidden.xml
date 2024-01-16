@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<FactionDef ParentName="FactionBase">
+		<defName>RH_TET_Daemons_Faction</defName>
+		<label>daemons</label>
+		<description>The Daemons of Chaos, known also as Chaos Daemons, the Legions of Chaos, the Archenemy, the Great Beast, or simply just Daemons, are malevolent, otherwordly entities born from the power of magic and composed entirely of magical energies that are corrupted by the deepest and darkest emotions of all mortal creatures.\n\nFrom their nightmarish fortresses and palaces within the extradimensional Realm of Chaos, these entities watch the mortal kingdoms with envious eyes, waiting with unblinking patience for their chance to wreak destruction and dismay upon the Known World and to feed upon the misery that they have wrought.</description>
+		<pawnSingular>daemon</pawnSingular>
+		<pawnsPlural>daemons</pawnsPlural>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<factionNameMaker>RH_TET_Daemons_NamerFactionDaemons</factionNameMaker>
+		<factionIconPath>World/RH_TET_Daemons</factionIconPath>
+		<canStageAttacks>true</canStageAttacks>
+		<colorSpectrum>
+			<li>(0.78, 0.79, 0.71)</li>
+		</colorSpectrum>
+		<raidCommonalityFromPointsCurve>
+			<points>
+				<li>(300,  0)</li>
+				<li>(700,  1)</li>
+				<li>(1400, 1.8)</li>
+				<li>(2800, 2.2)</li>
+				<li>(4000, 2.6)</li>
+			</points>
+		</raidCommonalityFromPointsCurve>
+		<raidLootMaker>RH_TET_DaemonRaidLootMaker</raidLootMaker>
+		<raidLootValueFromPointsCurve>
+			<points>
+				<li>(35,     0)</li>
+				<li>(100,   1)</li>
+				<li>(1000, 5)</li>
+				<li>(2000, 8)</li>
+				<li>(4000, 10)</li>
+			</points>
+		</raidLootValueFromPointsCurve>
+		<humanlikeFaction>false</humanlikeFaction>
+		<hidden>true</hidden>
+		<autoFlee>false</autoFlee>
+		<canUseAvoidGrid>false</canUseAvoidGrid>
+		<techLevel>Medieval</techLevel>
+		<earliestRaidDays>45</earliestRaidDays>
+		<permanentEnemy>true</permanentEnemy>
+		<hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
+		<maxPawnCostPerTotalPointsCurve>
+			<points>
+				<li>(400,200)</li>
+				<li>(900,300)</li>
+				<li>(100000,10000)</li>
+			</points>
+		</maxPawnCostPerTotalPointsCurve>
+		<!-- TODO ADD PAWN KINDS HERE AS THEY ARE CREATED. ALSO: Make groups of pawns per chaos god. -->
+		<pawnGroupMakers>
+			<li>
+				<!-- All types-->
+				<kindDef>Combat</kindDef>
+				<commonality>100</commonality>
+				<options>
+					<RH_TET_Daemons_Bloodletter>10</RH_TET_Daemons_Bloodletter>
+					<RH_TET_Daemons_Horror_Pink>10</RH_TET_Daemons_Horror_Pink>
+					<RH_TET_Daemons_Bloodletter_Armed>5</RH_TET_Daemons_Bloodletter_Armed>
+					<RH_TET_Daemons_Horror_Blue>1</RH_TET_Daemons_Horror_Blue>
+				</options>
+			</li>
+<!-- TODO - Instead of breaking these up by ranged vs melee, consider breaking them up by Chaos God. -->
+			<li>
+				<!-- Ranged -->
+				<kindDef>Combat</kindDef>
+				<commonality>75</commonality>
+				<options>
+					<RH_TET_Daemons_Horror_Pink>10</RH_TET_Daemons_Horror_Pink>
+					<RH_TET_Daemons_Horror_Blue>1</RH_TET_Daemons_Horror_Blue>
+				</options>
+			</li>
+			<li>
+				<!-- Melee only-->
+				<kindDef>Combat</kindDef>
+				<commonality>75</commonality>
+				<options>
+					<RH_TET_Daemons_Bloodletter>10</RH_TET_Daemons_Bloodletter>
+					<RH_TET_Daemons_Bloodletter_Armed>5</RH_TET_Daemons_Bloodletter_Armed>
+				</options>
+			</li>
+			<!-- Centipede only 
+      <li>
+        
+        <kindDef>Combat</kindDef>
+        <commonality>30</commonality>
+        <options>
+          <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster>
+          <Mech_CentipedeGunner>5</Mech_CentipedeGunner>
+          <Mech_CentipedeBurner>5</Mech_CentipedeBurner>
+        </options>
+      </li>
+	  -->
+			<!-- militor only 
+      <li MayRequire="Ludeon.RimWorld.Biotech">
+        <kindDef>Combat</kindDef>
+        <commonality>30</commonality>
+        <options>
+          <Mech_Militor>10</Mech_Militor>
+        </options>
+      </li>
+	  -->
+			<!-- breach raids 
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Mech_Pikeman>10</Mech_Pikeman>
+          <Mech_Scyther>10</Mech_Scyther>
+          <Mech_Lancer>10</Mech_Lancer>
+          <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster>
+          <Mech_Termite_Breach>1</Mech_Termite_Breach>
+          <Mech_Militor MayRequire="Ludeon.RimWorld.Biotech">20</Mech_Militor>
+        </options>
+      </li>
+	  -->
+		</pawnGroupMakers>
+		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+		<allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>
+		<maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+		<configurationListOrderPriority>900</configurationListOrderPriority>
+		<dropPodActive>RH_TET_ActiveMagicPod</dropPodActive>
+		<dropPodIncoming>RH_TET_MagicPodIncoming</dropPodIncoming>
+	</FactionDef>
+
+	<ThingSetMakerDef>
+		<defName>RH_TET_DaemonRaidLootMaker</defName>
+		<root Class="ThingSetMaker_MarketValue">
+			<fixedParams>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+			</fixedParams>
+		</root>
+	</ThingSetMakerDef>
+
+</Defs>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThoughtDef>
+		<defName>RH_TET_Daemons_WieldingHellblade</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>8</stackLimit>
+		<stages>
+			<li>
+				<label>wielding hellblade</label>
+				<description>I can feel the brutal power of Khorne inside me.</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+</Defs>
