@@ -18,7 +18,7 @@
 			<Mass>4.0</Mass>
 			<MarketValue>1500</MarketValue>
 		</statBases>
-		<equippedAngleOffset>-30</equippedAngleOffset>
+		<equippedAngleOffset>-135</equippedAngleOffset>
 		<equippedStatOffsets>
 			<SocialImpact>-0.35</SocialImpact>
 			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.35</SlaveSuppressionOffset>
@@ -63,6 +63,19 @@
 				<nameMaker>NamerArtWeaponMelee</nameMaker>
 				<descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
 				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>			
+			<li Class="CompOversizedWeapon.CompProperties_OversizedWeapon">
+				<verticalFlipNorth>true</verticalFlipNorth>
+				<!--
+				<angleAdjustmentWest>-45</angleAdjustmentWest>
+				<angleAdjustmentEast>-30</angleAdjustmentEast>
+				<angleAdjustmentSouth>0</angleAdjustmentSouth>
+				<angleAdjustmentNorth>0</angleAdjustmentNorth>
+				-->
+				<southOffset>(-0.30,0,0.1)</southOffset>
+				<northOffset>(-0.30,0,0.40)</northOffset>
+				<eastOffset>(-0.5,0,0.25)</eastOffset>
+				<westOffset>(0.5,0,0.25)</westOffset>
 			</li>
 		</comps>
 		<weaponClasses>
