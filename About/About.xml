@@ -2,7 +2,7 @@
 <ModMetaData>
   <name>Rimhammer - The End Times - Daemons</name>
   <author>SickBoyWI</author>
-	<supportedVersions><li>1.4</li></supportedVersions>
+	<supportedVersions><li>1.4</li><li>1.5</li></supportedVersions>
 	<packageId>SickBoyWi.TheEndTimes.Daemons</packageId>
   <description>
 IF YOU HAVE ISSUES, YOU'LL GET A MUCH FASTER RESPONSE BY POSTING ON MY DISCORD ISSUES-AND-BUGS CHANNEL: https://discord.gg/UCmQbCT
@@ -15,4 +15,48 @@ Dev Notes:
 ========================
 Development started. 
 </description>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>UnlimitedHugs.HugsLib</packageId>
+			<displayName>HugsLib</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</steamWorkshopUrl>
+			<downloadUrl />
+		</li>
+		<li>
+			<packageId>sickboywi.sicktools</packageId>
+			<displayName>SickTools</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=932008009</steamWorkshopUrl>
+			<downloadUrl />
+		</li>
+		<li>
+			<packageId>erdelf.HumanoidAlienRaces</packageId>
+			<displayName>Humanoid Alien Races</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=839005762</steamWorkshopUrl>
+			<downloadUrl />
+		</li>
+		<li>
+			<packageId>SickBoyWi.TheEndTimes.Magic</packageId>
+			<displayName>Rimhammer - The End Times - Magic</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2020384442</steamWorkshopUrl>
+			<downloadUrl />
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>brrainz.harmony</li>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.BioTech</li>
+		<li>UnlimitedHugs.HugsLib</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>sickboywi.sicktools</li>
+		<li>jecrell.doorsexpanded</li>
+		<li>SickBoyWi.TheEndTimes.Magic</li>
+	</loadAfter>	
 </ModMetaData>

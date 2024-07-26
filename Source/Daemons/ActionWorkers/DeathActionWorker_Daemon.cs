@@ -25,7 +25,7 @@ namespace TheEndTimes_Daemons
             }
         }
 
-        public override void PawnDied(Corpse corpse)
+        public override void PawnDied(Corpse corpse, Lord prevLord)
         {
             IntVec3 pos = corpse.Position;
             Map map = corpse.Map;

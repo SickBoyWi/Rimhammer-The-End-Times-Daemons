@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="BasePawn" Name="RH_TET_BaseDaemon" Abstract="True">
+		<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+		<statBases>
+			<MarketValue>1200</MarketValue>
+			<PsychicSensitivity>0.5</PsychicSensitivity>
+			<ToxicResistance>1</ToxicResistance>
+			<Flammability>1</Flammability>
+			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
+			<ComfyTemperatureMax>250</ComfyTemperatureMax>
+			<MeatAmount>0</MeatAmount>
+			<ArmorRating_Heat>2.00</ArmorRating_Heat>
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<WorkSpeedGlobal MayRequire="Ludeon.Rimworld.Biotech">0.5</WorkSpeedGlobal>
+		</statBases>
+		<tradeability>None</tradeability>
+		<race>
+			<deathAction>
+				<workerClass>TheEndTimes_Daemons.DeathActionWorker_Daemon</workerClass>
+			</deathAction>			
+			<fleshType>RH_TET_Daemons_Flesh</fleshType>
+			<needsRest>false</needsRest>
+			<hasGenders>false</hasGenders>
+			<foodType>None</foodType>
+			<lifeExpectancy>2500</lifeExpectancy>
+			<soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+			<soundCallIntervalFriendlyFactor>2</soundCallIntervalFriendlyFactor>
+			<thinkTreeConstant MayRequire="Ludeon.RimWorld.Biotech">HumanlikeConstant</thinkTreeConstant>
+			
+			<bloodDef>RH_TET_Filth_BloodDaemon</bloodDef>
+			<canBecomeShambler>False</canBecomeShambler>
+		</race>
+	</ThingDef>
+
+	<!-- Walker daemons base -->
+
+	<ThingDef ParentName="RH_TET_BaseDaemon" Name="RH_TET_BaseDaemonWalker" Abstract="True">
+		<race>
+			<intelligence>ToolUser</intelligence>
+			<makesFootprints>true</makesFootprints>
+			<thinkTreeMain>Humanlike</thinkTreeMain>
+			<baseBodySize>1.0</baseBodySize>
+		</race>
+	</ThingDef>
+
+	<!-- Bloodletter -->
+	<ThingDef ParentName="RH_TET_BaseDaemonWalker">
+		<defName>RH_TET_Daemon_Bloodletter</defName>
+		<label>bloodletter</label>
+		<description>A Bloodletter, also called "Khorne's Chosen," the "Teeth of Death," a "Naked Slayer," a "Taker of Skulls," or a "Horned One" is a Lesser Daemon of Khorne, the Chaos God of war and murder, who serves as a foot soldier in the Blood God's Daemonic legions.\n\nBloodletters generally stand taller than a man, though they are so stooped and hunched that their faces often lie at a similar height. Their bodies are slim with a muscled, wiry strength. Their horns and claws are blackened and flecked with crimson and their feet are turned and cloven like those of a goat. They wear naught but scraps of plate armour, most often of brass or bronze, stamped and pressed in Daemonic forges and welded while they are there upon their bodies.</description>		
+		<statBases>
+			<MoveSpeed>4.7</MoveSpeed>
+			<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>left claws</label>
+				<capacities>
+					<li>Cut</li>
+					<li>Stab</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RH_TET_LeftHandClaws</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right claws</label>
+				<capacities>
+					<li>Cut</li>
+					<li>Stab</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RH_TET_RightHandClaws</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<body>RH_TET_Bloodletter</body>
+			<baseHealthScale>1.32</baseHealthScale>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>			
+			<lifeStageAges>
+				<li>
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>RH_TET_Pawn_Daemon_Bloodletter_Wounded</soundWounded>
+					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
+					<soundCall>RH_TET_Pawn_Daemon_Bloodletter_Call</soundCall>
+				</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>100</minAge>
+					<soundWounded>RH_TET_Pawn_Daemon_Bloodletter_Wounded</soundWounded>
+					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
+					<soundCall>RH_TET_Pawn_Daemon_Bloodletter_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+	</ThingDef>
+ 
+	<!-- Pink Horror -->
+	<ThingDef ParentName="RH_TET_BaseDaemonWalker">
+		<defName>RH_TET_Daemon_HorrorPink</defName>
+		<label>pink horror</label>
+		<description>Pink Horrors, known also as "Whirling Destroyers," "Squealers" or "Spinning Sourguts," are Lesser Daemons of Tzeentch, the Chaos God of change and intrigue. They are the footsoldiers of Tzeentch's Daemonic legions, identified by their luminescent pink skin, and their squeals of high-pitched laughter.</description>		
+		<statBases>
+			<MoveSpeed>4.5</MoveSpeed>
+			<ArmorRating_Blunt>0.07</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>left claws</label>
+				<capacities>
+					<li>Cut</li>
+					<li>Stab</li>
+				</capacities>
+				<power>11</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RH_TET_LeftHandClaws</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right claws</label>
+				<capacities>
+					<li>Cut</li>
+					<li>Stab</li>
+				</capacities>
+				<power>11</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RH_TET_RightHandClaws</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+		</tools>
+		<race>
+			<body>RH_TET_Horror</body>
+			<baseHealthScale>1.0</baseHealthScale>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>			
+			<lifeStageAges>
+				<li>
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>RH_TET_Pawn_Daemon_Horror_Wounded</soundWounded>
+					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
+					<soundCall>RH_TET_Pawn_Daemon_Horror_Call</soundCall>
+				</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>100</minAge>
+					<soundWounded>RH_TET_Pawn_Daemon_Horror_Wounded</soundWounded>
+					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
+					<soundCall>RH_TET_Pawn_Daemon_Horror_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+	</ThingDef>
+
+	<!-- Blue Horror -->
+	<ThingDef ParentName="RH_TET_BaseDaemonWalker">
+		<defName>RH_TET_Daemon_HorrorBlue</defName>
+		<label>blue horror</label>
+		<description>A Blue Horror is a Lesser Daemon of Tzeentch, the Chaos God of change and intrigue, who is the unholy product that results from the destruction of a Pink Horror.\n\nBlue Horrors are sullen and malicious, like evil-tempered children, and sneer and grumble their way through a battle. Once spawned, they add a deeper whining note to the incessant chortling of the group of Horrors as they attempt to grapple with enemies and squeeze the life from them, before inevitably wandering off in search of fresh entertainment.</description>		
+		<statBases>
+			<MoveSpeed>4.5</MoveSpeed>
+			<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>left claws</label>
+				<capacities>
+					<li>Cut</li>
+					<li>Stab</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RH_TET_LeftHandClaws</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right claws</label>
+				<capacities>
+					<li>Cut</li>
+					<li>Stab</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RH_TET_RightHandClaws</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+		</tools>
+		<race>
+			<body>RH_TET_Horror</body>
+			<baseBodySize>.75</baseBodySize>
+			<baseHealthScale>.65</baseHealthScale>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>			
+			<lifeStageAges>
+				<li>
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>RH_TET_Pawn_Daemon_Horror_Wounded</soundWounded>
+					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
+					<soundCall>RH_TET_Pawn_Daemon_Horror_Call</soundCall>
+				</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>100</minAge>
+					<soundWounded>RH_TET_Pawn_Daemon_Horror_Wounded</soundWounded>
+					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
+					<soundCall>RH_TET_Pawn_Daemon_Horror_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+	</ThingDef>
+	
+</Defs>

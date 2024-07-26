@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="BaseWeapon">
+		<defName>RH_TET_Daemons_Hellblade</defName>
+		<label>daemon hellblade</label>
+		<description>The name "Hellblade" has been used to describe many weapons in the writings of men and other races, but it has been used most often to describe those weapons carried by the Bloodletters, the lower daemon vassals of Khorne. The tales relate that Hellblades are razor-edged and honed on the souls of those who have fallen in battle to the Blood God's own. They are consecrated to Khorne, and the bloody task of slaughtering his enemies, and glow with a power that, so it is said, can drain the very soul from a man and suck dry his shrivelling corpse.\n\nWielding this weapon hurts social interaction skill, as other good or neutral pawns abhor daemonkind and their effects. It does significantly improve slave suppression ability, as the slaves greatly fear the daemonic, and know that there is no remorse or pity to be found in the wielder.</description>
+		<graphicData>
+			<texPath>Things/Item/Weapon/Melee/Hellblade</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.6</drawSize>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<weaponTags>
+			<li>RH_TET_Daemons_Khorne_Bloodletter</li>
+		</weaponTags>
+		<statBases>
+			<Mass>4.0</Mass>
+			<MarketValue>1500</MarketValue>
+		</statBases>
+		<equippedAngleOffset>-135</equippedAngleOffset>
+		<equippedStatOffsets>
+			<SocialImpact>-0.35</SocialImpact>
+			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.35</SlaveSuppressionOffset>
+		</equippedStatOffsets>
+		<thingCategories Inherit="False">
+			<li>RH_TET_Daemons_WeaponsMelee</li>
+		</thingCategories>
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>2.3</cooldownTime>
+			</li>
+			<li>
+				<label>tip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>28</power>
+				<cooldownTime>2.3</cooldownTime>
+			</li>
+			<li>
+				<label>edge</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>38</power>
+				<cooldownTime>2.7</cooldownTime>
+				<armorPenetration>1.2</armorPenetration>
+			</li>
+		</tools>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtWeaponMelee</nameMaker>
+				<descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>			
+			<li Class="SickCompOversizedWeapon.CompProperties_OversizedWeapon">
+				<verticalFlipNorth>true</verticalFlipNorth>
+				<!--
+				<angleAdjustmentWest>-45</angleAdjustmentWest>
+				<angleAdjustmentEast>-30</angleAdjustmentEast>
+				<angleAdjustmentSouth>0</angleAdjustmentSouth>
+				<angleAdjustmentNorth>0</angleAdjustmentNorth>
+				-->
+				<southOffset>(-0.30,0,0.1)</southOffset>
+				<northOffset>(-0.30,0,0.40)</northOffset>
+				<eastOffset>(-0.5,0,0.25)</eastOffset>
+				<westOffset>(0.5,0,0.25)</westOffset>
+			</li>
+		</comps>
+		<weaponClasses>
+			<li>Melee</li>
+			<li>MeleePiercer</li>
+		</weaponClasses>
+		<relicChance>0</relicChance>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseWeapon">
+		<defName>RH_TET_Daemons_RitualKnife_Pink</defName>
+		<label>daemon ritual knife high</label>
+		<description>A ritual knife of the god Tzeentch, carried by his lesser daemons: Pink Horrors. Good for cutting, stabbing, and slicing, but an awful aura looms around it. It does launch a magic projectile.</description>
+		<graphicData>
+			<texPath>Things/Item/Weapon/Melee/TzeenchianBlade</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.0</drawSize>
+		</graphicData>
+		<uiIconScale>1.6</uiIconScale>
+		<techLevel>Medieval</techLevel>
+		<weaponTags>
+			<li>RH_TET_Daemons_Tzeentch_Horror_Pink</li>
+		</weaponTags>
+		<statBases>
+			<Mass>0.5</Mass>
+			<MarketValue>500</MarketValue>
+		</statBases>
+		<!--<equippedAngleOffset>-30</equippedAngleOffset>-->
+		<equippedStatOffsets>
+			<SocialImpact>-0.35</SocialImpact>
+			<PsychicSensitivity>-0.10</PsychicSensitivity>
+		</equippedStatOffsets>
+		<thingCategories Inherit="False">
+			<li>RH_TET_Daemons_WeaponsMelee</li>
+		</thingCategories>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>RH_TET_Daemons_Tzeentch_Pink_Proj</defaultProjectile>
+				<warmupTime>0.3</warmupTime>
+				<range>25.9</range>
+				<soundCast>RH_TET_Daemons_TzeentchFireSound</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>blade</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>1.5</cooldownTime>
+			</li>
+			<li>
+				<label>point</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtWeaponMelee</nameMaker>
+				<descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+		</comps>
+		<weaponClasses>
+			<li>Neolithic</li>
+		</weaponClasses>
+		<relicChance>0</relicChance>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseWeapon">
+		<defName>RH_TET_Daemons_RitualKnife_Blue</defName>
+		<label>daemon ritual knife low</label>
+		<description>A ritual knife of the god Tzeentch, carried by his lesser daemons: Blue Horrors. Good for cutting, stabbing, and slicing, but an awful aura looms around it. It does launch a magic projectile.</description>
+		<graphicData>
+			<texPath>Things/Item/Weapon/Melee/TzeenchianBlade</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.0</drawSize>
+		</graphicData>
+		<uiIconScale>1.6</uiIconScale>
+		<techLevel>Medieval</techLevel>
+		<weaponTags>
+			<li>RH_TET_Daemons_Tzeentch_Horror_Blue</li>
+		</weaponTags>
+		<statBases>
+			<Mass>0.5</Mass>
+			<MarketValue>450</MarketValue>
+		</statBases>
+		<!--<equippedAngleOffset>-30</equippedAngleOffset>-->
+		<equippedStatOffsets>
+			<SocialImpact>-0.35</SocialImpact>
+			<PsychicSensitivity>-0.10</PsychicSensitivity>
+		</equippedStatOffsets>
+		<thingCategories Inherit="False">
+			<li>RH_TET_Daemons_WeaponsMelee</li>
+		</thingCategories>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>RH_TET_Daemons_Tzeentch_Blue_Proj</defaultProjectile>
+				<warmupTime>0.3</warmupTime>
+				<range>22.9</range>
+				<soundCast>RH_TET_Daemons_TzeentchFireSound</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>blade</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>1.5</cooldownTime>
+			</li>
+			<li>
+				<label>point</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtWeaponMelee</nameMaker>
+				<descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+		</comps>
+		<weaponClasses>
+			<li>Neolithic</li>
+		</weaponClasses>
+		<relicChance>0</relicChance>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>RH_TET_Daemons_Tzeentch_Pink_Proj</defName>
+		<label>pink fire of Tzeentch</label>
+		<graphicData>
+			<texPath>Things/Projectile/Tzeentch/Pink/RH_TET_Tzeentch_Pink</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Burn</damageDef>
+			<damageAmountBase>10</damageAmountBase>
+			<stoppingPower>0</stoppingPower>
+			<speed>45</speed>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>RH_TET_Daemons_Tzeentch_Blue_Proj</defName>
+		<label>blue fire of Tzeentch</label>
+		<graphicData>
+			<texPath>Things/Projectile/Tzeentch/Blue/RH_TET_Tzeentch_Blue</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Burn</damageDef>
+			<damageAmountBase>8</damageAmountBase>
+			<stoppingPower>0</stoppingPower>
+			<speed>45</speed>
+		</projectile>
+	</ThingDef>
+  
+</Defs>
