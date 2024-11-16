@@ -65,6 +65,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AncientShrines\Building_AncientDaemonCryptosleepPod.cs" />
+    <Compile Include="AncientShrines\Building_AncientDaemonCryptosleepCasket.cs" />
+    <Compile Include="AncientShrines\SketchResolver_DaemonFloorFill.cs" />
+    <Compile Include="AncientShrines\SketchResolver_AddDaemonColumns.cs" />
+    <Compile Include="AncientShrines\SymbolResolver_DaemonsFloorFill.cs" />
+    <Compile Include="AncientShrines\SketchResolver_DaemonMonument.cs" />
+    <Compile Include="AncientShrines\DaemonClusterGenerator.cs" />
+    <Compile Include="AncientShrines\LayoutWorkerComplex_AncientDaemons.cs" />
+    <Compile Include="AncientShrines\SymbolResolver_RandomDaemonGroup.cs" />
+    <Compile Include="AncientShrines\SymbolResolver_Interior_AncientDaemonTemple.cs" />
+    <Compile Include="AncientShrines\SymbolResolver_AncientDaemonTemple.cs" />
+    <Compile Include="AncientShrines\ThingSetMaker_MapGen_AncientDaemonPodContents.cs" />
+    <Compile Include="AncientShrines\SymbolResolver_AncientDaemonCryptosleepCasket.cs" />
+    <Compile Include="AncientShrines\SymbolResolver_AncientDaemonRuins.cs" />
+    <Compile Include="AncientShrines\SymbolResolver_AncientDaemonShrine.cs" />
+    <Compile Include="AncientShrines\SymbolResolver_AncientDaemonShrinesGroup.cs" />
+    <Compile Include="AncientShrines\GenStep_ScatterRimhammerRuinsSimple.cs" />
+    <Compile Include="AncientShrines\GenStep_ScatterDaemonShrines.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Harmony\HarmonyPatches.cs" />
     <Compile Include="DaemonsUtil.cs" />

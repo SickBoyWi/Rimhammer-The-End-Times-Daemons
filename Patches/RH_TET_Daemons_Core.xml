@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+  
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/MapGeneratorDef[defName = "Base_Player"]/genSteps</xpath>
+		<value>
+			<li>RH_TET_ScatterDaemonShrines</li>
+		</value>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <RH_TET_Daemons_LetterLabelAncientShrineWarning>Daemonic danger</RH_TET_Daemons_LetterLabelAncientShrineWarning>
+  <RH_TET_Daemons_AncientShrineWarning>As {PAWN_nameDef} draws near the strange wall, a sense of uncanny foreboding overcomes {PAWN_objective}. {PAWN_pronoun} isn't sure why, but {PAWN_pronoun} feels that this dusty structure may contain great danger.</RH_TET_Daemons_AncientShrineWarning>
+  
+</LanguageData>

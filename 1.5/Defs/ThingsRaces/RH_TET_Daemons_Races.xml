@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+<!-- MAKE SURE NEW DAEMON RACES GO IN THE SOURCE CODE UTIL FILES. -->
+
 	<ThingDef ParentName="BasePawn" Name="RH_TET_BaseDaemon" Abstract="True">
 		<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
 		<statBases>
@@ -44,6 +46,80 @@
 			<baseBodySize>1.0</baseBodySize>
 		</race>
 	</ThingDef>
+
+	<!-- Imp -->
+	<ThingDef ParentName="RH_TET_BaseDaemonWalker">
+		<defName>RH_TET_Daemon_Imp</defName>
+		<label>imp</label>
+		<description>An Imp is a Least Daemon, the least of the least, minor Daemons born from loosed emotions. In their "natural" state, they are amorphous things, endlessly cycling through a variety of shapes and forms that seem to reflect the thought or concept that birthed them. It is only when one of the Dark Gods claims an Imp that it becomes something else, its form shifting to match the nature of its new, divine patron.</description>
+		<statBases>
+		    <MoveSpeed>3.75</MoveSpeed>
+			<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+		    <MarketValue>250</MarketValue>
+		    <LeatherAmount>0</LeatherAmount>			
+		</statBases>
+		<tools>
+			<li>
+				<label>left claws</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RH_TET_LeftHandClaws</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right claws</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RH_TET_RightHandClaws</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.1</chanceFactor>
+			</li>			
+		</tools>
+		<race>
+			<body>RH_TET_Daemons_HumanlikeWithWings</body>
+			<makesFootprints>false</makesFootprints>
+			<baseBodySize>0.2</baseBodySize>
+			<baseHealthScale>0.4</baseHealthScale>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>		
+			<lifeStageAges>
+				<li>
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Megascarab_Wounded</soundWounded>
+					<soundDeath>Pawn_Megascarab_Death</soundDeath>
+					<soundCall>Pawn_Megascarab_Call</soundCall>
+					<soundAngry>Pawn_Megascarab_Angry</soundAngry>
+				</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>100</minAge>
+					<soundWounded>Pawn_Megascarab_Wounded</soundWounded>
+					<soundDeath>Pawn_Megascarab_Death</soundDeath>
+					<soundCall>Pawn_Megascarab_Call</soundCall>
+					<soundAngry>Pawn_Megascarab_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+		</race>
+	</ThingDef>	
 
 	<!-- Bloodletter -->
 	<ThingDef ParentName="RH_TET_BaseDaemonWalker">

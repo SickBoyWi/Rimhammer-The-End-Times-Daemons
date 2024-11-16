@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<!-- TODO Add or Delete - Big Complexes for quests.
+	<ComplexLayoutDef Name="RH_TET_AncientDaemonComplex">
+		<defName>RH_TET_AncientDaemonComplex</defName>
+		<workerClass>TheEndTimes_Daemons.LayoutWorkerComplex_AncientDaemons</workerClass>
+		<roomDefs>
+			<li>AncientEquipmentRoom</li>
+			<li>AncientStorageRoom</li>
+			<li>AncientBarracks</li>
+			<li>AncientPowerRoom</li>
+			<li>AncientLab</li>
+			<li>AncientArmory</li>
+		</roomDefs>
+		<threats>
+			<li>
+				<def>SleepingDaemons</def>
+			</li>
+			<li>
+				<def>DaemonAmbush</def>
+			</li>
+			<li>
+				<def>DaemonCryptosleepPods</def>
+			</li>
+			<li>
+				<def>FuelNode</def>
+				<maxPerRoom>1</maxPerRoom>
+				<selectionWeight>3</selectionWeight>
+			</li>
+			<li>
+				<def>SecurityCrate</def>
+				<selectionWeight>4</selectionWeight>
+			</li>
+			<li>
+				<def>Infestation</def>
+			</li>
+			<li>
+				<def>RaidTerminal</def>
+				<maxPerComplex>1</maxPerComplex>
+				<chancePerComplex>0.5</chancePerComplex>
+			</li>
+		</threats>
+		<rewardThingSetMakerDef>MapGen_AncientDaemonComplexRoomLoot_Default</rewardThingSetMakerDef>
+	</ComplexLayoutDef>
+  
+	<ComplexLayoutDef ParentName="RH_TET_AncientDaemonComplex">
+		<defName>AncientDaemonComplex_Loot</defName>
+		<rewardThingSetMakerDef>MapGen_AncientDaemonComplexRoomLoot_Better</rewardThingSetMakerDef>
+	</ComplexLayoutDef>
+-->
+</Defs>

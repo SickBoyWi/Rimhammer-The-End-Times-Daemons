@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RuleDef>
+    <defName>RH_TET_AncientDaemonTemple</defName>
+    <symbol>ancientDaemonTemple</symbol>
+    <resolvers>
+      <li Class="TheEndTimes_Daemons.SymbolResolver_AncientDaemonTemple">
+        <minRectSize>(6, 5)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RH_TET_AncientDaemonShrinesGroup</defName>
+    <symbol>ancientDaemonShrinesGroup</symbol>
+    <resolvers>
+      <li Class="TheEndTimes_Daemons.SymbolResolver_AncientDaemonShrinesGroup">
+        <minRectSize>(4, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RH_TET_AncientDaemonShrine</defName>
+    <symbol>ancientDaemonShrine</symbol>
+    <resolvers>
+      <li Class="TheEndTimes_Daemons.SymbolResolver_AncientDaemonShrine">
+        <minRectSize>(4, 3)</minRectSize>
+        <techprintChance>0.033</techprintChance>
+        <bladelinkChance>0.02</bladelinkChance>
+        <psychicChance>0.02</psychicChance>
+      </li>
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RH_TET_AncientDaemonRuins</defName>
+    <symbol>ancientRuins</symbol>
+    <resolvers>
+      <li Class="TheEndTimes_Daemons.SymbolResolver_AncientDaemonRuins">
+        <minRectSize>(3, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>RH_TET_AncientDaemonCryptosleepCasket</defName>
+    <symbol>ancientDaemonCryptosleepCasket</symbol>
+    <resolvers>
+      <li Class="TheEndTimes_Daemons.SymbolResolver_AncientDaemonCryptosleepCasket" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>RH_TET_Interior_AncientDaemonTemple</defName>
+    <symbol>interior_ancientDaemonTemple</symbol>
+    <resolvers>
+      <li Class="TheEndTimes_Daemons.SymbolResolver_Interior_AncientDaemonTemple">
+        <minRectSize>(1, 1)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+ 
+  <RuleDef>
+    <defName>RH_TET_RandomDaemonGroup</defName>
+    <symbol>randomDaemonGroup</symbol>
+    <resolvers>
+      <li Class="TheEndTimes_Daemons.SymbolResolver_RandomDaemonGroup" />
+    </resolvers>
+  </RuleDef>
+  
+</Defs>

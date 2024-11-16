@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Ancient daemon shrines -->
+	<GenStepDef>
+		<defName>RH_TET_ScatterDaemonShrines</defName>
+		<order>400</order>
+		<genStep Class="TheEndTimes_Daemons.GenStep_ScatterDaemonShrines">
+			<allowInWaterBiome>false</allowInWaterBiome>
+			<countPer10kCellsRange><min>0.12</min><max>0.25</max></countPer10kCellsRange>
+		</genStep>
+	</GenStepDef>
+	
+	<SketchResolverDef>
+		<defName>RH_TET_DaemonMonument</defName>
+		<isRoot>true</isRoot>
+		<resolver Class="TheEndTimes_Daemons.SketchResolver_DaemonMonument" />
+	</SketchResolverDef>	
+
+	<SketchResolverDef>
+		<defName>RH_TET_AddDaemonColumns</defName>
+		<resolver Class="TheEndTimes_Daemons.SketchResolver_AddDaemonColumns" />
+	</SketchResolverDef>
+
+	<SketchResolverDef>
+		<defName>RH_TET_DaemonsFloorFill</defName>
+		<resolver Class="TheEndTimes_Daemons.SketchResolver_DaemonsFloorFill" />
+	</SketchResolverDef>
+
+	<ThingSetMakerDef>
+		<defName>RH_TET_MapGen_AncientDaemonTempleContents</defName>
+		<root Class="ThingSetMaker_Sum">
+			<options>
+
+				<!-- Artifacts -->
+				<li>
+					<chance>0.7</chance>
+					<thingSetMaker Class="ThingSetMaker_Count">
+						<fixedParams>
+							<filter>
+								<categories>
+									<li>RH_TET_Artifacts</li>
+									<li>RH_TET_MagicApparel</li>
+									<li>RH_TET_MagicItems</li>
+									<li>RH_TET_MagicHelms</li>
+									<li>RH_TET_MagicArmor</li>
+								</categories>
+							</filter>
+							<countRange>3~4</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+				<!-- Misc cool items -->
+				<li>
+					<chance>0.5</chance>
+					<thingSetMaker Class="ThingSetMaker_Count">
+						<fixedParams>
+							<qualityGenerator>Reward</qualityGenerator>
+							<filter>
+								<thingDefs>
+									<li>RH_TET_Magic_PotionTrainer_Shooting</li>
+									<li>RH_TET_Magic_PotionTrainer_Melee</li>
+									<li>RH_TET_Potion_Healing</li>
+									<li>RH_TET_Potion_Love</li>
+									<li>RH_TET_Potion_Foolhardiness</li>
+									<li>RH_TET_Potion_SupremeMagic</li>
+									<li>RH_TET_Magic_PotionTrainer_Construction</li>
+									<li>RH_TET_Magic_PotionTrainer_Mining</li>
+									<li>RH_TET_Magic_PotionTrainer_Cooking</li>
+									<li>RH_TET_Magic_PotionTrainer_Plants</li>
+									<li>RH_TET_Magic_PotionTrainer_Animals</li>
+									<li>RH_TET_Magic_PotionTrainer_Crafting</li>
+									<li>RH_TET_Magic_PotionTrainer_Artistic</li>
+									<li>RH_TET_Magic_PotionTrainer_Medicine</li>
+									<li>RH_TET_Magic_PotionTrainer_Social</li>
+									<li>RH_TET_Magic_PotionTrainer_Intellectual</li>
+								</thingDefs>
+							</filter>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+				<li>
+					<chance>0.35</chance>
+					<thingSetMaker Class="ThingSetMaker_Count">
+						<fixedParams>
+							<filter>
+								<thingSetMakerTagsToAllow>
+									<li>RH_TET_Magic_PotionHeDiff_Charisma</li>
+									<li>RH_TET_Magic_PotionHeDiff_Movement</li>
+									<li>RH_TET_Magic_PotionHeDiff_Unbreaking</li>
+									<li>RH_TET_Magic_PotionHeDiff_Immunity</li>
+								</thingSetMakerTagsToAllow>
+							</filter>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+		
+				<li>
+					<chance>0.35</chance>
+					<thingSetMaker Class="ThingSetMaker_Count">
+						<fixedParams>
+							<filter>
+								<thingSetMakerTagsToAllow>
+									<li>RH_TET_Magic_MagicEye</li>
+									<li>RH_TET_Magic_MagicArm</li>
+									<li>RH_TET_Magic_MagicLeg</li>
+								</thingSetMakerTagsToAllow>
+							</filter>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+				<li>
+					<chance>0.35</chance>
+					<thingSetMaker Class="ThingSetMaker_StackCount">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>RH_TET_Skaven_Warpstone</li>
+									<li>RH_TET_Daemons_MagicEssence_Refined</li>
+								</thingDefs>
+							</filter>
+							<countRange>5~50</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+			</options>
+		</root>
+	</ThingSetMakerDef>
+
+	<ThingSetMakerDef>
+		<defName>RH_TET_MapGen_AncientDaemonPodContents</defName>
+		<root Class="TheEndTimes_Daemons.ThingSetMaker_MapGen_AncientDaemonPodContents"/>
+	</ThingSetMakerDef>
+
+<!--
+	<ThingSetMakerDef>
+		<defName>MapGen_AncientDaemonComplexRoomLoot_Default</defName>
+		<root Class="ThingSetMaker_RandomOption">
+			<options>
+
+				<li>
+					<weight>1</weight>
+					<thingSetMaker Class="ThingSetMaker_StackCount">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>MealSurvivalPack</li>
+								</thingDefs>
+							</filter>
+							<countRange>2~6</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+				<li>
+					<weight>1</weight>
+					<thingSetMaker Class="ThingSetMaker_StackCount">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>MedicineIndustrial</li>
+									<li>MedicineHerbal</li>
+								</thingDefs>
+							</filter>
+							<countRange>3~6</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+				<li>
+					<weight>1</weight>
+					<thingSetMaker Class="ThingSetMaker_StackCount">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>Luciferium</li>
+								</thingDefs>
+							</filter>
+							<countRange>5~12</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+				<li>
+					<weight>1</weight>
+					<thingSetMaker Class="ThingSetMaker_StackCount">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>Joywire</li>
+								</thingDefs>
+							</filter>
+							<countRange>1</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+				<li>
+					<weight>1</weight>
+					<thingSetMaker Class="ThingSetMaker_StackCount">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>Silver</li>
+								</thingDefs>
+							</filter>
+							<countRange>30~100</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+				<li>
+					<weight>1</weight>
+					<thingSetMaker Class="ThingSetMaker_StackCount">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>Chemfuel</li>
+								</thingDefs>
+							</filter>
+							<countRange>10~30</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+				<li>
+					<weight>1</weight>
+					<thingSetMaker Class="ThingSetMaker_StackCount">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>Uranium</li>
+								</thingDefs>
+							</filter>
+							<countRange>30~50</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+        
+				<li>
+					<weight>1</weight>
+					<thingSetMaker Class="ThingSetMaker_StackCount">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>Plasteel</li>
+									<li>Hyperweave</li>
+								</thingDefs>
+							</filter>
+							<countRange>10~20</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+				<li>
+					<weight>0.15</weight>
+					<thingSetMaker Class="ThingSetMaker_StackCount">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>ComponentSpacer</li>
+								</thingDefs>
+							</filter>
+							<countRange>1~3</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+				<li>
+					<weight>0.15</weight>
+					<thingSetMaker Class="ThingSetMaker_StackCount">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>MedicineUltratech</li>
+								</thingDefs>
+							</filter>
+							<countRange>1~3</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+				<li>
+					<weight>0.05</weight>
+					<thingSetMaker Class="ThingSetMaker_Count">
+						<fixedParams>
+							<filter>
+								<thingSetMakerTagsToAllow>
+									<li>Techprint</li>
+								</thingSetMakerTagsToAllow>
+							</filter>
+							<countRange>1</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+
+			</options>
+		</root>
+	</ThingSetMakerDef>
+-->
+</Defs>

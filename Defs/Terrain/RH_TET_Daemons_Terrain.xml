@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--
+	<DesignatorDropdownGroupDef>
+		<defName>RH_TET_Dwarfs_Floor_Tile_Basic</defName>
+	</DesignatorDropdownGroupDef>
+	-->
+	
+	<TerrainDef Name="RH_TET_Daemons_FloorBase" Abstract="True">
+		<layerable>true</layerable>
+		<affordances>
+			<li>Light</li>
+			<li>Medium</li>
+			<li>Heavy</li>
+		</affordances>
+		<tags>
+			<li>Floor</li>
+			<li>RH_TET_Daemons_Floor</li>
+		</tags>
+		<designationCategory>Floors</designationCategory>
+		<fertility>0</fertility>
+		<constructEffect>ConstructDirt</constructEffect>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+	</TerrainDef>
+
+	<TerrainDef Abstract="True" ParentName="RH_TET_Daemons_FloorBase" Name="RH_TET_Daemons_FloorLowBase">
+		<renderPrecedence>220</renderPrecedence>
+		<description>Chaotic stone floor tiles. Very basic work, but effective. Bears unholy markings, and stains from long misuse.</description>
+		<texturePath>Terrain/Surfaces/RH_TET_AncientCursed_Floor</texturePath>
+		<statBases>
+			<WorkToBuild>900</WorkToBuild>
+			<Beauty>0</Beauty>
+		</statBases>
+		<tags>
+			<li>RH_TET_Daemons_FlooringBasic</li>
+		</tags>
+		<!--<designatorDropdown>RH_TET_Dwarfs_Floor_Tile_Basic</designatorDropdown>
+		<researchPrerequisites>
+			<li>Stonecutting</li>
+			<li>RH_TET_Dwarfs_FlooringBasic</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>3</constructionSkillPrerequisite>-->
+	</TerrainDef>
+
+	<TerrainDef ParentName="RH_TET_Daemons_FloorLowBase">
+		<defName>RH_TET_Daemons_BasicFloorGranite</defName>
+		<label>granite chaos floor tile</label>
+		<color>(105,95,97)</color>
+		<costList>
+			<BlocksGranite>3</BlocksGranite>
+		</costList>
+	</TerrainDef>
+  
+	<TerrainDef ParentName="RH_TET_Daemons_FloorLowBase">
+		<defName>RH_TET_Daemons_BasicFloorSandstone</defName>
+		<label>sandstone chaos floor tile</label>
+		<color>(126,104,94)</color>
+		<costList>
+			<BlocksSandstone>3</BlocksSandstone>
+		</costList>
+	</TerrainDef>
+
+	<TerrainDef ParentName="RH_TET_Daemons_FloorLowBase">
+		<defName>RH_TET_Daemons_BasicFloorLimestone</defName>
+		<label>limestone chaos floor tile</label>
+		<color>(158,153,135)</color>
+		<costList>
+			<BlocksLimestone>3</BlocksLimestone>
+		</costList>
+	</TerrainDef>
+
+	<TerrainDef ParentName="RH_TET_Daemons_FloorLowBase">
+		<defName>RH_TET_Daemons_BasicFloorSlate</defName>
+		<label>slate chaos floor tile</label>
+		<color>(100,100,100)</color>
+		<costList>
+			<BlocksSlate>3</BlocksSlate>
+		</costList>
+	</TerrainDef>
+
+	<TerrainDef ParentName="RH_TET_Daemons_FloorLowBase">
+		<defName>RH_TET_Daemons_BasicFloorMarble</defName>
+		<label>marble chaos floor tile</label>
+		<color>(132,135,132)</color>
+		<costList>
+			<BlocksMarble>3</BlocksMarble>
+		</costList>
+	</TerrainDef>
+
+</Defs>

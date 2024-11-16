@@ -36,7 +36,7 @@ namespace TheEndTimes_Daemons
         private static void Pawn_HealthTracker_MakeDowned_PostFix(Pawn_HealthTracker __instance, DamageInfo dinfo, Hediff hediff)
         {
             Pawn pawn = (Pawn)typeof(Pawn_HealthTracker).GetField(nameof(pawn), BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField).GetValue((object)__instance);
-            if (DaemonsUtil.IsDaemon(pawn.def))
+            if (DaemonsUtil.IsDaemonOfGodOrAny(pawn.def))
             {
                 DamageInfo damageinfo = new DamageInfo(dinfo.Def, 9999, 1.0F, dinfo.Angle, dinfo.Instigator, pawn.health.hediffSet.GetBrain(), dinfo.Weapon, DamageInfo.SourceCategory.ThingOrUnknown, dinfo.IntendedTarget, dinfo.InstigatorGuilty, true);
                 pawn.TakeDamage(damageinfo);
@@ -46,7 +46,7 @@ namespace TheEndTimes_Daemons
         private static bool PawnFootprintMaker_TryPlaceFootprint_PreFix(PawnFootprintMaker __instance, ref Pawn ___pawn, ref Vector3 ___FootprintOffset,
             ref Vector3 ___lastFootprintPlacePos, ref bool ___lastFootprintRight)
         {
-            if (DaemonsUtil.IsDaemon(___pawn.def) && ___pawn.def.defName.Contains("Bloodletter"))
+            if (DaemonsUtil.IsDaemonOfGodOrAny(___pawn.def, false, RH_TET_DaemonsDefOf.ChaosGods.Khorne) && ___pawn.def.defName.Contains("Bloodletter"))
             {
                 Vector3 drawPos = ___pawn.Drawer.DrawPos;
                 Vector3 normalized = (drawPos - ___lastFootprintPlacePos).normalized;

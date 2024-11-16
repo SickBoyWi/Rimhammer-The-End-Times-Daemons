@@ -14,17 +14,41 @@ namespace TheEndTimes_Daemons
 {
     public static class DaemonsUtil
     {
-        public static bool IsDaemon(ThingDef def)
+        public static bool IsDaemonOfGodOrAny(ThingDef def, bool allowUndivided = true, RH_TET_DaemonsDefOf.ChaosGods godCode = 0)
         {
-            // TODO - Add Daemon Def Names Here
-            if (def.defName.Equals("RH_TET_Daemon_Bloodletter")
-                || def.defName.Equals("RH_TET_Daemon_HorrorPink")
-                || def.defName.Equals("RH_TET_Daemon_HorrorBlue"))
-            {
+            bool isAny = (godCode == RH_TET_DaemonsDefOf.ChaosGods.Any);
+
+            // TODO - Add Daemon Race ThingDef Names Here AND BELOW
+            if ((isAny || godCode == RH_TET_DaemonsDefOf.ChaosGods.Khorne) 
+                    && def.defName.Equals("RH_TET_Daemon_Bloodletter"))
                 return true;
-            }
+
+            else if ((isAny || godCode == RH_TET_DaemonsDefOf.ChaosGods.Tzeentch) 
+                    && (def.defName.Equals("RH_TET_Daemon_HorrorPink")
+                        || def.defName.Equals("RH_TET_Daemon_HorrorBlue")))
+                return true;
+
+            else if ((isAny || allowUndivided || godCode == RH_TET_DaemonsDefOf.ChaosGods.Undivided)
+                    && (def.defName.Equals("RH_TET_Daemon_Imp")))
+                return true;
 
             return false;
+        }
+
+        public static RH_TET_DaemonsDefOf.ChaosGods GetGod(ThingDef def)
+        {
+            // TODO - Add Daemon Race ThingDef Names Here
+            if (def.defName.Equals("RH_TET_Daemon_Bloodletter"))
+                return RH_TET_DaemonsDefOf.ChaosGods.Khorne;
+
+            else if (def.defName.Equals("RH_TET_Daemon_HorrorPink")
+                        || def.defName.Equals("RH_TET_Daemon_HorrorBlue"))
+                return RH_TET_DaemonsDefOf.ChaosGods.Tzeentch;
+
+            else if (def.defName.Equals("RH_TET_Daemon_Imp"))
+                return RH_TET_DaemonsDefOf.ChaosGods.Undivided;
+
+            return RH_TET_DaemonsDefOf.ChaosGods.None;
         }
 
         public static void PlaceDaemonFootprint(Vector3 loc, Map map, float rot)

@@ -7,4 +7,10 @@
       <parent>WeaponsMelee</parent>
     </ThingCategoryDef>
 
+	<ThingCategoryDef>
+		<defName>RH_TET_Daemons_Buildings</defName>
+		<label>Daemons</label>
+		<parent>Buildings</parent>
+	</ThingCategoryDef>
+
 </Defs>

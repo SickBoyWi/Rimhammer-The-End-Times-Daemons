@@ -24,5 +24,31 @@
 		<label>right claw</label>
 		<labelShort>claw</labelShort>
 	</BodyPartGroupDef>
+
+	<BodyPartDef>
+		<defName>RH_TET_Daemons_WingSmall</defName>
+		<label>wing</label>
+		<hitPoints>10</hitPoints>
+		<frostbiteVulnerability>10</frostbiteVulnerability>
+		<permanentInjuryChanceFactor>0.05</permanentInjuryChanceFactor>
+		<skinCovered>true</skinCovered>
+		<tags>
+			<li>MovingLimbCore</li>
+		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>RH_TET_Daemons_WingSmallBone</defName>
+		<label>wing bone</label>
+		<hitPoints>10</hitPoints>
+		<frostbiteVulnerability>0</frostbiteVulnerability>
+		<permanentInjuryChanceFactor>0.05</permanentInjuryChanceFactor>
+		<skinCovered>false</skinCovered>
+		<solid>true</solid>
+		<bleedRate>0</bleedRate>
+		<tags>
+			<li>MovingLimbSegment</li>
+		</tags>
+	</BodyPartDef>
 	
 </Defs>

@@ -31,7 +31,7 @@
 		<defendPointRadius>0</defendPointRadius>
 		<weaponTags>
 		</weaponTags>
-		<techHediffsChance>1</techHediffsChance>
+		<techHediffsChance>0</techHediffsChance>
 		<techHediffsMoney>9999~9999</techHediffsMoney>
 	</PawnKindDef>
 	
@@ -113,4 +113,29 @@
 		</weaponTags>
 	</PawnKindDef>
 
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Imp</defName>
+		<label>imp</label>
+		<race>RH_TET_Daemon_Imp</race>
+		<combatPower>40</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Imp/Imp</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.0</drawSize>
+				    <shadowData>
+						<volume>(0.2, 0.3, 0.2)</volume>
+						<offset>(0,0,0)</offset>
+				    </shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>		
+		<weaponMoney>0~0</weaponMoney>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags></weaponTags>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+  
 </Defs>
