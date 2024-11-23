@@ -46,6 +46,7 @@ namespace TheEndTimes_Daemons
         private static bool PawnFootprintMaker_TryPlaceFootprint_PreFix(PawnFootprintMaker __instance, ref Pawn ___pawn, ref Vector3 ___FootprintOffset,
             ref Vector3 ___lastFootprintPlacePos, ref bool ___lastFootprintRight)
         {
+            //Log.Error("1:" + ___pawn.def.defName);
             if (DaemonsUtil.IsDaemonOfGodOrAny(___pawn.def, false, RH_TET_DaemonsDefOf.ChaosGods.Khorne) && ___pawn.def.defName.Contains("Bloodletter"))
             {
                 Vector3 drawPos = ___pawn.Drawer.DrawPos;
@@ -65,7 +66,7 @@ namespace TheEndTimes_Daemons
                             FleckMaker.ThrowAirPuffUp(vector3_2, ___pawn.Map);
                         }
                         else
-                            DaemonsUtil.PlaceDaemonFootprint(vector3_2, ___pawn.Map, rot);
+                            DaemonsUtil.PlaceKhorneDaemonFootprint(vector3_2, ___pawn.Map, rot);
                     }
                 }
                 ___lastFootprintPlacePos = drawPos;
@@ -73,6 +74,34 @@ namespace TheEndTimes_Daemons
 
                 return false;
             }
+            else if (DaemonsUtil.IsDaemonOfGodOrAny(___pawn.def, false, RH_TET_DaemonsDefOf.ChaosGods.Tzeentch) && ___pawn.def.defName.Contains("Flamer"))
+            {
+                Vector3 drawPos = ___pawn.Drawer.DrawPos;
+                Vector3 normalized = (drawPos - ___lastFootprintPlacePos).normalized;
+                float rot = normalized.AngleFlat();
+                Vector3 vector3_1 = normalized.RotatedBy(___lastFootprintRight ? 90f : -90f) * 0.17f * Mathf.Sqrt(___pawn.BodySize);
+                Vector3 vector3_2 = drawPos + ___FootprintOffset + vector3_1;
+                IntVec3 intVec3 = vector3_2.ToIntVec3();
+                if (intVec3.InBounds(___pawn.Map))
+                {
+                    TerrainDef terrain = intVec3.GetTerrain(___pawn.Map);
+                    if (terrain != null)
+                    {
+                        //if (terrain.takeSplashes)
+                        //{
+                        //    FleckMaker.WaterSplash(vector3_2, ___pawn.Map, Mathf.Sqrt(___pawn.BodySize) * 2f, 1.5f);
+                        //    FleckMaker.ThrowAirPuffUp(vector3_2, ___pawn.Map);
+                        //}
+                        //else
+                        DaemonsUtil.PlaceTzeentchDaemonFootprint(vector3_2, ___pawn.Map, rot);
+                    }
+                }
+                ___lastFootprintPlacePos = drawPos;
+                ___lastFootprintRight = !___lastFootprintRight;
+
+                return false;
+            }
+
 
             return true;
         }

@@ -115,4 +115,27 @@
 		</subSounds>
 	</SoundDef>
   
+	<SoundDef>
+		<defName>RH_TET_Daemons_Tzeentch_Fire</defName>
+		<context>MapOnly</context>
+		<eventNames/>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Weapons/RH_TET_Daemon_TzeentchFireBlast</clipPath>
+					</li>
+				</grains>
+				<volumeRange>
+					<min>60.70111</min>
+					<max>77.30627</max>
+				</volumeRange>
+				<pitchRange>
+					<min>0.6976015</min>
+					<max>0.7769372</max>
+				</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>  
+  
 </Defs>

@@ -53,6 +53,7 @@ namespace TheEndTimes_Daemons
 
         // Flecks.
         public static FleckDef RH_TET_Daemon_Bloodletter_Footprint;
+        public static FleckDef RH_TET_Daemon_Flamer_Footprint;
 
         // Faction.
         public static FactionDef RH_TET_Daemons_Faction;

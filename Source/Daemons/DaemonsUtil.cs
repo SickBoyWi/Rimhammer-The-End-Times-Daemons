@@ -25,7 +25,8 @@ namespace TheEndTimes_Daemons
 
             else if ((isAny || godCode == RH_TET_DaemonsDefOf.ChaosGods.Tzeentch) 
                     && (def.defName.Equals("RH_TET_Daemon_HorrorPink")
-                        || def.defName.Equals("RH_TET_Daemon_HorrorBlue")))
+                        || def.defName.Equals("RH_TET_Daemon_HorrorBlue")
+                        || def.defName.Equals("RH_TET_Daemon_Flamer")))
                 return true;
 
             else if ((isAny || allowUndivided || godCode == RH_TET_DaemonsDefOf.ChaosGods.Undivided)
@@ -42,7 +43,8 @@ namespace TheEndTimes_Daemons
                 return RH_TET_DaemonsDefOf.ChaosGods.Khorne;
 
             else if (def.defName.Equals("RH_TET_Daemon_HorrorPink")
-                        || def.defName.Equals("RH_TET_Daemon_HorrorBlue"))
+                        || def.defName.Equals("RH_TET_Daemon_HorrorBlue")
+                        || def.defName.Equals("RH_TET_Daemon_Flamer"))
                 return RH_TET_DaemonsDefOf.ChaosGods.Tzeentch;
 
             else if (def.defName.Equals("RH_TET_Daemon_Imp"))
@@ -51,11 +53,20 @@ namespace TheEndTimes_Daemons
             return RH_TET_DaemonsDefOf.ChaosGods.None;
         }
 
-        public static void PlaceDaemonFootprint(Vector3 loc, Map map, float rot)
+        public static void PlaceKhorneDaemonFootprint(Vector3 loc, Map map, float rot)
         {
             if (!loc.ShouldSpawnMotesAt(map, true))
                 return;
             FleckCreationData dataStatic = FleckMaker.GetDataStatic(loc, map, RH_TET_DaemonsDefOf.RH_TET_Daemon_Bloodletter_Footprint, 0.5f);
+            dataStatic.rotation = rot;
+            map.flecks.CreateFleck(dataStatic);
+        }
+
+        public static void PlaceTzeentchDaemonFootprint(Vector3 loc, Map map, float rot)
+        {
+            if (!loc.ShouldSpawnMotesAt(map, true))
+                return;
+            FleckCreationData dataStatic = FleckMaker.GetDataStatic(loc, map, RH_TET_DaemonsDefOf.RH_TET_Daemon_Flamer_Footprint, 0.5f);
             dataStatic.rotation = rot;
             map.flecks.CreateFleck(dataStatic);
         }

@@ -114,6 +114,32 @@
 	</PawnKindDef>
 
 	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Flamer</defName>
+		<label>flamer</label>
+		<race>RH_TET_Daemon_Flamer</race>
+		<combatPower>210</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Flamer/Flamer</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.1</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<defendPointRadius>0</defendPointRadius>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>RH_TET_Daemons_Tzeentch_Flamer</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
 		<defName>RH_TET_Daemons_Imp</defName>
 		<label>imp</label>
 		<race>RH_TET_Daemon_Imp</race>
@@ -123,7 +149,7 @@
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Imp/Imp</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>1.0</drawSize>
+					<drawSize>1.15</drawSize>
 				    <shadowData>
 						<volume>(0.2, 0.3, 0.2)</volume>
 						<offset>(0,0,0)</offset>

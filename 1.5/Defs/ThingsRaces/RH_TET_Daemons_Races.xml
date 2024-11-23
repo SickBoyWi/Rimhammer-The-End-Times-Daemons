@@ -309,5 +309,77 @@
 			</lifeStageAges>
 		</race>
 	</ThingDef>
+
+	<!-- Flamer -->
+	<ThingDef ParentName="RH_TET_BaseDaemonWalker">
+		<defName>RH_TET_Daemon_Flamer</defName>
+		<label>flamer</label>
+		<description>A Flamer, also called the "Pyrodaemons of Tzeentch," a "Fire Daemon," a "Burning Horror," "Keepers of the True Flame of Change," "Bearers of the True Flame of Change," or "Candelabra Mutationi" are Daemonic Beasts of Tzeentch, the Chaos God of change and intrigue. Flamers are amongst the most strange and disturbing of all Tzeentch's Daemons, and their absurd physiologies are more than most mortals can stand.</description>		
+		<statBases>
+			<MoveSpeed>4.5</MoveSpeed>
+			<ArmorRating_Blunt>0.07</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>left mouth</label>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right mouth</label>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+		</tools>
+		<race>
+			<body>RH_TET_Flamer</body>
+			<makesFootprints>true</makesFootprints>
+			<baseHealthScale>1.1</baseHealthScale>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>			
+			<lifeStageAges>
+				<li>
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>RH_TET_Pawn_Daemon_Horror_Wounded</soundWounded>
+					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
+					<soundCall>RH_TET_Pawn_Daemon_Horror_Call</soundCall>
+				</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>100</minAge>
+					<soundWounded>RH_TET_Pawn_Daemon_Horror_Wounded</soundWounded>
+					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
+					<soundCall>RH_TET_Pawn_Daemon_Horror_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+		<!--
+		<comps>
+			<li Class="TheEndTimes_Dwarfs.CompProperties_MoteThrower">
+				<mote>RH_TET_MoteMusic</mote>
+				<offsetMin>(-0.6,0,0.3)</offsetMin>
+				<offsetMax>(0.6,0,0.5)</offsetMax>
+				<emissionInterval>150</emissionInterval>
+				<scale>0.4~0.8</scale>
+				<rotationRate>-15~15</rotationRate>
+				<velocityX>0.3~0.7</velocityX>
+				<velocityY>0.3~0.8</velocityY>
+			</li>
+		</comps>	
+-->		
+	</ThingDef>
 	
 </Defs>

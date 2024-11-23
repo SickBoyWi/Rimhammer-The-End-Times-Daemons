@@ -13,4 +13,16 @@
 		<fadeOutTime>2.6</fadeOutTime>
 	</FleckDef>
 
+	<FleckDef ParentName="FleckBase">
+		<defName>RH_TET_Daemon_Flamer_Footprint</defName>
+		<graphicData>
+			<texPath>Things/Mote/Flamer_Footprint</texPath>
+			<renderInstanced>true</renderInstanced>
+		</graphicData>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<fadeInTime>0.08</fadeInTime>
+		<solidTime>2.2</solidTime>
+		<fadeOutTime>2.6</fadeOutTime>
+	</FleckDef>
+
 </Defs>
