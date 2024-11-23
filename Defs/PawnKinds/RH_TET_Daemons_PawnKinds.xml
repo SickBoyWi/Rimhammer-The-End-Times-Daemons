@@ -123,7 +123,7 @@
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Flamer/Flamer</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>2.1</drawSize>
+					<drawSize>2.3</drawSize>
 					<shadowData>
 						<volume>(0.4, 0.8, 0.4)</volume>
 					</shadowData>
