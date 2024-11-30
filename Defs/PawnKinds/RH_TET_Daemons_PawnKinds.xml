@@ -150,18 +150,41 @@
 					<texPath>Things/Pawn/Imp/Imp</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.15</drawSize>
-				    <shadowData>
+					<shadowData>
 						<volume>(0.2, 0.3, 0.2)</volume>
 						<offset>(0,0,0)</offset>
-				    </shadowData>
+					</shadowData>
 				</bodyGraphicData>
 			</li>
-		</lifeStages>		
+		</lifeStages>
 		<weaponMoney>0~0</weaponMoney>
 		<defendPointRadius>0</defendPointRadius>
-		<weaponTags></weaponTags>
+		<weaponTags/>
 		<techHediffsChance>0</techHediffsChance>
 		<techHediffsMoney>9999~9999</techHediffsMoney>
 	</PawnKindDef>
-  
+ 
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Juggernaught</defName>
+		<label>juggernaught</label>
+		<race>RH_TET_Daemon_Juggernaught</race>
+		<combatPower>280</combatPower>
+		<!--
+		<ecoSystemWeight>1.5</ecoSystemWeight>
+		<wildGroupSize>1~4</wildGroupSize>
+		-->
+		<lifeStages>			
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Jugger/Juggernaut</texPath>
+					<drawSize>3.2</drawSize>
+					<shadowData>
+						<volume>(0.475, 0.2, 0.3)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+ 
 </Defs>

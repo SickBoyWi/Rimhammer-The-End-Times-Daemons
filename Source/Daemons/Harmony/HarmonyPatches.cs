@@ -33,6 +33,7 @@ namespace TheEndTimes_Daemons
                 null, null);
         }
 
+        // Destroy on downed.
         private static void Pawn_HealthTracker_MakeDowned_PostFix(Pawn_HealthTracker __instance, DamageInfo dinfo, Hediff hediff)
         {
             Pawn pawn = (Pawn)typeof(Pawn_HealthTracker).GetField(nameof(pawn), BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField).GetValue((object)__instance);
@@ -43,6 +44,7 @@ namespace TheEndTimes_Daemons
             }
         }
 
+        // Place footprints.
         private static bool PawnFootprintMaker_TryPlaceFootprint_PreFix(PawnFootprintMaker __instance, ref Pawn ___pawn, ref Vector3 ___FootprintOffset,
             ref Vector3 ___lastFootprintPlacePos, ref bool ___lastFootprintRight)
         {

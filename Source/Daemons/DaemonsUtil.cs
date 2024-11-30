@@ -20,7 +20,8 @@ namespace TheEndTimes_Daemons
 
             // TODO - Add Daemon Race ThingDef Names Here AND BELOW
             if ((isAny || godCode == RH_TET_DaemonsDefOf.ChaosGods.Khorne) 
-                    && def.defName.Equals("RH_TET_Daemon_Bloodletter"))
+                    && (def.defName.Equals("RH_TET_Daemon_Bloodletter")
+                        || def.defName.Equals("RH_TET_Daemon_Juggernaught")))
                 return true;
 
             else if ((isAny || godCode == RH_TET_DaemonsDefOf.ChaosGods.Tzeentch) 
@@ -39,7 +40,8 @@ namespace TheEndTimes_Daemons
         public static RH_TET_DaemonsDefOf.ChaosGods GetGod(ThingDef def)
         {
             // TODO - Add Daemon Race ThingDef Names Here
-            if (def.defName.Equals("RH_TET_Daemon_Bloodletter"))
+            if (def.defName.Equals("RH_TET_Daemon_Bloodletter") 
+                || def.defName.Equals("RH_TET_Daemon_Juggernaught"))
                 return RH_TET_DaemonsDefOf.ChaosGods.Khorne;
 
             else if (def.defName.Equals("RH_TET_Daemon_HorrorPink")
@@ -69,6 +71,54 @@ namespace TheEndTimes_Daemons
             FleckCreationData dataStatic = FleckMaker.GetDataStatic(loc, map, RH_TET_DaemonsDefOf.RH_TET_Daemon_Flamer_Footprint, 0.5f);
             dataStatic.rotation = rot;
             map.flecks.CreateFleck(dataStatic);
+        }
+
+        public static Faction FindPodContentsPawnFaction()
+        {
+            Faction faction = null;
+
+            FactionDef factionDef = DefDatabase<FactionDef>.GetNamed("RH_TET_Outcasts", false);
+            if (factionDef != null)
+            {
+                faction = Find.FactionManager.FirstFactionOfDef(factionDef);
+
+                if (faction != null)
+                    return faction;
+            }
+
+            if (faction == null)
+            {
+                factionDef = DefDatabase<FactionDef>.GetNamed("RH_TET_EmpireOfMan", false);
+                
+                if (factionDef != null)
+                {
+                    faction = Find.FactionManager.FirstFactionOfDef(factionDef);
+
+                    if (faction != null)
+                        return faction;
+                }
+            }
+
+            if (faction == null)
+            {
+                factionDef = DefDatabase<FactionDef>.GetNamed("RH_TET_Dwarf_KarakMountain", false);
+
+                if (factionDef != null)
+                {
+                    faction = Find.FactionManager.FirstFactionOfDef(factionDef);
+
+                    if (faction != null)
+                        return faction;
+                }
+            }
+
+            if ((faction == null) && !(Faction.OfAncients is null))
+                faction = Faction.OfAncients;
+
+            if (faction == null)
+                Log.ErrorOnce("RH_TET_Daemons: No valid faction found for pawns in ancient caskets.", 357315341);
+
+            return faction;
         }
 
         internal static void DaemonDiedOrDowned(Pawn daemonPawn)

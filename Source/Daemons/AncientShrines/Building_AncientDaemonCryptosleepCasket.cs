@@ -63,10 +63,10 @@ namespace TheEndTimes_Daemons
                 cryptosleepCasket.contentsKnown = true;
                 cryptosleepCasket.EjectContents();
             }
-            IEnumerable<Pawn> pawns = thingList.OfType<Pawn>().ToList<Pawn>().Where<Pawn>((Func<Pawn, bool>)(p => p.RaceProps.Humanlike && p.GetLord() == null && p.Faction == Faction.OfAncientsHostile));
+            IEnumerable<Pawn> pawns = thingList.OfType<Pawn>().ToList<Pawn>().Where<Pawn>((Func<Pawn, bool>)(p => p.RaceProps.Humanlike && p.GetLord() == null && p.Faction == DaemonsUtil.FindPodContentsPawnFaction()));
             if (!pawns.Any<Pawn>())
                 return;
-            LordMaker.MakeNewLord(Faction.OfAncientsHostile, (LordJob)new LordJob_AssaultColony(Faction.OfAncientsHostile, false, true, false, false, false, false, false), this.Map, pawns);
+            LordMaker.MakeNewLord(Faction.OfAncientsHostile, (LordJob)new LordJob_AssaultColony(DaemonsUtil.FindPodContentsPawnFaction(), false, true, false, false, false, false, false), this.Map, pawns);
         }
 
         private IEnumerable<Building_AncientDaemonCryptosleepCasket> UnopenedCasketsInGroup()

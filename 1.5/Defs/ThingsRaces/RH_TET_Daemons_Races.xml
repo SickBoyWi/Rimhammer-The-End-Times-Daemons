@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-<!-- MAKE SURE NEW DAEMON RACES GO IN THE SOURCE CODE UTIL FILES. -->
+	<!-- MAKE SURE NEW DAEMON RACES GO IN THE SOURCE CODE UTIL FILES. -->
 
 	<ThingDef ParentName="BasePawn" Name="RH_TET_BaseDaemon" Abstract="True">
 		<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
@@ -21,18 +21,62 @@
 		<race>
 			<deathAction>
 				<workerClass>TheEndTimes_Daemons.DeathActionWorker_Daemon</workerClass>
-			</deathAction>			
+			</deathAction>
 			<fleshType>RH_TET_Daemons_Flesh</fleshType>
 			<needsRest>false</needsRest>
 			<hasGenders>false</hasGenders>
 			<foodType>None</foodType>
 			<lifeExpectancy>2500</lifeExpectancy>
-			<soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+			<soundCallIntervalRange>4000~10000</soundCallIntervalRange>
 			<soundCallIntervalFriendlyFactor>2</soundCallIntervalFriendlyFactor>
+			<thinkTreeMain>Mechanoid</thinkTreeMain>
 			<thinkTreeConstant MayRequire="Ludeon.RimWorld.Biotech">HumanlikeConstant</thinkTreeConstant>
 			
 			<bloodDef>RH_TET_Filth_BloodDaemon</bloodDef>
 			<canBecomeShambler>False</canBecomeShambler>
+		</race>
+	</ThingDef>
+	
+	<ThingDef ParentName="BasePawn" Name="RH_TET_BaseDaemonAnimal" Abstract="True">
+		<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+		<statBases>
+			<MarketValue>1200</MarketValue>
+			<PsychicSensitivity>0.5</PsychicSensitivity>
+			<ToxicResistance>1</ToxicResistance>
+			<Flammability>1</Flammability>
+			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
+			<ComfyTemperatureMax>250</ComfyTemperatureMax>
+			<MeatAmount>0</MeatAmount>
+			<ArmorRating_Heat>2.00</ArmorRating_Heat>
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<WorkSpeedGlobal MayRequire="Ludeon.Rimworld.Biotech">0.5</WorkSpeedGlobal>
+			<FilthRate>20</FilthRate>
+		</statBases>
+		<tradeability>None</tradeability>
+		<race>
+			<deathAction>
+				<workerClass>TheEndTimes_Daemons.DeathActionWorker_Daemon</workerClass>
+			</deathAction>
+			<fleshType>RH_TET_Daemons_Flesh</fleshType>
+			<needsRest>false</needsRest>
+			<hasGenders>false</hasGenders>
+			<foodType>None</foodType>
+			<lifeExpectancy>2500</lifeExpectancy>
+			<soundCallIntervalRange>4000~10000</soundCallIntervalRange>
+			<soundCallIntervalFriendlyFactor>2</soundCallIntervalFriendlyFactor>
+			<thinkTreeMain>Animal</thinkTreeMain>
+			<thinkTreeConstant>AnimalConstant</thinkTreeConstant>
+			
+			<bloodDef>RH_TET_Filth_BloodDaemon</bloodDef>
+			<canBecomeShambler>False</canBecomeShambler>
+			
+			<wildness>0.99</wildness>
+			<trainability>Advanced</trainability>      
+			<manhunterOnTameFailChance>0.99</manhunterOnTameFailChance>
+			<manhunterOnDamageChance>0.99</manhunterOnDamageChance>
+			<herdAnimal>false</herdAnimal>
+			
+			<renderTree>Animal</renderTree>
 		</race>
 	</ThingDef>
 
@@ -53,11 +97,11 @@
 		<label>imp</label>
 		<description>An Imp is a Least Daemon, the least of the least, minor Daemons born from loosed emotions. In their "natural" state, they are amorphous things, endlessly cycling through a variety of shapes and forms that seem to reflect the thought or concept that birthed them. It is only when one of the Dark Gods claims an Imp that it becomes something else, its form shifting to match the nature of its new, divine patron.</description>
 		<statBases>
-		    <MoveSpeed>3.75</MoveSpeed>
+			<MoveSpeed>3.75</MoveSpeed>
 			<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
-		    <MarketValue>250</MarketValue>
-		    <LeatherAmount>0</LeatherAmount>			
+			<MarketValue>250</MarketValue>
+			<LeatherAmount>0</LeatherAmount>
 		</statBases>
 		<tools>
 			<li>
@@ -90,7 +134,7 @@
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
 				<chanceFactor>0.1</chanceFactor>
-			</li>			
+			</li>
 		</tools>
 		<race>
 			<body>RH_TET_Daemons_HumanlikeWithWings</body>
@@ -99,7 +143,7 @@
 			<baseHealthScale>0.4</baseHealthScale>
 			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
-			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>		
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
 			<lifeStageAges>
 				<li>
 					<def>RH_TET_DaemonFullyFormed</def>
@@ -119,13 +163,13 @@
 				</li>
 			</lifeStageAges>
 		</race>
-	</ThingDef>	
+	</ThingDef>
 
 	<!-- Bloodletter -->
 	<ThingDef ParentName="RH_TET_BaseDaemonWalker">
 		<defName>RH_TET_Daemon_Bloodletter</defName>
 		<label>bloodletter</label>
-		<description>A Bloodletter, also called "Khorne's Chosen," the "Teeth of Death," a "Naked Slayer," a "Taker of Skulls," or a "Horned One" is a Lesser Daemon of Khorne, the Chaos God of war and murder, who serves as a foot soldier in the Blood God's Daemonic legions.\n\nBloodletters generally stand taller than a man, though they are so stooped and hunched that their faces often lie at a similar height. Their bodies are slim with a muscled, wiry strength. Their horns and claws are blackened and flecked with crimson and their feet are turned and cloven like those of a goat. They wear naught but scraps of plate armour, most often of brass or bronze, stamped and pressed in Daemonic forges and welded while they are there upon their bodies.</description>		
+		<description>A Bloodletter, also called "Khorne's Chosen," the "Teeth of Death," a "Naked Slayer," a "Taker of Skulls," or a "Horned One" is a Lesser Daemon of Khorne, the Chaos God of war and murder, who serves as a foot soldier in the Blood God's Daemonic legions.\n\nBloodletters generally stand taller than a man, though they are so stooped and hunched that their faces often lie at a similar height. Their bodies are slim with a muscled, wiry strength. Their horns and claws are blackened and flecked with crimson and their feet are turned and cloven like those of a goat. They wear naught but scraps of plate armour, most often of brass or bronze, stamped and pressed in Daemonic forges and welded while they are there upon their bodies.</description>
 		<statBases>
 			<MoveSpeed>4.7</MoveSpeed>
 			<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
@@ -171,7 +215,7 @@
 			<baseHealthScale>1.32</baseHealthScale>
 			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
-			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>			
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
 			<lifeStageAges>
 				<li>
 					<def>RH_TET_DaemonFullyFormed</def>
@@ -195,7 +239,7 @@
 	<ThingDef ParentName="RH_TET_BaseDaemonWalker">
 		<defName>RH_TET_Daemon_HorrorPink</defName>
 		<label>pink horror</label>
-		<description>Pink Horrors, known also as "Whirling Destroyers," "Squealers" or "Spinning Sourguts," are Lesser Daemons of Tzeentch, the Chaos God of change and intrigue. They are the footsoldiers of Tzeentch's Daemonic legions, identified by their luminescent pink skin, and their squeals of high-pitched laughter.</description>		
+		<description>Pink Horrors, known also as "Whirling Destroyers," "Squealers" or "Spinning Sourguts," are Lesser Daemons of Tzeentch, the Chaos God of change and intrigue. They are the footsoldiers of Tzeentch's Daemonic legions, identified by their luminescent pink skin, and their squeals of high-pitched laughter.</description>
 		<statBases>
 			<MoveSpeed>4.5</MoveSpeed>
 			<ArmorRating_Blunt>0.07</ArmorRating_Blunt>
@@ -230,7 +274,7 @@
 			<baseHealthScale>1.0</baseHealthScale>
 			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
-			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>			
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
 			<lifeStageAges>
 				<li>
 					<def>RH_TET_DaemonFullyFormed</def>
@@ -254,7 +298,7 @@
 	<ThingDef ParentName="RH_TET_BaseDaemonWalker">
 		<defName>RH_TET_Daemon_HorrorBlue</defName>
 		<label>blue horror</label>
-		<description>A Blue Horror is a Lesser Daemon of Tzeentch, the Chaos God of change and intrigue, who is the unholy product that results from the destruction of a Pink Horror.\n\nBlue Horrors are sullen and malicious, like evil-tempered children, and sneer and grumble their way through a battle. Once spawned, they add a deeper whining note to the incessant chortling of the group of Horrors as they attempt to grapple with enemies and squeeze the life from them, before inevitably wandering off in search of fresh entertainment.</description>		
+		<description>A Blue Horror is a Lesser Daemon of Tzeentch, the Chaos God of change and intrigue, who is the unholy product that results from the destruction of a Pink Horror.\n\nBlue Horrors are sullen and malicious, like evil-tempered children, and sneer and grumble their way through a battle. Once spawned, they add a deeper whining note to the incessant chortling of the group of Horrors as they attempt to grapple with enemies and squeeze the life from them, before inevitably wandering off in search of fresh entertainment.</description>
 		<statBases>
 			<MoveSpeed>4.5</MoveSpeed>
 			<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
@@ -290,7 +334,7 @@
 			<baseHealthScale>.65</baseHealthScale>
 			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
-			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>			
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
 			<lifeStageAges>
 				<li>
 					<def>RH_TET_DaemonFullyFormed</def>
@@ -314,7 +358,7 @@
 	<ThingDef ParentName="RH_TET_BaseDaemonWalker">
 		<defName>RH_TET_Daemon_Flamer</defName>
 		<label>flamer</label>
-		<description>A Flamer, also called the "Pyrodaemons of Tzeentch," a "Fire Daemon," a "Burning Horror," "Keepers of the True Flame of Change," "Bearers of the True Flame of Change," or "Candelabra Mutationi" are Daemonic Beasts of Tzeentch, the Chaos God of change and intrigue. Flamers are amongst the most strange and disturbing of all Tzeentch's Daemons, and their absurd physiologies are more than most mortals can stand.</description>		
+		<description>A Flamer, also called the "Pyrodaemons of Tzeentch," a "Fire Daemon," a "Burning Horror," "Keepers of the True Flame of Change," "Bearers of the True Flame of Change," or "Candelabra Mutationi" are Daemonic Beasts of Tzeentch, the Chaos God of change and intrigue. Flamers are amongst the most strange and disturbing of all Tzeentch's Daemons, and their absurd physiologies are more than most mortals can stand.</description>
 		<statBases>
 			<MoveSpeed>4.5</MoveSpeed>
 			<ArmorRating_Blunt>0.07</ArmorRating_Blunt>
@@ -348,7 +392,7 @@
 			<baseHealthScale>1.1</baseHealthScale>
 			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
-			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>			
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
 			<lifeStageAges>
 				<li>
 					<def>RH_TET_DaemonFullyFormed</def>
@@ -379,7 +423,90 @@
 				<velocityY>0.3~0.8</velocityY>
 			</li>
 		</comps>	
--->		
+-->
+	</ThingDef>
+
+	<ThingDef ParentName="RH_TET_BaseDaemonAnimal">
+		<defName>RH_TET_Daemon_Juggernaught</defName>
+		<label>juggernaught</label>
+		<description>A Juggernaut, also known as a Blood Crusher, Soul Crusher, Foot of Khorne, Jugger, and Blight of Khorne, is a four-legged Daemon beast that blends the features of canine and bull but is covered in profane armour formed of a fused mass of flesh, bone and metal. Though they may look more machine than beast, beneath this heavy Khorne-marked barding is the slaughter-hungry heart of a vicious Lesser Daemon of the Chaos God of war and murder. These beasts are often used as mounts by Khorne's most favoured Daemonic and mortal champions.</description>
+		<statBases>
+			<MoveSpeed>4.5</MoveSpeed>
+			<MarketValue>1500</MarketValue>
+			<ArmorRating_Blunt>0.49</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.69</ArmorRating_Sharp>
+			<Flammability>.50</Flammability>
+		</statBases>
+		<tools>
+			<li>
+				<label>horn</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>19</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>horn</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>19</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>19</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<chanceFactor>0.7</chanceFactor>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<body>QuadrupedAnimalWithHoovesAndHorn</body>
+			<baseBodySize>3.0</baseBodySize>
+			<baseHealthScale>3.5</baseHealthScale>
+			<lifeStageAges>
+				<li>
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>RH_TET_Pawn_Daemon_Jugger_Wounded</soundWounded>
+					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
+					<soundCall>RH_TET_Pawn_Daemon_Jugger_Call</soundCall>
+				</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>100</minAge>
+					<soundWounded>RH_TET_Pawn_Daemon_Jugger_Wounded</soundWounded>
+					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
+					<soundCall>RH_TET_Pawn_Daemon_Jugger_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+			<headPosPerRotation>
+				<li>(-0.02, 0, 0.1)</li>
+				<li>(0.28, 0, 0.02)</li>
+				<li>(0.0, 0, 0.02)</li>
+				<li>(-0.28, 0, 0.02)</li>
+			</headPosPerRotation>
+		</race>
 	</ThingDef>
 	
 </Defs>

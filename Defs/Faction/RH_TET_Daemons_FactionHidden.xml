@@ -51,20 +51,21 @@
 		<!-- TODO ADD PAWN KINDS HERE AS THEY ARE CREATED. ALSO: Make groups of pawns per chaos god. -->
 		<pawnGroupMakers>
 			<li>
-				<!-- All types-->
+				<!-- Mix of all gods. -->
 				<kindDef>Combat</kindDef>
 				<commonality>100</commonality>
 				<options>
 					<RH_TET_Daemons_Bloodletter>10</RH_TET_Daemons_Bloodletter>
 					<RH_TET_Daemons_Horror_Pink>10</RH_TET_Daemons_Horror_Pink>
+					<RH_TET_Daemons_Imp>10</RH_TET_Daemons_Imp>
 					<RH_TET_Daemons_Bloodletter_Armed>5</RH_TET_Daemons_Bloodletter_Armed>
 					<RH_TET_Daemons_Flamer>2</RH_TET_Daemons_Flamer>
+					<RH_TET_Daemons_Juggernaught>2</RH_TET_Daemons_Juggernaught>
 					<RH_TET_Daemons_Horror_Blue>1</RH_TET_Daemons_Horror_Blue>
-					<RH_TET_Daemons_Imp>1</RH_TET_Daemons_Imp>
 				</options>
 			</li>
 			<li>
-				<!-- Ranged -->
+				<!-- Tzeentch w/ Undivided -->
 				<kindDef>Combat</kindDef>
 				<commonality>75</commonality>
 				<options>
@@ -75,12 +76,13 @@
 				</options>
 			</li>
 			<li>
-				<!-- Melee only-->
+				<!-- Khorne w/ Undivided-->
 				<kindDef>Combat</kindDef>
 				<commonality>75</commonality>
 				<options>
 					<RH_TET_Daemons_Bloodletter>10</RH_TET_Daemons_Bloodletter>
 					<RH_TET_Daemons_Bloodletter_Armed>5</RH_TET_Daemons_Bloodletter_Armed>
+					<RH_TET_Daemons_Juggernaught>2</RH_TET_Daemons_Juggernaught>
 					<RH_TET_Daemons_Imp>1</RH_TET_Daemons_Imp>
 				</options>
 			</li>
