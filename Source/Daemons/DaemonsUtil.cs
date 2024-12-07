@@ -21,7 +21,8 @@ namespace TheEndTimes_Daemons
             // TODO - Add Daemon Race ThingDef Names Here AND BELOW
             if ((isAny || godCode == RH_TET_DaemonsDefOf.ChaosGods.Khorne) 
                     && (def.defName.Equals("RH_TET_Daemon_Bloodletter")
-                        || def.defName.Equals("RH_TET_Daemon_Juggernaught")))
+                        || def.defName.Equals("RH_TET_Daemon_Juggernaught")
+                        || def.defName.Equals("RH_TET_Daemon_Fleshhound")))
                 return true;
 
             else if ((isAny || godCode == RH_TET_DaemonsDefOf.ChaosGods.Tzeentch) 
@@ -41,7 +42,8 @@ namespace TheEndTimes_Daemons
         {
             // TODO - Add Daemon Race ThingDef Names Here
             if (def.defName.Equals("RH_TET_Daemon_Bloodletter") 
-                || def.defName.Equals("RH_TET_Daemon_Juggernaught"))
+                        || def.defName.Equals("RH_TET_Daemon_Juggernaught")
+                        || def.defName.Equals("RH_TET_Daemon_Fleshhound"))
                 return RH_TET_DaemonsDefOf.ChaosGods.Khorne;
 
             else if (def.defName.Equals("RH_TET_Daemon_HorrorPink")

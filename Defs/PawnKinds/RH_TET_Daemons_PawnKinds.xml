@@ -9,7 +9,7 @@
 		<minGenerationAge MayRequire="Ludeon.Rimworld.Biotech">200</minGenerationAge>
 	</PawnKindDef>
 
-	<!-- Equivalent to scyther, but with a bit less armor, and weaker attacks. -->
+	<!-- Khorne -->
 	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
 		<defName>RH_TET_Daemons_Bloodletter</defName>
 		<label>bloodletter</label>
@@ -23,6 +23,31 @@
 					<drawSize>2.0</drawSize>
 					<shadowData>
 						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>0~0</weaponMoney>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags>
+		</weaponTags>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Fleshhound</defName>
+		<label>fleshhound</label>
+		<race>RH_TET_Daemon_Fleshhound</race>
+		<combatPower>70</combatPower>
+		<lifeStages>			
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Fleshhound/Fleshhound</texPath>
+					<drawSize>1.75</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.4, 0.3)</volume>
+						<offset>(0,0,-0.15)</offset>
 					</shadowData>
 				</bodyGraphicData>
 			</li>
@@ -60,7 +85,53 @@
 			<li>RH_TET_Daemons_Khorne_Bloodletter</li>
 		</weaponTags>
 	</PawnKindDef>
+ 
+	<!-- juggers are intelligent/humanlike, and crushers are animals. -->
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Juggernaught</defName>
+		<label>juggernaught</label>
+		<race>RH_TET_Daemon_Juggernaught</race>
+		<combatPower>280</combatPower>
+		<lifeStages>			
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Jugger/Juggernaut</texPath>
+					<drawSize>3.6</drawSize>
+					<shadowData>
+						<volume>(0.475, 0.2, 0.3)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>0~0</weaponMoney>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags>
+		</weaponTags>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+ 
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Bloodcrusher</defName>
+		<label>juggernaught</label>
+		<race>RH_TET_Daemon_Bloodcrusher</race>
+		<combatPower>280</combatPower>
+		<lifeStages>			
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Jugger/Juggernaut</texPath>
+					<drawSize>3.6</drawSize>
+					<shadowData>
+						<volume>(0.475, 0.2, 0.3)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
 	
+	<!-- Tzeentch -->
 	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
 		<defName>RH_TET_Daemons_Horror_Pink</defName>
 		<label>pink horror</label>
@@ -139,6 +210,7 @@
 		</weaponTags>
 	</PawnKindDef>
 
+	<!-- Undivided -->
 	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
 		<defName>RH_TET_Daemons_Imp</defName>
 		<label>imp</label>
@@ -162,29 +234,6 @@
 		<weaponTags/>
 		<techHediffsChance>0</techHediffsChance>
 		<techHediffsMoney>9999~9999</techHediffsMoney>
-	</PawnKindDef>
- 
-	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
-		<defName>RH_TET_Daemons_Juggernaught</defName>
-		<label>juggernaught</label>
-		<race>RH_TET_Daemon_Juggernaught</race>
-		<combatPower>280</combatPower>
-		<!--
-		<ecoSystemWeight>1.5</ecoSystemWeight>
-		<wildGroupSize>1~4</wildGroupSize>
-		-->
-		<lifeStages>			
-			<li>
-				<bodyGraphicData>
-					<texPath>Things/Pawn/Jugger/Juggernaut</texPath>
-					<drawSize>3.2</drawSize>
-					<shadowData>
-						<volume>(0.475, 0.2, 0.3)</volume>
-						<offset>(0,0,-0.2)</offset>
-					</shadowData>
-				</bodyGraphicData>
-			</li>
-		</lifeStages>
 	</PawnKindDef>
  
 </Defs>

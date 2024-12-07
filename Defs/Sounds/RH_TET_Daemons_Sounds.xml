@@ -135,6 +135,25 @@
 		</subSounds>
 	</SoundDef>
 
+	<SoundDef>
+		<defName>RH_TET_Pawn_Daemon_Flamer_Call</defName>
+		<context>MapOnly</context>
+		<maxVoices>1</maxVoices>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Daemons/Flamer/daemoncall-flamer</clipPath>
+					</li>
+				</grains>
+				<volumeRange>20~20</volumeRange>
+				<pitchRange>0.9541177~1.068824</pitchRange>
+				<repeatMode>NeverTwice</repeatMode>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
 	<!-- Weapons -->
 	<SoundDef>
 		<defName>RH_TET_Daemons_TzeentchFireSound</defName>
