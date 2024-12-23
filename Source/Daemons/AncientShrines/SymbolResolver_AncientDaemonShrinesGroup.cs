@@ -29,6 +29,9 @@ namespace TheEndTimes_Daemons
             int num4 = rp.ancientCryptosleepCasketGroupID ?? Find.UniqueIDsManager.GetNextAncientCryptosleepCasketGroupID();
 
             int num5 = 0;
+
+            bool cursedCasketGenned = false;
+
             for (int index1 = 0; index1 < num2; ++index1)
             {
                 for (int index2 = 0; index2 < num1; ++index2)
@@ -48,7 +51,16 @@ namespace TheEndTimes_Daemons
                                     resolveParams.rect = cellRect;
                                     resolveParams.ancientCryptosleepCasketGroupID = new int?(num4);
                                     resolveParams.podContentsType = nullable;
-                                    RimWorld.BaseGen.BaseGen.symbolStack.Push("ancientDaemonShrine", resolveParams, (string)null);
+
+                                    if (!cursedCasketGenned)
+                                    {
+                                        RimWorld.BaseGen.BaseGen.symbolStack.Push("ancientDaemonCursedShrine", resolveParams, (string)null);
+                                        cursedCasketGenned = true;
+                                    }
+                                    else
+                                        RimWorld.BaseGen.BaseGen.symbolStack.Push("ancientDaemonShrine", resolveParams, (string)null);
+                                    
+                                    
                                     ++num5;
                                 }
                             }

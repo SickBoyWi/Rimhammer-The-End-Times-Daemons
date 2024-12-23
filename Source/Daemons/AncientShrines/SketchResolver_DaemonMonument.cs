@@ -182,11 +182,6 @@ namespace TheEndTimes_Daemons
                     monument.RemoveTerrain(things[index].pos);
             }
             parms.sketch.MergeAt(monument, new IntVec3(), Sketch.SpawnPosType.OccupiedCenter, true);
-
-            //bool CanUse(ThingDef def)
-            //{
-            //    return (!onlyBuildableByPlayer || SketchGenUtility.PlayerCanBuildNow((BuildableDef)def)) && (filterAllowsAll || parms.allowedMonumentThings.Allows(def));
-            //}
         }
 
         private bool IsWallBorderingEdge(Sketch monument, SketchThing sketchThing)
@@ -234,61 +229,43 @@ namespace TheEndTimes_Daemons
           ResolveParams parms,
           Sketch monument)//, Func<ThingDef, bool> canUseValidator
         {
-            //if (canUseValidator == null || canUseValidator(ThingDefOf.Urn))
-            //{
-                ResolveParams parms1 = parms;
-                parms1.sketch = monument;
-                parms1.cornerThing = RH_TET_DaemonsDefOf.RH_TET_Daemons_Brazier;
-                parms1.requireFloor = new bool?(true);
-                SketchResolverDefOf.AddCornerThings.Resolve(parms1);
-            //}
-            //if (canUseValidator == null || canUseValidator(ThingDefOf.SteleLarge))
-            //{
-                ResolveParams parms2 = parms;
-                parms2.sketch = monument;
-                parms2.thingCentral = RH_TET_DaemonsDefOf.RH_TET_Daemons_SacrificialAltar;
-                parms2.requireFloor = new bool?(true);
-                SketchResolverDefOf.AddThingsCentral.Resolve(parms2);
-            //}
-            //if (canUseValidator == null || canUseValidator(ThingDefOf.SteleGrand))
-            //{
-                ResolveParams parms3 = parms;
-                parms3.sketch = monument;
-                parms3.thingCentral = RH_TET_DaemonsDefOf.RH_TET_Daemons_BloodAltar;
-                parms3.requireFloor = new bool?(true);
-                SketchResolverDefOf.AddThingsCentral.Resolve(parms3);
-            //}
-            //if (canUseValidator == null || canUseValidator(ThingDefOf.Table1x2c))
-            //{
+            ResolveParams parms1 = parms;
+            parms1.sketch = monument;
+            parms1.cornerThing = RH_TET_DaemonsDefOf.RH_TET_Daemons_Brazier;
+            parms1.requireFloor = new bool?(true);
+            SketchResolverDefOf.AddCornerThings.Resolve(parms1);
 
-            // TODO - Places rotated when it's not rotatable.
-                ResolveParams parms4 = parms;
-                parms4.sketch = monument;
-                //parms4.wallEdgeThing = RH_TET_DaemonsDefOf.RH_TET_Daemons_Lectern_Skull;
-                parms4.thingCentral = RH_TET_DaemonsDefOf.RH_TET_Daemons_Lectern_Skull;
-                parms4.requireFloor = new bool?(true);
-                //SketchResolverDefOf.AddWallEdgeThings.Resolve(parms4);
-                SketchResolverDefOf.AddThingsCentral.Resolve(parms4);
+            ResolveParams parms2 = parms;
+            parms2.sketch = monument;
+            parms2.thingCentral = RH_TET_DaemonsDefOf.RH_TET_Daemons_SacrificialAltar;
+            parms2.requireFloor = new bool?(true);
+            SketchResolverDefOf.AddThingsCentral.Resolve(parms2);
 
+            ResolveParams parms3 = parms;
+            parms3.sketch = monument;
+            parms3.thingCentral = RH_TET_DaemonsDefOf.RH_TET_Daemons_BloodAltar;
+            parms3.requireFloor = new bool?(true);
+            SketchResolverDefOf.AddThingsCentral.Resolve(parms3);
 
-            //}
-            //if (canUseValidator == null || canUseValidator(ThingDefOf.Table2x2c))
-            //{
+            ResolveParams parms4 = parms;
+            parms4.sketch = monument;
+            parms4.thingCentral = RH_TET_DaemonsDefOf.RH_TET_Daemons_Lectern_Skull;
+            parms4.requireFloor = new bool?(true);
+            SketchResolverDefOf.AddThingsCentral.Resolve(parms4);
+
             ResolveParams parms5 = parms;
                 parms5.sketch = monument;
                 parms5.thingCentral = RH_TET_DaemonsDefOf.RH_TET_Daemons_Lectern;
                 parms5.requireFloor = new bool?(true);
                 SketchResolverDefOf.AddThingsCentral.Resolve(parms5);
-            //}
+
             if (RH_TET_DaemonsMod.random.Next(0, 3) < 3)
                 return;
             ResolveParams parms6 = parms;
             parms6.sketch = monument;
             parms6.wallEdgeThing = RH_TET_DaemonsDefOf.RH_TET_AncientDaemonCursedCryptosleepCasket;
             parms6.requireFloor = new bool?(true);
-            //parms6.thingCentral = ThingDefOf.Sarcophagus;
             SketchResolverDefOf.AddWallEdgeThings.Resolve(parms6);
-            //SketchResolverDefOf.AddThingsCentral.Resolve(parms6);
         }
 
         private void TryAddDoorsToClosedRooms(Sketch sketch)

@@ -58,6 +58,25 @@
 			</li>
 		</subSounds>
 	</SoundDef>
+  
+	<SoundDef>
+		<defName>RH_TET_Pawn_Daemon_Daemonhost_Call</defName>
+		<context>MapOnly</context>
+		<maxVoices>1</maxVoices>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Daemons/Daemonhost/daemoncall-daemonhost</clipPath>
+					</li>
+				</grains>
+				<volumeRange>20~20</volumeRange>
+				<pitchRange>0.9541177~1.068824</pitchRange>
+				<repeatMode>NeverTwice</repeatMode>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
 
 	<SoundDef>
 		<defName>RH_TET_Pawn_Daemon_Jugger_Wounded</defName>

@@ -235,5 +235,38 @@
 		<techHediffsChance>0</techHediffsChance>
 		<techHediffsMoney>9999~9999</techHediffsMoney>
 	</PawnKindDef>
- 
+	
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Daemonhost</defName>
+		<label>daemonhost</label>
+		<race>RH_TET_Daemon_Daemonhost</race>
+		<combatPower>350</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Daemonhost/DaemonhostMale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+				<femaleGraphicData>
+					<texPath>Things/Pawn/Daemonhost/DaemonhostFemale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</femaleGraphicData>				
+			</li>
+		</lifeStages>
+		<weaponMoney>0~0</weaponMoney>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags>
+		</weaponTags>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+	
 </Defs>

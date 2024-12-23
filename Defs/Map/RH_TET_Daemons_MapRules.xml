@@ -27,13 +27,20 @@
     <resolvers>
       <li Class="TheEndTimes_Daemons.SymbolResolver_AncientDaemonShrine">
         <minRectSize>(4, 3)</minRectSize>
-        <techprintChance>0.033</techprintChance>
-        <bladelinkChance>0.02</bladelinkChance>
-        <psychicChance>0.02</psychicChance>
       </li>
     </resolvers>
   </RuleDef>
-  
+ 
+  <RuleDef>
+    <defName>RH_TET_AncientDaemonCursedShrine</defName>
+    <symbol>ancientDaemonCursedShrine</symbol>
+    <resolvers>
+      <li Class="TheEndTimes_Daemons.SymbolResolver_AncientDaemonCursedShrine">
+        <minRectSize>(4, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+ 
   <RuleDef>
     <defName>RH_TET_AncientDaemonRuins</defName>
     <symbol>ancientRuins</symbol>
@@ -49,6 +56,14 @@
     <symbol>ancientDaemonCryptosleepCasket</symbol>
     <resolvers>
       <li Class="TheEndTimes_Daemons.SymbolResolver_AncientDaemonCryptosleepCasket" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>RH_TET_AncientDaemonCursedCryptosleepCasket</defName>
+    <symbol>ancientDaemonCursedCryptosleepCasket</symbol>
+    <resolvers>
+      <li Class="TheEndTimes_Daemons.SymbolResolver_AncientDaemonCursedCryptosleepCasket" />
     </resolvers>
   </RuleDef>
 

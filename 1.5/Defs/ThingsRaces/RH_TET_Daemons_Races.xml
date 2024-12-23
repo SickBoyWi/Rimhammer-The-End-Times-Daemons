@@ -29,7 +29,7 @@
 			<lifeExpectancy>2500</lifeExpectancy>
 			<soundCallIntervalRange>4000~10000</soundCallIntervalRange>
 			<soundCallIntervalFriendlyFactor>2</soundCallIntervalFriendlyFactor>
-			<thinkTreeMain>Mechanoid</thinkTreeMain>
+			<thinkTreeMain>RH_TET_Daemon_ThinkTree</thinkTreeMain>
 			<thinkTreeConstant MayRequire="Ludeon.RimWorld.Biotech">HumanlikeConstant</thinkTreeConstant>
 			
 			<bloodDef>RH_TET_Filth_BloodDaemon</bloodDef>
@@ -86,7 +86,7 @@
 		<race>
 			<intelligence>ToolUser</intelligence>
 			<makesFootprints>true</makesFootprints>
-			<thinkTreeMain>Humanlike</thinkTreeMain>
+			<thinkTreeMain>RH_TET_Daemon_ThinkTree</thinkTreeMain>
 			<baseBodySize>1.0</baseBodySize>
 		</race>
 	</ThingDef>
@@ -211,7 +211,7 @@
 			</li>
 		</tools>
 		<race>
-			<body>RH_TET_Bloodletter</body>
+			<body>RH_TET_HumanoidWithHeadHornsAndClaws</body>
 			<baseHealthScale>1.32</baseHealthScale>
 			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
@@ -700,6 +700,80 @@
 				<li>(0.0, 0, 0.02)</li>
 				<li>(-0.28, 0, 0.02)</li>
 			</headPosPerRotation>
+		</race>
+	</ThingDef>
+
+	<!-- Daemonhost -->
+	<ThingDef ParentName="RH_TET_BaseDaemonWalker">
+		<defName>RH_TET_Daemon_Daemonhost</defName>
+		<label>daemonhost</label>
+		<description>A Daemonhost is an unholy creation of foul and dangerous rituals in which a powerful Daemon of Chaos is bound into a living Human, or other mortal host body and enslaved to the will of its creator. An utterly foul act, the creation of a Daemonhost condemns the soul of the host body to eternal torment, and provides a lasting home in the material universe for a Daemon to work its malignant evil.</description>
+		<statBases>
+			<MoveSpeed>4.9</MoveSpeed>
+			<MeleeDoorDamageFactor>1.5</MeleeDoorDamageFactor>
+			<ArmorRating_Blunt>0</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0</ArmorRating_Sharp>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
+		</statBases>
+		<tools>
+			<li>
+				<label>left claws</label>
+				<capacities>
+					<li>Cut</li>
+					<li>Stab</li>
+				</capacities>
+				<power>18</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>RH_TET_LeftHandClaws</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right claws</label>
+				<capacities>
+					<li>Cut</li>
+					<li>Stab</li>
+				</capacities>
+				<power>18</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>RH_TET_RightHandClaws</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<body>RH_TET_HumanoidWithHeadHornsAndClaws</body>
+			<hasGenders>true</hasGenders>
+			<baseBodySize>2.5</baseBodySize>
+			<baseHealthScale>5.5</baseHealthScale>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+			<lifeStageAges>
+				<li>
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Muffalo_Wounded</soundWounded>
+					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
+					<soundCall>RH_TET_Pawn_Daemon_Daemonhost_Call</soundCall>
+				</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">
+					<def>RH_TET_DaemonFullyFormed</def>
+					<minAge>100</minAge>
+					<soundWounded>Pawn_Muffalo_Wounded</soundWounded>
+					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
+					<soundCall>RH_TET_Pawn_Daemon_Daemonhost_Call</soundCall>
+				</li>
+			</lifeStageAges>
 		</race>
 	</ThingDef>
 	

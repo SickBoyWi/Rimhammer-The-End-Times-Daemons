@@ -203,8 +203,11 @@ namespace TheEndTimes_Daemons
       }
     };
 
-        public static bool DaemonKindSuitableForCluster(PawnKindDef def, RH_TET_DaemonsDefOf.ChaosGods god)
+        public static bool DaemonKindSuitableForCluster(PawnKindDef def, RH_TET_DaemonsDefOf.ChaosGods god, bool allowDaemonhost = true)
         {
+            if (!allowDaemonhost && def.defName.Equals(RH_TET_DaemonsDefOf.RH_TET_Daemons_Daemonhost.defName))
+                return false;
+
             return DaemonsUtil.IsDaemonOfGodOrAny(def.race, true, god) && !def.isGoodBreacher && (def.isFighter);
         }
 

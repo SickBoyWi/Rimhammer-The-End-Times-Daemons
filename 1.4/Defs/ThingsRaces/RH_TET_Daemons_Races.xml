@@ -36,7 +36,7 @@
 		<race>
 			<intelligence>ToolUser</intelligence>
 			<makesFootprints>true</makesFootprints>
-			<thinkTreeMain>Humanlike</thinkTreeMain>
+			<thinkTreeMain>RH_TET_Daemon_ThinkTree</thinkTreeMain>
 			<baseBodySize>1.0</baseBodySize>
 		</race>
 	</ThingDef>
@@ -87,7 +87,7 @@
 			</li>
 		</tools>
 		<race>
-			<body>RH_TET_Bloodletter</body>
+			<body>RH_TET_HumanoidWithHeadHornsAndClaws</body>
 			<baseHealthScale>1.32</baseHealthScale>
 			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>

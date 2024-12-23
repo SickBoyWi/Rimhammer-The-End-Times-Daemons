@@ -24,6 +24,7 @@ namespace TheEndTimes_Daemons
         // Pawnkinds.
         public static PawnKindDef RH_TET_Daemons_Horror_Blue;
         public static PawnKindDef RH_TET_Daemons_Imp;
+        public static PawnKindDef RH_TET_Daemons_Daemonhost;
 
         // Building.
         public static ThingDef RH_TET_AncientDaemonCryptosleepCasket;
@@ -60,6 +61,7 @@ namespace TheEndTimes_Daemons
 
         // Things Set Makers.
         public static ThingSetMakerDef RH_TET_MapGen_AncientDaemonPodContents;
+        public static ThingSetMakerDef RH_TET_MapGen_AncientDaemonCursedPodContents;
 
         // Map Gen.
         public static ThingSetMakerDef RH_TET_MapGen_AncientDaemonTempleContents;

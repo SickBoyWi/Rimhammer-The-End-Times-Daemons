@@ -12,6 +12,7 @@ namespace TheEndTimes_Daemons
     public class RH_TET_DaemonsMod : Mod
     {
         public static System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
+        //public static bool cursedCasketGenned = false;
         
         public RH_TET_DaemonsMod(ModContentPack content) : base(content)
         {

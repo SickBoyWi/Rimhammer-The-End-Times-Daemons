@@ -7,7 +7,7 @@ using Verse;
 
 namespace TheEndTimes_Daemons
 {
-    public class SymbolResolver_AncientDaemonShrine : SymbolResolver
+    public class SymbolResolver_AncientDaemonCursedShrine : SymbolResolver
     {
         public override void Resolve(ResolveParams rp)
         {
@@ -28,11 +28,11 @@ namespace TheEndTimes_Daemons
             ResolveParams resolveParams1 = rp;
             resolveParams1.rect = CellRect.SingleCell(cellRect.Min);
             resolveParams1.thingRot = new Rot4?(Rot4.East);
-            RimWorld.BaseGen.BaseGen.symbolStack.Push("ancientDaemonCryptosleepCasket", resolveParams1, (string)null);
+            RimWorld.BaseGen.BaseGen.symbolStack.Push("ancientDaemonCursedCryptosleepCasket", resolveParams1, (string)null);
 
             ResolveParams resolveParams2 = rp;
             resolveParams2.rect = cellRect;
-            resolveParams2.floorDef = TerrainDefOf.WoodPlankFloor;
+            resolveParams2.floorDef = DefDatabase<TerrainDef>.GetNamed("GoldTile");
             RimWorld.BaseGen.BaseGen.symbolStack.Push("floor", resolveParams2, (string)null);
             ResolveParams resolveParams3 = rp;
             resolveParams3.floorDef = rp.floorDef ?? RH_TET_DaemonsDefOf.RH_TET_Daemons_BasicFloorMarble;

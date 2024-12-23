@@ -9,7 +9,7 @@ using Verse.AI.Group;
 
 namespace TheEndTimes_Daemons
 {
-    public class Building_AncientDaemonCryptosleepCasket : Building_CryptosleepCasket
+    public class Building_AncientDaemonCursedCryptosleepCasket : Building_CryptosleepCasket
     {
         public int groupID = -1;
 
@@ -49,7 +49,7 @@ namespace TheEndTimes_Daemons
             {
                 thingList = new List<Thing>();
                 thingList.AddRange((IEnumerable<Thing>)this.innerContainer);
-                thingList.AddRange(this.UnopenedCasketsInGroup().SelectMany<Building_AncientDaemonCryptosleepCasket, Thing>((Func<Building_AncientDaemonCryptosleepCasket, IEnumerable<Thing>>)(c => (IEnumerable<Thing>)c.innerContainer)));
+                thingList.AddRange(this.UnopenedCasketsInGroup().SelectMany<Building_AncientDaemonCursedCryptosleepCasket, Thing>((Func<Building_AncientDaemonCursedCryptosleepCasket, IEnumerable<Thing>>)(c => (IEnumerable<Thing>)c.innerContainer)));
                 thingList.RemoveDuplicates<Thing>((Func<Thing, Thing, bool>)null);
             }
             base.EjectContents();
@@ -58,26 +58,28 @@ namespace TheEndTimes_Daemons
             if (num != 0)
                 return;
             FilthMaker.TryMakeFilth(this.Position, this.Map, ThingDefOf.Filth_Slime, Rand.Range(8, 12), FilthSourceFlags.None, true);
-            foreach (Building_AncientDaemonCryptosleepCasket cryptosleepCasket in this.UnopenedCasketsInGroup())
+            foreach (Building_AncientDaemonCursedCryptosleepCasket cryptosleepCasket in this.UnopenedCasketsInGroup())
             {
                 cryptosleepCasket.contentsKnown = true;
                 cryptosleepCasket.EjectContents();
             }
             IEnumerable<Pawn> pawns = thingList.OfType<Pawn>().ToList<Pawn>().Where<Pawn>((Func<Pawn, bool>)(p => p.RaceProps.Humanlike && p.GetLord() == null && p.Faction == DaemonsUtil.FindPodContentsPawnFaction()));
+
             if (!pawns.Any<Pawn>())
                 return;
+
             LordMaker.MakeNewLord(Find.FactionManager.FirstFactionOfDef(RH_TET_DaemonsDefOf.RH_TET_Daemons_Faction), (LordJob)new LordJob_AssaultColony(DaemonsUtil.FindPodContentsPawnFaction(), false, true, false, false, false, false, false), this.Map, pawns);
         }
 
-        private IEnumerable<Building_AncientDaemonCryptosleepCasket> UnopenedCasketsInGroup()
+        private IEnumerable<Building_AncientDaemonCursedCryptosleepCasket> UnopenedCasketsInGroup()
         {
-            Building_AncientDaemonCryptosleepCasket cryptosleepCasket1 = this;
+            Building_AncientDaemonCursedCryptosleepCasket cryptosleepCasket1 = this;
             yield return cryptosleepCasket1;
             if (cryptosleepCasket1.groupID != -1)
             {
-                foreach (Thing thing in cryptosleepCasket1.Map.listerThings.ThingsOfDef(RH_TET_DaemonsDefOf.RH_TET_AncientDaemonCryptosleepCasket))
+                foreach (Thing thing in cryptosleepCasket1.Map.listerThings.ThingsOfDef(RH_TET_DaemonsDefOf.RH_TET_AncientDaemonCursedCryptosleepCasket))
                 {
-                    Building_AncientDaemonCryptosleepCasket cryptosleepCasket2 = thing as Building_AncientDaemonCryptosleepCasket;
+                    Building_AncientDaemonCursedCryptosleepCasket cryptosleepCasket2 = thing as Building_AncientDaemonCursedCryptosleepCasket;
                     if (cryptosleepCasket2.groupID == cryptosleepCasket1.groupID && !cryptosleepCasket2.contentsKnown)
                         yield return cryptosleepCasket2;
                 }

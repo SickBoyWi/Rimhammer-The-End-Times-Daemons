@@ -69,6 +69,7 @@
 					<RH_TET_Daemons_Juggernaught>5</RH_TET_Daemons_Juggernaught>
 					<RH_TET_Daemons_Flamer>2</RH_TET_Daemons_Flamer>
 					<RH_TET_Daemons_Horror_Blue>1</RH_TET_Daemons_Horror_Blue>
+					<RH_TET_Daemons_Daemonhost>.01</RH_TET_Daemons_Daemonhost>
 					
 					<RH_TET_Daemons_Bloodcrusher>5</RH_TET_Daemons_Bloodcrusher>
 				</options>
@@ -83,6 +84,7 @@
 					<RH_TET_Daemons_Horror_Blue>1</RH_TET_Daemons_Horror_Blue>
 					
 					<RH_TET_Daemons_Imp>1</RH_TET_Daemons_Imp>
+					<RH_TET_Daemons_Daemonhost>.01</RH_TET_Daemons_Daemonhost>
 				</options>
 			</li>
 			<li>
@@ -98,6 +100,7 @@
 					<RH_TET_Daemons_Bloodcrusher>5</RH_TET_Daemons_Bloodcrusher>
 					
 					<RH_TET_Daemons_Imp>1</RH_TET_Daemons_Imp>
+					<RH_TET_Daemons_Daemonhost>.01</RH_TET_Daemons_Daemonhost>
 				</options>
 			</li>
 			<!-- Centipede only 

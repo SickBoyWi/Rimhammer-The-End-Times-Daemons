@@ -6,18 +6,18 @@ using Verse;
 
 namespace TheEndTimes_Daemons
 {
-    public class SymbolResolver_AncientDaemonCryptosleepCasket : SymbolResolver
+    public class SymbolResolver_AncientDaemonCursedCryptosleepCasket : SymbolResolver
     {
         public override void Resolve(ResolveParams rp)
         {
-            int num = rp.ancientCryptosleepCasketGroupID ?? Find.UniqueIDsManager.GetNextAncientCryptosleepCasketGroupID();
-
+            int num = 1;
+            
             PodContentsType? podContentsType1 = rp.podContentsType;
             PodContentsType podContentsType2 = podContentsType1.HasValue ? podContentsType1.GetValueOrDefault() : Gen.RandomEnumValue<PodContentsType>(true);
             Rot4 rot = rp.thingRot ?? Rot4.North;
-            Building_AncientDaemonCryptosleepCasket cryptosleepCasket = (Building_AncientDaemonCryptosleepCasket)ThingMaker.MakeThing(RH_TET_DaemonsDefOf.RH_TET_AncientDaemonCryptosleepCasket, DefDatabase<ThingDef>.GetNamed("BlocksSlate"));
+            Building_AncientDaemonCursedCryptosleepCasket cryptosleepCasket = (Building_AncientDaemonCursedCryptosleepCasket)ThingMaker.MakeThing(RH_TET_DaemonsDefOf.RH_TET_AncientDaemonCursedCryptosleepCasket, DefDatabase<ThingDef>.GetNamed("BlocksSlate"));
             cryptosleepCasket.groupID = num;
-            List<Thing> thingList = RH_TET_DaemonsDefOf.RH_TET_MapGen_AncientDaemonPodContents.root.Generate(new ThingSetMakerParams()
+            List<Thing> thingList = RH_TET_DaemonsDefOf.RH_TET_MapGen_AncientDaemonCursedPodContents.root.Generate(new ThingSetMakerParams()
             {
                 podContentsType = new PodContentsType?(podContentsType2)
             });
@@ -39,8 +39,6 @@ namespace TheEndTimes_Daemons
             actionOpenCasket.signalTag = rp.ancientCryptosleepCasketOpenSignalTag;
             actionOpenCasket.caskets.Add((Thing)cryptosleepCasket);
             GenSpawn.Spawn((Thing)actionOpenCasket, randomCell, RimWorld.BaseGen.BaseGen.globalSettings.map, WipeMode.Vanish);
-
-
         }
     }
 }

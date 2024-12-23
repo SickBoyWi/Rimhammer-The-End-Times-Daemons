@@ -65,10 +65,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AncientShrines\Building_AncientDaemonCursedCryptosleepCasket.cs" />
     <Compile Include="AncientShrines\Building_AncientDaemonCryptosleepPod.cs" />
     <Compile Include="AncientShrines\Building_AncientDaemonCryptosleepCasket.cs" />
     <Compile Include="AncientShrines\SketchResolver_DaemonFloorFill.cs" />
     <Compile Include="AncientShrines\SketchResolver_AddDaemonColumns.cs" />
+    <Compile Include="AncientShrines\SymbolResolver_AncientDaemonCursedCryptosleepCasket.cs" />
+    <Compile Include="AncientShrines\SymbolResolver_AncientDaemonCursedShrine.cs" />
     <Compile Include="AncientShrines\SymbolResolver_DaemonsFloorFill.cs" />
     <Compile Include="AncientShrines\SketchResolver_DaemonMonument.cs" />
     <Compile Include="AncientShrines\DaemonClusterGenerator.cs" />
@@ -76,6 +79,7 @@
     <Compile Include="AncientShrines\SymbolResolver_RandomDaemonGroup.cs" />
     <Compile Include="AncientShrines\SymbolResolver_Interior_AncientDaemonTemple.cs" />
     <Compile Include="AncientShrines\SymbolResolver_AncientDaemonTemple.cs" />
+    <Compile Include="AncientShrines\ThingSetMaker_MapGen_AncientDaemonCursedPodContents.cs" />
     <Compile Include="AncientShrines\ThingSetMaker_MapGen_AncientDaemonPodContents.cs" />
     <Compile Include="AncientShrines\SymbolResolver_AncientDaemonCryptosleepCasket.cs" />
     <Compile Include="AncientShrines\SymbolResolver_AncientDaemonRuins.cs" />

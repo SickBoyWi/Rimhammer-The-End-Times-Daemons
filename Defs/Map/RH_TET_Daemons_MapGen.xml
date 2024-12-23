@@ -136,6 +136,11 @@
 		<root Class="TheEndTimes_Daemons.ThingSetMaker_MapGen_AncientDaemonPodContents"/>
 	</ThingSetMakerDef>
 
+	<ThingSetMakerDef>
+		<defName>RH_TET_MapGen_AncientDaemonCursedPodContents</defName>
+		<root Class="TheEndTimes_Daemons.ThingSetMaker_MapGen_AncientDaemonCursedPodContents"/>
+	</ThingSetMakerDef>
+
 <!--
 	<ThingSetMakerDef>
 		<defName>MapGen_AncientDaemonComplexRoomLoot_Default</defName>

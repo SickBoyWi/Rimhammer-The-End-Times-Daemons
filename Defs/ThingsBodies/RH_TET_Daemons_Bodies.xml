@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Bloodletter: Like a human, but with horns, and claws on both hands and feet. -->
+	<!-- Bloodletter: Like a human, but with horns on head, and claws on both hands and feet. -->
 	<BodyDef>
-		<defName>RH_TET_Bloodletter</defName>
-		<label>bloodletter</label>
+		<defName>RH_TET_HumanoidWithHeadHornsAndClaws</defName>
+		<label>humanoid with horns and claws</label>
 		<corePart>
 			<def>Torso</def>
 			<height>Middle</height>

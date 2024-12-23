@@ -125,7 +125,7 @@
 		<defName>RH_TET_AncientDaemonCursedCryptosleepCasket</defName>
 		<label>ancient cursed casket</label>
 		<description>This ancient magic casket gives off a real creepy vibe, and looks like it has been here for a very long time. It is chained closed, and enscribed with runes and words of warding. Who knows what it might contain? When emptied, the dissipation of the empyrean forces leaves the casket scorched looking.</description>
-		<thingClass>TheEndTimes_Daemons.Building_AncientDaemonCryptosleepCasket</thingClass>
+		<thingClass>TheEndTimes_Daemons.Building_AncientDaemonCursedCryptosleepCasket</thingClass>
 		<containedPawnsSelectable>true</containedPawnsSelectable>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>

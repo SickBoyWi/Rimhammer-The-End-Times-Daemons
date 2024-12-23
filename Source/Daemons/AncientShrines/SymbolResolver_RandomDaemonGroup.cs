@@ -10,7 +10,7 @@ namespace TheEndTimes_Daemons
 {
     public class SymbolResolver_RandomDaemonGroup : SymbolResolver
     {
-        private static readonly IntRange DefaultDaemonCountRange = new IntRange(4, 8);
+        private static readonly IntRange DefaultDaemonCountRange = new IntRange(5, 10);
 
         public override void Resolve(ResolveParams rp)
         {
@@ -23,10 +23,10 @@ namespace TheEndTimes_Daemons
                 IntVec3 result;
                 lord = LordMaker.MakeNewLord(daemonFaction, !Rand.Bool || !rp.rect.Cells.Where<IntVec3>((Func<IntVec3, bool>)(x => !x.Impassable(map))).TryRandomElement<IntVec3>(out result) ? (LordJob)new LordJob_AssaultColony(daemonFaction, false, false, false, false, false, false, false) : (LordJob)new LordJob_DefendPoint(result, new float?(), new float?(), false, true), map, (IEnumerable<Pawn>)null);
             }
-            RH_TET_DaemonsDefOf.ChaosGods god = 0;
+            RH_TET_DaemonsDefOf.ChaosGods god = RH_TET_DaemonsDefOf.ChaosGods.Any;
             for (int index = 0; index < num; ++index)
             {
-                PawnKindDef pawnKindDef = rp.singlePawnKindDef ?? DefDatabase<PawnKindDef>.AllDefsListForReading.Where<PawnKindDef>(new Func<PawnKindDef, bool>(kind => this.isSuitable(kind, god))).RandomElementByWeight<PawnKindDef>((Func<PawnKindDef, float>)(kind => 1f / kind.combatPower));
+                PawnKindDef pawnKindDef = rp.singlePawnKindDef ?? DefDatabase<PawnKindDef>.AllDefsListForReading.Where<PawnKindDef>(new Func<PawnKindDef, bool>(kind => this.isSuitable(kind, god, false))).RandomElementByWeight<PawnKindDef>((Func<PawnKindDef, float>)(kind => 1f / kind.combatPower));
                 ResolveParams resolveParams = rp;
                 resolveParams.singlePawnKindDef = pawnKindDef;
                 if (god == RH_TET_DaemonsDefOf.ChaosGods.Any || god == RH_TET_DaemonsDefOf.ChaosGods.Undivided)
@@ -37,9 +37,9 @@ namespace TheEndTimes_Daemons
             }
         }
 
-        public bool isSuitable(PawnKindDef kind, RH_TET_DaemonsDefOf.ChaosGods god)
+        public bool isSuitable(PawnKindDef kind, RH_TET_DaemonsDefOf.ChaosGods god, bool allowDaemonhost = true)
         {
-            return DaemonClusterGenerator.DaemonKindSuitableForCluster(kind, god);
+            return DaemonClusterGenerator.DaemonKindSuitableForCluster(kind, god, allowDaemonhost);
         }
     }
 }

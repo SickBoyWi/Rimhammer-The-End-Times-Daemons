@@ -30,12 +30,33 @@ namespace TheEndTimes_Daemons
                         || def.defName.Equals("RH_TET_Daemon_HorrorBlue")
                         || def.defName.Equals("RH_TET_Daemon_Flamer")))
                 return true;
-
+            
             else if ((isAny || allowUndivided || godCode == RH_TET_DaemonsDefOf.ChaosGods.Undivided)
-                    && (def.defName.Equals("RH_TET_Daemon_Imp")))
+                    && (def.defName.Equals("RH_TET_Daemon_Imp")
+                        || def.defName.Equals("RH_TET_Daemon_Daemonhost")))
                 return true;
 
             return false;
+        }
+
+        public static Faction GetDaemonsFaction()
+        {
+            Faction faction = null;
+
+            FactionDef factionDef = DefDatabase<FactionDef>.GetNamed("RH_TET_Daemons_Faction", false);
+            if (factionDef != null)
+            {
+                faction = Find.FactionManager.FirstFactionOfDef(factionDef);
+
+                if (faction != null)
+                    return faction;
+            }
+            else
+            {
+                Log.Error("RH_TET_Daemons: Could not find Daemons faction for cursed casket.");
+            }
+
+            return faction;
         }
 
         public static RH_TET_DaemonsDefOf.ChaosGods GetGod(ThingDef def)
@@ -51,7 +72,8 @@ namespace TheEndTimes_Daemons
                         || def.defName.Equals("RH_TET_Daemon_Flamer"))
                 return RH_TET_DaemonsDefOf.ChaosGods.Tzeentch;
 
-            else if (def.defName.Equals("RH_TET_Daemon_Imp"))
+            else if (def.defName.Equals("RH_TET_Daemon_Imp")
+                        || def.defName.Equals("RH_TET_Daemon_Daemonhost"))
                 return RH_TET_DaemonsDefOf.ChaosGods.Undivided;
 
             return RH_TET_DaemonsDefOf.ChaosGods.None;

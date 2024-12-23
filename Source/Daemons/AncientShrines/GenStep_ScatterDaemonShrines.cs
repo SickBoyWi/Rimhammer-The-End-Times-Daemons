@@ -69,8 +69,9 @@ namespace TheEndTimes_Daemons
             resolveParams.disableSinglePawn = new bool?(true);
             resolveParams.disableHives = new bool?(true);
             resolveParams.makeWarningLetter = new bool?(true);
-            if (Find.Storyteller.difficulty.peacefulTemples)
-                resolveParams.podContentsType = new PodContentsType?(PodContentsType.AncientFriendly);
+            // TODO: Think about being friendly.
+            //if (Find.Storyteller.difficulty.peacefulTemples)
+            //    resolveParams.podContentsType = new PodContentsType?(PodContentsType.AncientFriendly);
             RimWorld.BaseGen.BaseGen.globalSettings.map = map;
             RimWorld.BaseGen.BaseGen.symbolStack.Push("ancientDaemonTemple", resolveParams, (string)null);
             RimWorld.BaseGen.BaseGen.Generate();
