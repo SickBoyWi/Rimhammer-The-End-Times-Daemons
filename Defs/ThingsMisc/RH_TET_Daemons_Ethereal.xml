@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="EtherealThingBase">
+		<defName>RH_TET_Daemons_WarpRiftSpawner</defName>
+		<label>rift</label>
+		<thingClass>TheEndTimes_Daemons.WarpRiftSpawner</thingClass>
+		<tickerType>Normal</tickerType>
+		<drawerType>RealtimeOnly</drawerType>
+		<alwaysFlee>true</alwaysFlee>
+		<building>
+			<groundSpawnerSustainerSound></groundSpawnerSustainerSound>
+			<groundSpawnerSustainedEffecter>RH_TET_Daemons_EmergencePointSustained2X2</groundSpawnerSustainedEffecter>
+			<groundSpawnerCompleteEffecter>RH_TET_Daemons_EmergencePointComplete2X2</groundSpawnerCompleteEffecter>
+		</building>
+	</ThingDef>
+
+</Defs>

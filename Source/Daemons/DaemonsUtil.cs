@@ -145,8 +145,131 @@ namespace TheEndTimes_Daemons
             return faction;
         }
 
-        internal static void DaemonDiedOrDowned(Pawn daemonPawn)
+        public static int TotalSpawnedRiftsCount(Map map, bool filterFogged = false)
         {
+            List<Thing> source = map.listerThings.ThingsOfDef(RH_TET_DaemonsDefOf.RH_TET_Daemons_RiftKhorne);
+            int riftCount = filterFogged ? source.Where<Thing>((Func<Thing, bool>)(h => !h.Position.Fogged(h.Map))).Count<Thing>() : source.Count;
+
+            List<Thing> source2 = map.listerThings.ThingsOfDef(RH_TET_DaemonsDefOf.RH_TET_Daemons_RiftTzeentch);
+            riftCount += filterFogged ? source2.Where<Thing>((Func<Thing, bool>)(h => !h.Position.Fogged(h.Map))).Count<Thing>() : source2.Count;
+
+            return riftCount;
+        }
+
+        public static void Notify_RiftDespawned(WarpRift rift, Map map)
+        {
+            int num = GenRadial.NumCellsInRadius(2f);
+            for (int index1 = 0; index1 < num; ++index1)
+            {
+                IntVec3 c = rift.Position + GenRadial.RadialPattern[index1];
+                if (c.InBounds(map))
+                {
+                    List<Thing> thingList = c.GetThingList(map);
+                    for (int index2 = 0; index2 < thingList.Count; ++index2)
+                    {
+                        if (thingList[index2].Faction == Find.FactionManager.FirstFactionOfDef(RH_TET_DaemonsDefOf.RH_TET_Daemons_Faction) && !DaemonsUtil.AnyRiftPreventsClaiming(thingList[index2]) && !(thingList[index2] is Pawn))
+                            thingList[index2].SetFaction((Faction)null, (Pawn)null);
+                    }
+                }
+            }
+        }
+
+        public static bool AnyRiftPreventsClaiming(Thing thing)
+        {
+            if (!thing.Spawned)
+                return false;
+            int num = GenRadial.NumCellsInRadius(2f);
+            for (int index = 0; index < num; ++index)
+            {
+                IntVec3 c = thing.Position + GenRadial.RadialPattern[index];
+                if (c.InBounds(thing.Map) && c.GetFirstThing<WarpRift>(thing.Map) != null)
+                    return true;
+            }
+            return false;
+        }
+
+        public static RH_TET_DaemonsDefOf.ChaosGods GetRandomGod()
+        {
+            // TODO - Add other gods here when rifts are added for them all.
+            if (RH_TET_DaemonsMod.random.Next(100) > 50)
+                return RH_TET_DaemonsDefOf.ChaosGods.Khorne;
+            else return RH_TET_DaemonsDefOf.ChaosGods.Tzeentch;
+        }
+
+        public static Thing SpawnRifts(
+          int riftCount,
+          Map map,
+          bool spawnAnywhereIfNoGoodCell = false,
+          bool ignoreRoofedRequirement = true,
+          string questTag = null,
+          IntVec3? overrideLoc = null,
+          float? daemonPoints = null)
+        {
+            IntVec3 loc = overrideLoc.HasValue ? overrideLoc.Value : new IntVec3();
+            if (!overrideLoc.HasValue)
+                DaemonsUtil.TryFindWarpRiftCell(out loc, map, daemonPoints);
+            if (!loc.IsValid)
+                return (Thing)null;
+            WarpRiftSpawner riftSpawner1 = (WarpRiftSpawner)ThingMaker.MakeThing(RH_TET_DaemonsDefOf.RH_TET_Daemons_WarpRiftSpawner, (ThingDef)null);
+            Thing thing = GenSpawn.Spawn((Thing)riftSpawner1, loc, map, WipeMode.FullRefund);
+
+            //Log.Warning("JEH: Daemon Points:" + daemonPoints);
+            
+            if (daemonPoints.HasValue)
+                riftSpawner1.daemonPoints = daemonPoints.Value;
+            QuestUtility.AddQuestTag((object)thing, questTag);
+
+            ThingDef riftDef = DaemonsUtil.GetRandomWarpRiftTypeDef();
+
+            for (int index = 0; index < riftCount - 1; ++index)
+            {
+                IntVec3 childRiftLocation = CompSpawnerRifts.FindChildRiftLocation(thing.Position, map, riftDef, riftDef.GetCompProperties<CompProperties_SpawnerRifts>(), ignoreRoofedRequirement, true);
+                if (childRiftLocation.IsValid)
+                {
+                    WarpRiftSpawner riftSpawner2 = (WarpRiftSpawner)ThingMaker.MakeThing(RH_TET_DaemonsDefOf.RH_TET_Daemons_WarpRiftSpawner, (ThingDef)null);
+                    thing = GenSpawn.Spawn((Thing)riftSpawner2, childRiftLocation, map, WipeMode.FullRefund);
+                    if (daemonPoints.HasValue)
+                        riftSpawner2.daemonPoints = daemonPoints.Value;
+                    QuestUtility.AddQuestTag((object)thing, questTag);
+                }
+            }
+            return thing;
+        }
+
+        public static ThingDef GetRandomWarpRiftTypeDef()
+        {
+            // TODO - Add other god rifts here when created.
+            if (RH_TET_DaemonsMod.random.Next(100) < 50)
+                return RH_TET_DaemonsDefOf.RH_TET_Daemons_RiftKhorne;
+            else
+                return RH_TET_DaemonsDefOf.RH_TET_Daemons_RiftTzeentch;
+        }
+
+        public static bool TryFindWarpRiftCell(out IntVec3 location, Map target, float? points)
+        {
+            int rando = RH_TET_DaemonsMod.random.Next(101);
+
+            if (rando < 20)
+            {
+                // Under Mountain
+                if (InfestationCellFinder.TryFindCell(out location, target))
+                    return true;
+            }
+
+            if (rando > 75 && points > 2500)
+            {
+                // Near
+                if (DropCellFinder.TryFindRaidDropCenterClose(out location, target, false, false, true, -1))
+                    return true;
+            }
+
+            // Far
+            location = DropCellFinder.FindRaidDropCenterDistant(target, false);
+            return true;
+        }
+
+        //internal static void DaemonDiedOrDowned(Pawn daemonPawn)
+        //{
             /*
             IntVec3 pos = daemonPawn.Position;
             Map map = daemonPawn.Map;
@@ -194,7 +317,7 @@ namespace TheEndTimes_Daemons
                 }
             }
             */
-        }
+        //}
 
         /*
        public static void SpawnItemsNear(List<ThingDef> itemsToSpawn, IntVec3 loc)

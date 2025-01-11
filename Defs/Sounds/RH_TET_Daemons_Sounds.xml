@@ -212,6 +212,28 @@
 				</pitchRange>
 			</li>
 		</subSounds>
-	</SoundDef>  
+	</SoundDef>
+
+	<SoundDef>
+		<defName>RH_TET_Daemons_Rift</defName>
+		<sustain>True</sustain>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<priorityMode>PrioritizeNearest</priorityMode>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Misc/RH_TET_Daemon_Rift</clipPath>
+					</li>
+				</grains>
+				<volumeRange>30~30</volumeRange>
+				<sustainAttack>2.5</sustainAttack>
+				<sustainRelease>2.5</sustainRelease>
+				<distRange>20~100</distRange>
+			</li>
+		</subSounds>
+		<sustainStopSound>RH_TET_Pawn_Daemon_Death</sustainStopSound>
+	</SoundDef>
   
 </Defs>

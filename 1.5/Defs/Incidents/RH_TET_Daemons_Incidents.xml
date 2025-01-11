@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<IncidentDef>
+		<defName>RH_TET_Daemons_Infestation</defName>
+		<label>Warp Rift</label>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>TheEndTimes_Daemons.IncidentWorker_WarpRift</workerClass>
+		<letterLabel>Warp Rift</letterLabel>
+		<letterText>A tear in reality has appeared nearby! This warp rift creates a portal that daemons will use to enter the material realm.\n\nThe warp rift will expand, and daemonic entities will pour forth.\n\nIf you don't want the daemons to overrun the entire area, destroy the rifts. But beware - the daemons will defend their rifts.</letterText>
+		<letterDef>ThreatBig</letterDef>
+		<baseChance>2.7</baseChance>
+		<minRefireDays>20</minRefireDays>
+		<category>ThreatBig</category>
+		<pointsScaleable>true</pointsScaleable>
+		<minThreatPoints>400</minThreatPoints>
+		<tale>RH_TET_Daemons_Infestation</tale>
+	</IncidentDef>
+
+</Defs>

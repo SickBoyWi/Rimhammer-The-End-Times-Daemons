@@ -22,7 +22,16 @@ namespace TheEndTimes_Daemons
         }
 
         // Pawnkinds.
+        public static PawnKindDef RH_TET_Daemons_Bloodletter;
+        public static PawnKindDef RH_TET_Daemons_Bloodletter_Armed;
+        public static PawnKindDef RH_TET_Daemons_Fleshhound;
+        public static PawnKindDef RH_TET_Daemons_Juggernaught;
+        public static PawnKindDef RH_TET_Daemons_Bloodcrusher;
+
         public static PawnKindDef RH_TET_Daemons_Horror_Blue;
+        public static PawnKindDef RH_TET_Daemons_Horror_Pink;
+        public static PawnKindDef RH_TET_Daemons_Flamer;
+
         public static PawnKindDef RH_TET_Daemons_Imp;
         public static PawnKindDef RH_TET_Daemons_Daemonhost;
 
@@ -36,6 +45,9 @@ namespace TheEndTimes_Daemons
         public static ThingDef RH_TET_Daemons_Brazier;
         public static ThingDef RH_TET_Daemons_BloodAltar;
         public static ThingDef RH_TET_Daemons_SacrificialAltar;
+        public static ThingDef RH_TET_Daemons_WarpRiftSpawner;
+        public static ThingDef RH_TET_Daemons_RiftKhorne;
+        public static ThingDef RH_TET_Daemons_RiftTzeentch;
 
         // Terrain
         public static TerrainDef RH_TET_Daemons_BasicFloorSlate;
@@ -63,11 +75,17 @@ namespace TheEndTimes_Daemons
         public static ThingSetMakerDef RH_TET_MapGen_AncientDaemonPodContents;
         public static ThingSetMakerDef RH_TET_MapGen_AncientDaemonCursedPodContents;
 
+        // Faction.
+        public static ThoughtDef RH_TET_Daemons_DefeatedRifts;
+
         // Map Gen.
         public static ThingSetMakerDef RH_TET_MapGen_AncientDaemonTempleContents;
         public static SketchResolverDef RH_TET_DaemonMonument;
         public static SketchResolverDef RH_TET_AddDaemonColumns;
         public static SketchResolverDef RH_TET_DaemonsFloorFill;
 
+        // Lords/Duties/Jobs
+        public static DutyDef RH_TET_Daemons_DefendRiftAggressively;
+        public static DutyDef RH_TET_Daemons_DefendAndExpandRift;
     } 
 }

@@ -4,4 +4,8 @@
   <RH_TET_Daemons_LetterLabelAncientShrineWarning>Daemonic danger</RH_TET_Daemons_LetterLabelAncientShrineWarning>
   <RH_TET_Daemons_AncientShrineWarning>As {PAWN_nameDef} draws near the strange wall, a sense of uncanny foreboding overcomes {PAWN_objective}. {PAWN_pronoun} isn't sure why, but {PAWN_pronoun} feels that this dusty structure may contain great danger.</RH_TET_Daemons_AncientShrineWarning>
   
+  <RH_TET_Daemons_MessageRiftReproduced>A warp rift has expanded.</RH_TET_Daemons_MessageRiftReproduced>
+  <RH_TET_Daemons_DormantRiftNotReproducing>Dormant: Not expanding.</RH_TET_Daemons_DormantRiftNotReproducing>
+  <RH_TET_Daemons_RiftReproducesIn>Expands in</RH_TET_Daemons_RiftReproducesIn>
+  
 </LanguageData>

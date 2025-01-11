@@ -710,7 +710,7 @@
 		<description>A Daemonhost is an unholy creation of foul and dangerous rituals in which a powerful Daemon of Chaos is bound into a living Human, or other mortal host body and enslaved to the will of its creator. An utterly foul act, the creation of a Daemonhost condemns the soul of the host body to eternal torment, and provides a lasting home in the material universe for a Daemon to work its malignant evil.</description>
 		<statBases>
 			<MoveSpeed>4.9</MoveSpeed>
-			<MeleeDoorDamageFactor>1.5</MeleeDoorDamageFactor>
+			<!--TODO: Not found error tossed?<MeleeDoorDamageFactor>1.5</MeleeDoorDamageFactor>-->
 			<ArmorRating_Blunt>0</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0</ArmorRating_Sharp>
 			<ArmorRating_Heat>0</ArmorRating_Heat>

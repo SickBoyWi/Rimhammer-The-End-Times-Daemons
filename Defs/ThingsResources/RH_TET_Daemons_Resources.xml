@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
+<!-- TODO DELETE? -->
 	<!-- Added from skaven mod, to make use of here without that mod in place.
 	<ThingDef ParentName="ResourceBase" Name="RH_TET_Skaven_MetalBase" Abstract="True">
 		<soundInteract>Metal_Drop</soundInteract>

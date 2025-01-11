@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>RH_TET_Deaemons_RealityCrackHuge</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>Filth</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <fadeInTime>10</fadeInTime>
+      <solidTime>99999</solidTime>
+      <fadeOutTime>0</fadeOutTime>
+      <growthRate>0</growthRate>
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/RealityCracks/Daemons-GroundCrackHuge</texPath>
+      <shaderType>Mote</shaderType>
+      <renderInstanced>false</renderInstanced>
+      <graphicClass>Graphic_Mote</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>RH_TET_Deaemons_RealityCrack</defName>
+    <randomGraphics>
+      <li>
+        <texPath>Things/Mote/RealityCracks/Daemons-GroundCrackA</texPath>
+        <shaderType>Mote</shaderType>
+        <renderInstanced>false</renderInstanced>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li> 
+      <li>
+        <texPath>Things/Mote/RealityCracks/Daemons-GroundCrackB</texPath>
+        <shaderType>Mote</shaderType>
+        <renderInstanced>false</renderInstanced>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+      <li>
+        <texPath>Things/Mote/RealityCracks/Daemons-GroundCrackC</texPath>
+        <shaderType>Mote</shaderType>
+        <renderInstanced>false</renderInstanced>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+      <li>
+        <texPath>Things/Mote/RealityCracks/Daemons-GroundCrackD</texPath>
+        <shaderType>Mote</shaderType>
+        <renderInstanced>false</renderInstanced>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+      <li>
+        <texPath>Things/Mote/RealityCracks/Daemons-GroundCrackE</texPath>
+        <shaderType>Mote</shaderType>
+        <renderInstanced>false</renderInstanced>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+    </randomGraphics>
+    <growthRate>0</growthRate>
+    <altitudeLayer>Filth</altitudeLayer>
+    <fadeInTime>.2</fadeInTime>
+    <solidTime>5</solidTime>
+    <fadeOutTime>3</fadeOutTime>
+  </FleckDef>  
+
+</Defs>

@@ -3,7 +3,7 @@
 
 	<ThingDef ParentName="BaseFilth">
 		<defName>RH_TET_Filth_BloodDaemon</defName>
-		<label>daemonblood</label>
+		<label>daemon blood</label>
 		<statBases>
 			<Beauty>-40</Beauty>
 			<Cleanliness>-15</Cleanliness>
@@ -181,6 +181,10 @@
 					<shaderType>CutoutComplex</shaderType>
 					<drawSize>(1, 2)</drawSize>
 				</graphicData>
+			</li>			
+			<li Class="CompProperties_Glower">
+				<glowRadius>3</glowRadius>
+				<glowColor>(255, 140, 247,0)</glowColor>
 			</li>
 		</comps>
 		<placeWorkers>

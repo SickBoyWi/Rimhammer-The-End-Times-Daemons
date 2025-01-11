@@ -13,5 +13,21 @@
 			</li>
 		</stages>
 	</ThoughtDef>
+	
+	
+	<ThoughtDef>
+		<defName>RH_TET_Daemons_DefeatedRifts</defName>
+		<icon>Things/Mote/ThoughtSymbol/Skull</icon>
+		<showBubble>true</showBubble>
+		<durationDays>10</durationDays>
+		<stackLimit>5</stackLimit>
+		<stages>
+			<li>
+				<label>defeated daemons</label>
+				<description>Sent back to the immaterium!</description>
+				<baseMoodEffect>4</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
 
 </Defs>
