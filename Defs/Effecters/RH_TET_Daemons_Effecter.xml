@@ -11,6 +11,25 @@
 				<children>
 					<li>
 						<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+						<avoidLastPositionRadius>1</avoidLastPositionRadius>
+						<fleckDef>RH_TET_Daemons_WarpFlame</fleckDef>
+						<initialDelayTicks>0</initialDelayTicks>
+						<burstCount>5~10</burstCount>
+						<spawnLocType>OnSource</spawnLocType>
+						<rotationRate>100~200</rotationRate>
+						<positionRadius>1</positionRadius>
+						<positionRadiusMin>0</positionRadiusMin>
+						<scale>.5~1</scale>
+						<rotation>0~360</rotation>
+						<absoluteAngle>False</absoluteAngle>
+						<positionOffset>(-.5, 0, -.5)</positionOffset>
+						<angle>0~360</angle>
+						<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+						<speed>1~3</speed>
+						<makeMoteOnSubtrigger>true</makeMoteOnSubtrigger>
+					</li>
+					<li>
+						<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
 						<fleckDef>GrowingFlash</fleckDef>
 						<initialDelayTicks>0</initialDelayTicks>
 						<burstCount>1~2</burstCount>
@@ -114,6 +133,25 @@
 				<angle>0~360</angle>
 				<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
 				<speed>.6~.75</speed>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<avoidLastPositionRadius>1</avoidLastPositionRadius>
+				<fleckDef>RH_TET_Daemons_WarpFlame</fleckDef>
+				<initialDelayTicks>0</initialDelayTicks>
+				<burstCount>5~10</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<rotationRate>100~200</rotationRate>
+				<positionRadius>1</positionRadius>
+				<positionRadiusMin>0</positionRadiusMin>
+				<scale>.5~1</scale>
+				<rotation>0~360</rotation>
+				<absoluteAngle>False</absoluteAngle>
+				<positionOffset>(-.5, 0, -.5)</positionOffset>
+				<angle>0~360</angle>
+				<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+				<speed>1~3</speed>
+				<makeMoteOnSubtrigger>true</makeMoteOnSubtrigger>
 			</li>
 			<li>
 				<subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>

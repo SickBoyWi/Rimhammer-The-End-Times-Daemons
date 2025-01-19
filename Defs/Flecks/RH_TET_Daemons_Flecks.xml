@@ -25,4 +25,33 @@
 		<fadeOutTime>2.6</fadeOutTime>
 	</FleckDef>
 
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>RH_TET_Daemons_WarpFlame</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+	<fadeInTime>0.10</fadeInTime>
+	<solidTime>1.5</solidTime>
+	<fadeOutTime>0.8</fadeOutTime>
+    <growthRate>0.4</growthRate>
+    <randomGraphics>
+      <li>
+        <texPath>Things/Mote/AmbientFlame/AmbientFlameA</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>1.0</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/AmbientFlame/AmbientFlameB</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>1.0</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/AmbientFlame/AmbientFlameC</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>1.0</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
 </Defs>
