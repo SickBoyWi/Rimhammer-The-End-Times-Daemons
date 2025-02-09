@@ -14,6 +14,22 @@ namespace TheEndTimes_Daemons
 {
     public static class DaemonsUtil
     {
+        private static readonly SimpleCurve PawnWeightFactorByMostExpensivePawnCostFractionCurve = new SimpleCurve()
+        {
+          {
+            new CurvePoint(0.2f, 0.01f),
+            true
+          },
+          {
+            new CurvePoint(0.3f, 0.3f),
+            true
+          },
+          {
+            new CurvePoint(0.5f, 1f),
+            true
+          }
+        };
+
         public static bool IsDaemonOfGodOrAny(ThingDef def, bool allowUndivided = true, RH_TET_DaemonsDefOf.ChaosGods godCode = 0)
         {
             bool isAny = (godCode == RH_TET_DaemonsDefOf.ChaosGods.Any);
@@ -22,6 +38,7 @@ namespace TheEndTimes_Daemons
             if ((isAny || godCode == RH_TET_DaemonsDefOf.ChaosGods.Khorne) 
                     && (def.defName.Equals("RH_TET_Daemon_Bloodletter")
                         || def.defName.Equals("RH_TET_Daemon_Juggernaught")
+                        || def.defName.Equals("RH_TET_Daemon_Bloodcrusher")
                         || def.defName.Equals("RH_TET_Daemon_Fleshhound")))
                 return true;
 
@@ -268,99 +285,152 @@ namespace TheEndTimes_Daemons
             return true;
         }
 
-        //internal static void DaemonDiedOrDowned(Pawn daemonPawn)
-        //{
-            /*
-            IntVec3 pos = daemonPawn.Position;
-            Map map = daemonPawn.Map;
+        public static List<PawnKindDef> GetSpawnablePawnsForRiftTypeByGod(RH_TET_DaemonsDefOf.ChaosGods god, bool includeUndivided = false)
+        {
+            List<PawnKindDef> retPawns = null;
+            if (god == RH_TET_DaemonsDefOf.ChaosGods.Khorne)
+                retPawns = WarpRift_Khorne.spawnablePawnKinds;
+            else if (god == RH_TET_DaemonsDefOf.ChaosGods.Tzeentch)
+                retPawns = WarpRift_Tzeentch.spawnablePawnKinds;
+            else
+                Log.Error("No valid god found for warp rift type:" + god);
 
-            float combatPower = daemonPawn.kindDef.combatPower;
-            int spawnCount = (int)(Math.Round(combatPower / 100, 0));
-
-            // Destroy the carcass. 
-            daemonPawn.Corpse.Destroy();
-            FleckMaker.ThrowDustPuffThick(pos.ToVector3(), map, 1.5F, Color.magenta);
-            FleckMaker.Static(pos.ToVector3(), map, FleckDefOf.PsycastAreaEffect, spawnCount);
-
-            // Drop some goodies.
-            Thing rawEssence = ThingMaker.MakeThing(RH_TET_DaemonsDefOf.RH_TET_Daemons_MagicEssence_Raw);
-            rawEssence.stackCount = spawnCount;
-            GenSpawn.Spawn(rawEssence, pos, map);
-
-            if (daemonPawn.kindDef.defName.Equals("RH_TET_Daemons_Bloodletter_Armed"))
+            if (includeUndivided)
             {
-                // Maybe drop Hellblade.
-                if (RH_TET_DaemonsMod.random.Next(100) > 90)
-                {
-                    IntVec3 placePos;
-                    Predicate<IntVec3> validator = (Predicate<IntVec3>)(x =>
-                    {
-                        foreach (IntVec3 c in GenAdj.OccupiedRect(x, Rot4.North, new IntVec2(1, 1)))
-                        {
-                            if (!c.InBounds(map) || c.Fogged(map) || !c.Standable(map) || (c.GetFirstItem(map) != null && c.GetFirstBuilding(map) != null))
-                                return false;
-                            foreach (Thing thing in c.GetThingList(map))
-                            {
-                                if (thing.def.preventSkyfallersLandingOn)
-                                    return false;
-                            }
-                        }
-                        return ((1 <= 0 || x.DistanceToEdge(map) >= 1) && (map.reachability.CanReachColony(x)));
-                    });
+                retPawns.Add(RH_TET_DaemonsDefOf.RH_TET_Daemons_Imp);
+            }
 
-                    if (CellFinder.TryFindRandomCellNear(pos, map, 2, validator, out placePos, -1))
-                    {
-                        Thing spawnThing = ThingMaker.MakeThing(RH_TET_DaemonsDefOf.RH_TET_Daemons_Hellblade);
-                        spawnThing.TryGetComp<CompQuality>().SetQuality(QualityCategory.Masterwork, ArtGenerationContext.Outsider);
-                        GenSpawn.Spawn(spawnThing, placePos, map);
-                    }
+            return retPawns;
+        }
+
+        public static RH_TET_DaemonsDefOf.ChaosGods GetChaosGodByNameFromDefName(String defName)
+        {
+            if (defName.Contains("Khorne"))
+                return RH_TET_DaemonsDefOf.ChaosGods.Khorne;
+            else if (defName.Contains("Tzeentch"))
+                return RH_TET_DaemonsDefOf.ChaosGods.Tzeentch;
+            else if (defName.Contains("Nurgle"))
+                return RH_TET_DaemonsDefOf.ChaosGods.Nurgle;
+            else if (defName.Contains("Slaanesh"))
+                return RH_TET_DaemonsDefOf.ChaosGods.Slaanesh;
+            else
+                Log.Error("No valid god found to pull from def name:" + defName);
+
+            return RH_TET_DaemonsDefOf.ChaosGods.None;
+        }
+
+        public static IEnumerable<Pawn> GeneratePawns(
+            PawnGroupMakerParms parms,
+            RH_TET_DaemonsDefOf.ChaosGods chaosGod,
+            bool warnOnZeroResults = true)
+        {
+            if (parms.groupKind == null)
+                Log.Error("Tried to generate pawns with null pawn group kind def. parms=" + (object)parms);
+            else if (parms.faction == null)
+                Log.Error("Tried to generate pawn kinds with null faction. parms=" + (object)parms);
+            else if (parms.faction.def.pawnGroupMakers.NullOrEmpty<PawnGroupMaker>())
+            {
+                Log.Error("Faction " + (object)parms.faction + " of def " + (object)parms.faction.def + " has no PawnGroupMakers.");
+            }
+            else
+            {
+                PawnGroupMaker pawnGroupMaker;
+                if (!DaemonsUtil.TryGetRandomPawnGroupMaker(parms, chaosGod, out pawnGroupMaker))
+                {
+                    Log.Error("Faction " + (object)parms.faction + " of def " + (object)parms.faction.def + " has no usable PawnGroupMakers for parms " + (object)parms);
+                }
+                else
+                {
+                    foreach (Pawn pawn in pawnGroupMaker.GeneratePawns(parms, warnOnZeroResults))
+                        yield return pawn;
                 }
             }
-            */
-        //}
+        }
 
-        /*
-       public static void SpawnItemsNear(List<ThingDef> itemsToSpawn, IntVec3 loc)
-       {
-           IntVec3 spawnCell;
-           CellRect cellRectAroundThrone = new CellRect(throne.InteractionCell.x - 3, throne.InteractionCell.z - 3, 5, 5);
-           Map map = throne.Map;
+        public static bool TryGetRandomPawnGroupMaker(
+          PawnGroupMakerParms parms,
+          RH_TET_DaemonsDefOf.ChaosGods chaosGod,
+          out PawnGroupMaker pawnGroupMaker)
+        {
+            if (parms.seed.HasValue)
+                Rand.PushState(parms.seed.Value);
+            int num = parms.faction.def.pawnGroupMakers.Where<PawnGroupMaker>(
+                (Func<PawnGroupMaker, bool>)(gm => gm.kindDef == parms.groupKind && gm.CanGenerateFrom(parms) && DaemonsUtil.GodMatch(gm.options, chaosGod, true))).
+                    TryRandomElementByWeight<PawnGroupMaker>((Func<PawnGroupMaker, float>)(gm => gm.commonality), 
+                        out pawnGroupMaker) ? 1 : 0;
+            if (!parms.seed.HasValue)
+                return num != 0;
+            Rand.PopState();
+            return num != 0;
+        }
 
-           foreach (ThingDef thingDef in itemsToSpawn)
-           { 
-               TryFindSpawnCellForItem(cellRectAroundThrone, map, out spawnCell);
+        private static bool GodMatch(List<PawnGenOption> options, RH_TET_DaemonsDefOf.ChaosGods chaosGod, bool allowUndivided)
+        {
+            bool allMatched = true;
+            foreach (PawnGenOption option in options)
+            {
+                if (!DaemonsUtil.IsDaemonOfGodOrAny(option.kind.race, allowUndivided, chaosGod))
+                {
+                    // THE UTIL METHOD CALLED MUST BE UPDATED WITH ALL NEW DAEMON KINDS FOR THIS TO WORK.
+                    allMatched = false;
+                    break;
+                }
+            }
 
-               Thing thingToSpawn = null;
-               if (thingDef.IsWeapon)
-                   thingToSpawn = ThingMaker.MakeThing(thingDef);
-               else
-                   thingToSpawn = ThingMaker.MakeThing(thingDef, RH_TET_DwarfDefOf.RH_TET_Dwarf_Gromril);
+            return allMatched;
+        }
 
-               thingToSpawn.TryGetComp<CompQuality>().SetQuality(QualityCategory.Legendary, ArtGenerationContext.Outsider);
-               GenSpawn.Spawn(thingToSpawn, spawnCell, map);
-           }
-       }
-
-       private static bool TryFindSpawnCellForItem(CellRect rect, Map map, out IntVec3 result)
-       {
-           return CellFinder.TryFindRandomCellInsideWith(rect, (Predicate<IntVec3>)(c =>
-           {
-               if (c.GetFirstItem(map) != null)
-                   return false;
-               if (!c.Standable(map))
-               {
-                   switch (c.GetSurfaceType(map))
-                   {
-                       case SurfaceType.Item:
-                       case SurfaceType.Eat:
-                           break;
-                       default:
-                           return false;
-                   }
-               }
-               return true;
-           }), out result);
-       }
-*/
+        public static IEnumerable<PawnGenOptionWithXenotype> ChoosePawnGenOptionsByPoints(
+            float pointsTotal,
+            List<PawnGenOption> options,
+            PawnGroupMakerParms groupParms, 
+            RH_TET_DaemonsDefOf.ChaosGods chaosGod)
+        {
+            if (groupParms.seed.HasValue)
+                Rand.PushState(groupParms.seed.Value);
+            List<PawnGenOptionWithXenotype> source = new List<PawnGenOptionWithXenotype>();
+            List<PawnGenOptionWithXenotype> chosenOptions = new List<PawnGenOptionWithXenotype>();
+            float pointsLeft = pointsTotal;
+            bool leaderChosen = false;
+            float highestCost = -1f;
+            while (true)
+            {
+                PawnGenOptionWithXenotype result;
+                do
+                {
+                    source.Clear();
+                    foreach (PawnGenOptionWithXenotype option in PawnGroupMakerUtility.GetOptions(groupParms, groupParms.faction.def, options, pointsTotal, pointsLeft, new float?(), chosenOptions, leaderChosen))
+                    {
+                        
+                        if (DaemonsUtil.IsDaemonOfGodOrAny(option.Option.kind.race, true, chaosGod))
+                        { 
+                            if ((double)option.Cost <= (double)pointsLeft)
+                            {
+                                if ((double)option.Cost > (double)highestCost)
+                                    highestCost = option.Cost;
+                                source.Add(option);
+                            }
+                        }
+                    }
+                    Func<PawnGenOptionWithXenotype, float> weightSelector = (Func<PawnGenOptionWithXenotype, float>)(gr => !PawnGroupMakerUtility.PawnGenOptionValid(gr.Option, groupParms, chosenOptions) ? 0.0f : gr.SelectionWeight * DaemonsUtil.PawnWeightFactorByMostExpensivePawnCostFractionCurve.Evaluate(gr.Cost / highestCost));
+                    if (source.TryRandomElementByWeight<PawnGenOptionWithXenotype>(weightSelector, out result))
+                    {
+                        chosenOptions.Add(result);
+                        pointsLeft -= result.Cost;
+                    }
+                    else
+                        goto label_14;
+                }
+                while (!result.Option.kind.factionLeader);
+                leaderChosen = true;
+            }
+        label_14:
+            source.Clear();
+            if (chosenOptions.Count == 1 && (double)pointsLeft > (double)pointsTotal / 2.0)
+                Log.Warning("Used only " + (object)(float)((double)pointsTotal - (double)pointsLeft) + " / " + (object)pointsTotal + " points generating for " + (object)groupParms.faction);
+            if (groupParms.seed.HasValue)
+                Rand.PopState();
+            return (IEnumerable<PawnGenOptionWithXenotype>)chosenOptions;
+        }
     }
 }

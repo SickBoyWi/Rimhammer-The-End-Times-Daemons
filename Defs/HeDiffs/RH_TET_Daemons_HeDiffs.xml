@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<HediffDef ParentName="DiseaseBase">
+		<defName>RH_TET_Daemons_MentalSuppression</defName>
+		<label>mental suppression</label>
+		<description>The effect of an otherworldly entity. Coordination and reasoning are muddled.</description>
+		<isBad>true</isBad>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="HediffCompProperties">
+				<compClass>TheEndTimes_Daemons.HediffComp_MentalSuppression</compClass>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMaxCurveOverride>
+							<points>
+								<li>0, 1</li>
+								<li>1, 0.5</li>
+							</points>
+						</setMaxCurveOverride>
+						<setMaxCurveEvaluateStat>PsychicSensitivity</setMaxCurveEvaluateStat>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

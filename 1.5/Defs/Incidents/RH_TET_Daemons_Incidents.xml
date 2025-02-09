@@ -19,4 +19,56 @@
 		<tale>RH_TET_Daemons_Infestation</tale>
 	</IncidentDef>
 
+	<IncidentDef>
+		<defName>RH_TET_Daemons_TzeentchWarpPortal</defName>
+		<label>Tzeentch warp portal</label>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>TheEndTimes_Daemons.IncidentWorker_LargeWarpPortal</workerClass>
+		<letterLabel>Tzeentch Warp Portal</letterLabel>
+		<letterText>A large tear in reality has occurred nearby.\n\nIts mysterious influence will kill all plants in an expanding circle around itself.\n\nDestroy it as soon as possible. But beware - the beasts of the immaterium will probably defend the portal.</letterText>
+		<letterDef>ThreatSmall</letterDef>
+		<baseChance>2.0</baseChance>
+		<baseChanceWithRoyalty>0.8</baseChanceWithRoyalty>
+		<minRefireDays>18</minRefireDays>
+		<tags>
+			<li>RH_TET_Daemons_LargePortal</li>
+		</tags>
+		<refireCheckTags>
+			<li>RH_TET_Daemons_LargePortal</li>
+		</refireCheckTags>
+		<category>ThreatBig</category>
+		<pointsScaleable>true</pointsScaleable>
+		<minThreatPoints>300</minThreatPoints>
+		<mechClusterBuilding>RH_TET_Daemons_TzeentchWarpPortal</mechClusterBuilding>
+		<tale>RH_TET_Daemons_LargeWarpPortal</tale>
+	</IncidentDef>
+
+	<IncidentDef>
+		<defName>RH_TET_Daemons_KhorneWarpPortal</defName>
+		<label>Khorne warp portal</label>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>TheEndTimes_Daemons.IncidentWorker_LargeWarpPortal</workerClass>
+		<letterLabel>Khorne Warp Portal</letterLabel>
+		<letterText>A large tear in reality has occurred nearby.\n\nYour colonists can feel it in the back of their mind, exhorting unspeakable acts. It must have an onboard machine persona with psychic projection ability. And this persona is not friendly.\n\nDestroy it as soon as possible. But beware - the beasts of the immaterium will probably defend the portal.</letterText>
+		<letterDef>ThreatSmall</letterDef>
+		<baseChance>2.0</baseChance>
+		<baseChanceWithRoyalty>0.4</baseChanceWithRoyalty>
+		<minRefireDays>15</minRefireDays>
+		<tags>
+			<li>RH_TET_Daemons_LargePortal</li>
+		</tags>
+		<refireCheckTags>
+			<li>RH_TET_Daemons_LargePortal</li>
+		</refireCheckTags>
+		<category>ThreatBig</category>
+		<pointsScaleable>true</pointsScaleable>
+		<minThreatPoints>300</minThreatPoints>
+		<mechClusterBuilding>RH_TET_Daemons_KhorneWarpPortal</mechClusterBuilding>
+		<tale>RH_TET_Daemons_LargeWarpPortal</tale>
+	</IncidentDef>
+
 </Defs>

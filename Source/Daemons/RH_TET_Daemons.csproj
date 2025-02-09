@@ -92,6 +92,10 @@
     <Compile Include="Buildings\WarpRift_Tzeentch.cs" />
     <Compile Include="Comps\CompSpawnerRifts.cs" />
     <Compile Include="Comps\CompProperties_SpawnerRifts.cs" />
+    <Compile Include="GameConditions\GameCondition_MentalSuppression.cs" />
+    <Compile Include="Comps\CompCauseGameCondition_MentalSuppression.cs" />
+    <Compile Include="HeDiffs\HediffComp_MentalSuppression.cs" />
+    <Compile Include="IncidentStuff\IncidentWorker_LargeWarpPortal.cs" />
     <Compile Include="IncidentStuff\WarpRiftSpawner.cs" />
     <Compile Include="IncidentStuff\IncidentWorker_WarpRift.cs" />
     <Compile Include="Jobs\JobGiver_MaintainRifts.cs" />
@@ -108,6 +112,7 @@
     <Compile Include="ActionWorkers\DeathActionWorker_Daemon.cs" />
     <Compile Include="RH_TET_DaemonsMod.cs" />
     <Compile Include="RH_TET_DaemonsDefOf.cs" />
+    <Compile Include="Utility\DelayedEffecterSpawnerNonPawn.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

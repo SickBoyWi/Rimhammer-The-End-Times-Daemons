@@ -48,7 +48,7 @@ namespace TheEndTimes_Daemons
             if ((double)this.daemonPoints <= 0.0)
                 return;
 
-            this.daemonPoints = Mathf.Max(this.daemonPoints, WarpRiftSpawner.GetSpawnablePawnsForRiftTypeByGod(godForSpawning).Min<PawnKindDef>((Func<PawnKindDef, float>)(x => x.combatPower)));
+            this.daemonPoints = Mathf.Max(this.daemonPoints, DaemonsUtil.GetSpawnablePawnsForRiftTypeByGod(godForSpawning).Min<PawnKindDef>((Func<PawnKindDef, float>)(x => x.combatPower)));
             float pointsLeft = this.daemonPoints;
             List<Pawn> list = new List<Pawn>();
             int num = 0;
@@ -61,7 +61,7 @@ namespace TheEndTimes_Daemons
                     break;
                 }
                 PawnKindDef result;
-                if (WarpRiftSpawner.GetSpawnablePawnsForRiftTypeByGod(godForSpawning).Where<PawnKindDef>((Func<PawnKindDef, bool>)(x => (double)x.combatPower <= (double)pointsLeft)).TryRandomElement<PawnKindDef>(out result))
+                if (DaemonsUtil.GetSpawnablePawnsForRiftTypeByGod(godForSpawning).Where<PawnKindDef>((Func<PawnKindDef, bool>)(x => (double)x.combatPower <= (double)pointsLeft)).TryRandomElement<PawnKindDef>(out result))
                 {
                     Pawn pawn = PawnGenerator.GeneratePawn(result, Find.FactionManager.FirstFactionOfDef(RH_TET_DaemonsDefOf.RH_TET_Daemons_Faction));
                     GenSpawn.Spawn((Thing)pawn, CellFinder.RandomClosewalkCellNear(loc, map, 2, (Predicate<IntVec3>)null), map, WipeMode.Vanish);
@@ -75,18 +75,6 @@ namespace TheEndTimes_Daemons
             if (!list.Any<Pawn>())
                 return;
             LordMaker.MakeNewLord(Find.FactionManager.FirstFactionOfDef(RH_TET_DaemonsDefOf.RH_TET_Daemons_Faction), (LordJob)new LordJob_AssaultColony(Find.FactionManager.FirstFactionOfDef(RH_TET_DaemonsDefOf.RH_TET_Daemons_Faction), true, false, false, false, true, false, false), map, (IEnumerable<Pawn>)list);
-        }
-
-        public static List<PawnKindDef> GetSpawnablePawnsForRiftTypeByGod(RH_TET_DaemonsDefOf.ChaosGods god)
-        {
-            if (god == RH_TET_DaemonsDefOf.ChaosGods.Khorne)
-                return WarpRift_Khorne.spawnablePawnKinds;
-            else if (god == RH_TET_DaemonsDefOf.ChaosGods.Tzeentch)
-                return WarpRift_Tzeentch.spawnablePawnKinds;
-            else
-                Log.Error("No valid god found for warp rift type:" + god);
-
-            return null;
         }
     }
 }

@@ -96,7 +96,7 @@
 				<spawnSound>RH_TET_Pawn_Daemon_Death</spawnSound>
 				<initialPawnsPoints>200</initialPawnsPoints>
 				<maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
-			</li>      
+			</li>
 			<li Class="CompProperties_Glower">
 				<glowRadius>3</glowRadius>
 				<glowColor>(229,0,0,0)</glowColor>
@@ -125,7 +125,7 @@
 				<spawnSound>RH_TET_Pawn_Daemon_Death</spawnSound>
 				<initialPawnsPoints>200</initialPawnsPoints>
 				<maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
-			</li>    
+			</li>
 			<li Class="CompProperties_Glower">
 				<glowRadius>3</glowRadius>
 				<glowColor>(0,207,235,0)</glowColor>
@@ -134,4 +134,109 @@
 		<thingClass>TheEndTimes_Daemons.WarpRift_Tzeentch</thingClass>
 	</ThingDef>
 
+	<!-- ========================= Large Warp Portal Base ========================= -->
+
+	<ThingDef Abstract="True" Name="RH_TET_Daemons_CrashedShipPartBase" ParentName="BuildingBase">
+		<size>(3,3)</size>
+		<passability>Impassable</passability>
+		<fillPercent>1</fillPercent>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>false</blockWind>
+		<receivesSignals>true</receivesSignals>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+		<drawerType>MapMeshOnly</drawerType>
+		<repairEffect>Repair</repairEffect>
+		<forceDebugSpawnable>true</forceDebugSpawnable>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<neverMultiSelect>true</neverMultiSelect>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1200</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Beauty>-200</Beauty>
+		</statBases>
+		<killedLeavings>
+			<ChunkSlagSteel>4</ChunkSlagSteel>
+			<Steel>60</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>1</ComponentSpacer>
+		</killedLeavings>
+		<building>
+			<combatPower>250</combatPower>
+			<claimable>false</claimable>
+			<roofCollapseDamageMultiplier>0.2</roofCollapseDamageMultiplier>
+			<destroySound>ChunkRock_Drop</destroySound>
+		</building>
+		<comps>
+			<li Class="CompProperties_WakeUpDormant"/>
+		</comps>
+	</ThingDef>
+  
+	<!-- ========================= Psychic droner ========================= -->
+	<!-- Note this is a ConditionCauser -->
+
+	<ThingDef ParentName="RH_TET_Daemons_CrashedShipPartBase">
+		<defName>RH_TET_Daemons_KhorneWarpPortal</defName>
+		<label>Khorne warp portal</label>
+		<description>A large portal that has opened to the violent realm of Khorne.\n\nThis one emenates a psychic disturbance, that is meant to distract and cause unrest in mortals. It will drive people and animals mad within a wide radius around itself.</description>
+		<graphicData>
+			<texPath>Things/Buildings/Spawners/Rift_To_Khorne_Large</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData><rect>(0.5, 0.1, 2.5, 1.5)</rect></damageData>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_CausesGameCondition_PsychicEmanation">
+				<conditionDef>PsychicDroner</conditionDef>
+				<compClass>CompCauseGameCondition_PsychicEmanation</compClass>
+				<worldRange>1</worldRange>
+				<droneLevelIncreaseInterval>150000</droneLevelIncreaseInterval>
+				<droneLevel>2</droneLevel>
+			</li>
+			<li Class="CompProperties_AnimalInsanityPulser"/>			
+			<li Class="CompProperties_Glower">
+				<glowRadius>3</glowRadius>
+				<glowColor>(229,0,0,0)</glowColor>
+			</li>
+		</comps>
+		<building>
+			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
+		</building>
+	</ThingDef>
+
+	<!-- =============================== Defoliator ship part ============================ -->
+
+	<ThingDef ParentName="RH_TET_Daemons_CrashedShipPartBase">
+		<defName>RH_TET_Daemons_TzeentchWarpPortal</defName>
+		<label>Tzeentch warp portal</label>
+		<description>A large portal that has opened to the insane realm of Tzeentch.\n\nThis one emenates a psychic suppression, that is meant to calm and distract mortals. It will reduce the mental capacity of mortals.</description>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected><!-- Hack to draw defoliant radius -->
+		<graphicData>
+			<texPath>Things/Buildings/Spawners/Rift_To_Tzeentch_Large</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData><rect>(0.5, 0.1, 2.5, 1.5)</rect></damageData>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_CausesGameCondition">
+				<conditionDef>RH_TET_Daemons_MentalSuppression</conditionDef>
+				<compClass>TheEndTimes_Daemons.CompCauseGameCondition_MentalSuppression</compClass>
+				<worldRange>1</worldRange>
+			</li>
+			<li Class="CompProperties_MoteEmitter">
+				<mote>Mote_PsychicConditionCauserEffect</mote>
+				<emissionInterval>150</emissionInterval>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>3</glowRadius>
+				<glowColor>(0,207,235,0)</glowColor>
+			</li>
+		</comps>
+	</ThingDef>
+  
 </Defs>

@@ -33,4 +33,46 @@
 		</rulePack>
 	</TaleDef>
 
+	<TaleDef>
+		<defName>RH_TET_Daemons_LargeWarpPortal</defName>
+		<label>large warp portal</label>
+		<taleClass>Tale_SinglePawn</taleClass>
+		<type>Volatile</type>
+		<baseInterest>5</baseInterest>
+		<rulePack>
+			<rulesStrings>
+				<li>tale_noun->a large chaos portal opened near [PAWN_nameDef]'s [Community]</li>
+				<li>tale_noun->a large chaos portal opening near [PAWN_nameDef]'s [Community]</li>
+				<li>tale_noun->a chaos portal opening near [PAWN_nameDef]'s [Community]</li>
+				<li>image->a swarm of [Daemon]s [circumstance_phrase]</li>
+				<li>image->an army of [Daemon]s [circumstance_phrase]</li>
+				<li>image->[Quantity_adjphrase] [Daemon]s [circumstance_phrase]</li>
+				<li>image->a [AdjectiveLarge] [Daemon] [circumstance_phrase]</li>
+				<li>image->[Quantity_adjphrase] [Daemon] silhouettes [circumstance_phrase]</li>
+				<li>image->[Quantity_adjphrase] [Daemon]s with glowing [Color] eyes [circumstance_phrase]</li>
+				<li>circumstance_phrase->advancing over a [TerrainFeature]</li>
+				<li>circumstance_phrase->completely encircling a [Community]</li>
+				<li>circumstance_phrase->attacking [Quantity_adjphrase] [PersonJob]s</li>
+				<li>circumstance_phrase->slaughtering [Quantity_adjphrase] [Animal]s</li>
+				<li>circumstance_phrase->covered in [Gore]</li>
+				<li>circumstance_phrase->slashed and oozing chaotic essence</li>
+				<li>desc_sentence->[PAWN_nameDef] organizes a resistance while [defender_circumstance].</li>
+				<li>desc_sentence->[PAWN_nameDef] wields a [Weapon] defensively while [defender_circumstance].</li>
+				<li>desc_sentence->[PAWN_nameDef] lies on the ground, wounded.</li>
+				<li>desc_sentence->[PAWN_nameDef] retaliates with [PAWN_possessive] [Weapon] while [defender_circumstance].</li>
+				<li>desc_sentence->[PAWN_nameDef] stands as tall as a building, [defender_circumstance].</li>
+				<li>desc_sentence->[PAWN_nameDef] wears a [AdjectiveBadass] expression.</li>
+				<li>desc_sentence->[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+				<li>desc_sentence->The ground is coated in [Gore].</li>
+				<li>desc_sentence->The ground is coated in daemonic ichor.</li>
+				<li>desc_sentence->[Quantity_adjphrase] [PersonJob]s flee the area.</li>
+				<li>desc_sentence->[Quantity_adjphrase] [Animal]s flee the area.</li>
+				<li>defender_circumstance->shouting triumphantly</li>
+				<li>defender_circumstance->glowing [Color]</li>
+				<li>defender_circumstance->raising a fist in defiance</li>
+				<li>defender_circumstance->flexing [PAWN_possessive] muscles</li>
+			</rulesStrings>
+		</rulePack>
+	</TaleDef>
+  
 </Defs>

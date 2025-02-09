@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<GameConditionDef>
+		<defName>RH_TET_Daemons_MentalSuppression</defName>
+		<conditionClass>TheEndTimes_Daemons.GameCondition_MentalSuppression</conditionClass>
+		<label>mental suppression</label>
+		<description>A bizarre effect is occurring that affects {0}s, and reduced their mental capacities. The effect is more or less severe depending upon an individual's psychic sensitivity.</description>
+		<descriptionFuture>An unearthly effict is occurrings that will reduce the consciousness of all [psychicSuppressorGender]s around [map_definite] for [gameConditionDuration_duration]</descriptionFuture>
+		<endMessage>The mental suppression effect has dissipated.</endMessage>
+		<letterText>A bizarre effect is occurring that affects {0}s, and reduced their mental capacities. The effect is more or less severe depending upon an individual's psychic sensitivity.</letterText>
+		<letterDef>NegativeEvent</letterDef>
+		<canBePermanent>false</canBePermanent>
+		<natural>false</natural>
+	</GameConditionDef>
+
+</Defs>

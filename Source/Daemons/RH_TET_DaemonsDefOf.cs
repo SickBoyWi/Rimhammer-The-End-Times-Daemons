@@ -87,5 +87,18 @@ namespace TheEndTimes_Daemons
         // Lords/Duties/Jobs
         public static DutyDef RH_TET_Daemons_DefendRiftAggressively;
         public static DutyDef RH_TET_Daemons_DefendAndExpandRift;
+
+        // Game Conditions
+        public static HediffDef RH_TET_Daemons_MentalSuppression;
+
+        // Effecters
+        public static EffecterDef RH_TET_Daemons_EmergencePointSustained2X2;
+        public static EffecterDef RH_TET_Daemons_EmergencePointComplete2X2;
+
+        // Effecters
+        public static SoundDef RH_TET_Pawn_Daemon_Death;
+
+        // Things Misc
+        public static ThingDef RH_TET_Daemons_DelayedEffecterSpawnerNonPawn;
     } 
 }
