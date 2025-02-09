@@ -17,6 +17,7 @@
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
 			<WorkSpeedGlobal MayRequire="Ludeon.Rimworld.Biotech">0.5</WorkSpeedGlobal>
 		</statBases>
+		<receivesSignals>true</receivesSignals>
 		<tradeability>None</tradeability>
 		<race>
 			<deathAction>
@@ -34,7 +35,15 @@
 			
 			<bloodDef>RH_TET_Filth_BloodDaemon</bloodDef>
 			<canBecomeShambler>False</canBecomeShambler>
-		</race>
+		</race>    
+		<comps>
+			<li Class="CompProperties_CanBeDormant" />
+			<li Class="CompProperties_WakeUpDormant">
+				<wakeUpOnDamage>true</wakeUpOnDamage>
+				<wakeUpCheckRadius>30</wakeUpCheckRadius>
+				<wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+			</li>
+		</comps>
 	</ThingDef>
 	
 	<ThingDef ParentName="BasePawn" Name="RH_TET_BaseDaemonAnimal" Abstract="True">
@@ -52,6 +61,7 @@
 			<WorkSpeedGlobal MayRequire="Ludeon.Rimworld.Biotech">0.5</WorkSpeedGlobal>
 			<FilthRate>20</FilthRate>
 		</statBases>
+		<receivesSignals>true</receivesSignals>
 		<tradeability>None</tradeability>
 		<race>
 			<deathAction>
@@ -77,7 +87,15 @@
 			<herdAnimal>false</herdAnimal>
 			
 			<renderTree>Animal</renderTree>
-		</race>
+		</race> 
+		<comps>
+			<li Class="CompProperties_CanBeDormant" />
+			<li Class="CompProperties_WakeUpDormant">
+				<wakeUpOnDamage>true</wakeUpOnDamage>
+				<wakeUpCheckRadius>30</wakeUpCheckRadius>
+				<wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+			</li>
+		</comps>
 	</ThingDef>
 
 	<!-- Walker daemons base -->
@@ -604,20 +622,6 @@
 				</li>
 			</lifeStageAges>
 		</race>
-		<!--
-		<comps>
-			<li Class="TheEndTimes_Dwarfs.CompProperties_MoteThrower">
-				<mote>RH_TET_MoteMusic</mote>
-				<offsetMin>(-0.6,0,0.3)</offsetMin>
-				<offsetMax>(0.6,0,0.5)</offsetMax>
-				<emissionInterval>150</emissionInterval>
-				<scale>0.4~0.8</scale>
-				<rotationRate>-15~15</rotationRate>
-				<velocityX>0.3~0.7</velocityX>
-				<velocityY>0.3~0.8</velocityY>
-			</li>
-		</comps>	
--->
 	</ThingDef>
 
 	<ThingDef ParentName="RH_TET_BaseDaemonAnimal">
