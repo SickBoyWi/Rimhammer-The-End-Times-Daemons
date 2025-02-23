@@ -16,15 +16,6 @@ namespace TheEndTimes_Daemons
             RH_TET_DaemonsDefOf.RH_TET_Daemons_Flamer
         };
 
-        //public static void ResetStaticData()
-        //{
-        //    Log.Error("X:RESETSTATICDATA TZEENTCH");
-        //    WarpRift_Tzeentch.spawnablePawnKinds.Clear();
-        //    WarpRift_Tzeentch.spawnablePawnKinds.Add(RH_TET_DaemonsDefOf.RH_TET_Daemons_Horror_Blue);
-        //    WarpRift_Tzeentch.spawnablePawnKinds.Add(RH_TET_DaemonsDefOf.RH_TET_Daemons_Horror_Pink);
-        //    WarpRift_Tzeentch.spawnablePawnKinds.Add(RH_TET_DaemonsDefOf.RH_TET_Daemons_Flamer);
-        //}
-
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             if (!this.questTags.NullOrEmpty<string>())

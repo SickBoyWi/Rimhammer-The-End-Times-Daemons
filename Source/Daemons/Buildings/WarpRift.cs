@@ -60,8 +60,15 @@ namespace TheEndTimes_Daemons
         public override void Tick()
         {
             base.Tick();
-            if (!this.Spawned || this.CompDormant.Awake || this.Position.Fogged(this.Map))
+            if (!this.Spawned || this.CompDormant.Awake || !this.Position.Fogged(this.Map))
+            {
+                PawnSpawner.CompTick();
+
                 return;
+            }
+            else if (this.Position.Fogged(this.Map))
+                return;
+
             this.CompDormant.WakeUp();
         }
 

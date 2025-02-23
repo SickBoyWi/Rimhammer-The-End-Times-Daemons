@@ -7,5 +7,9 @@
   <RH_TET_Daemons_MessageRiftReproduced>A warp rift has expanded.</RH_TET_Daemons_MessageRiftReproduced>
   <RH_TET_Daemons_DormantRiftNotReproducing>Dormant: Not expanding.</RH_TET_Daemons_DormantRiftNotReproducing>
   <RH_TET_Daemons_RiftReproducesIn>Expands in</RH_TET_Daemons_RiftReproducesIn>
+  <RH_TET_Daemons_MovingOn>The nearby daemons apparently have a different target in mind.</RH_TET_Daemons_MovingOn>
+  <RH_TET_Daemons_MessageDaemonsSpawned>Daemons have spewed from the portal.</RH_TET_Daemons_MessageDaemonsSpawned>
+  <RH_TET_Daemons_Dormant>Seems dormant</RH_TET_Daemons_Dormant>
+  <RH_TET_Daemons_DaemonsArriveIn>{0} materializes in {1}</RH_TET_Daemons_DaemonsArriveIn>
   
 </LanguageData>

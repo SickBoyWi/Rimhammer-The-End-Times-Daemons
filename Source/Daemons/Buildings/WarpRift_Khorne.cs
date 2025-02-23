@@ -17,16 +17,6 @@ namespace TheEndTimes_Daemons
             RH_TET_DaemonsDefOf.RH_TET_Daemons_Juggernaught
         };
 
-        //public static void ResetStaticData()
-        //{
-        //    Log.Error("X:RESETSTATICDATA KHORNE");
-        //    WarpRift_Khorne.spawnablePawnKinds.Clear();
-        //    WarpRift_Khorne.spawnablePawnKinds.Add(RH_TET_DaemonsDefOf.RH_TET_Daemons_Bloodletter);
-        //    WarpRift_Khorne.spawnablePawnKinds.Add(RH_TET_DaemonsDefOf.RH_TET_Daemons_Bloodletter_Armed);
-        //    WarpRift_Khorne.spawnablePawnKinds.Add(RH_TET_DaemonsDefOf.RH_TET_Daemons_Fleshhound);
-        //    WarpRift_Khorne.spawnablePawnKinds.Add(RH_TET_DaemonsDefOf.RH_TET_Daemons_Juggernaught);
-        //}
-
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             if (!this.questTags.NullOrEmpty<string>())

@@ -101,7 +101,9 @@
     <Compile Include="Jobs\JobGiver_MaintainRifts.cs" />
     <Compile Include="Jobs\JobGiver_WanderRift.cs" />
     <Compile Include="Jobs\JobGiver_RiftDefense.cs" />
+    <Compile Include="Jobs\LordJob_DaemonsDefendBase.cs" />
     <Compile Include="Jobs\LordToil_DefendAndExpandRift.cs" />
+    <Compile Include="Jobs\LordJob_DaemonsDefend.cs" />
     <Compile Include="Jobs\LordToil_RiftRelatedData.cs" />
     <Compile Include="Jobs\LordToil_RiftRelated.cs" />
     <Compile Include="Jobs\LordToil_DefendRiftAggressively.cs" />

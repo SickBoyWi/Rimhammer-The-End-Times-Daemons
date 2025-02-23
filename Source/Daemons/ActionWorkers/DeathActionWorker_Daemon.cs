@@ -76,9 +76,10 @@ namespace TheEndTimes_Daemons
                 blueHorrorPawns.Add(this.GenerateDaemonPawn(corpse, RH_TET_DaemonsDefOf.RH_TET_Daemons_Horror_Blue));
                 blueHorrorPawns.Add(this.GenerateDaemonPawn(corpse, RH_TET_DaemonsDefOf.RH_TET_Daemons_Horror_Blue));
 
-                Lord attackLord = LordMaker.MakeNewLord(corpse.Faction, (LordJob)new LordJob_AssaultColony(corpse.InnerPawn.Faction, false, false, false, false, true, false, false), corpse.Map, blueHorrorPawns);
-
                 IntVec3 spawnCell4 = corpse.Position;
+
+                prevLord.AddPawns(blueHorrorPawns);
+
                 foreach (Pawn p in blueHorrorPawns)
                     GenSpawn.Spawn(p, spawnCell4, corpse.Map, WipeMode.Vanish);
             }

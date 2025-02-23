@@ -432,5 +432,25 @@ namespace TheEndTimes_Daemons
                 Rand.PopState();
             return (IEnumerable<PawnGenOptionWithXenotype>)chosenOptions;
         }
+
+        public static bool AnyThreatBuilding(List<Thing> things)
+        {
+            for (int index = 0; index < things.Count; ++index)
+            {
+                Thing thing = things[index];
+                if (thing is Building && !thing.Destroyed && DaemonsUtil.IsBuildingThreat(thing))
+                    return true;
+            }
+            return false;
+        }
+
+        private static bool IsBuildingThreat(Thing b)
+        {
+            CompPawnSpawnOnWakeup comp1 = b.TryGetComp<CompPawnSpawnOnWakeup>();
+            if (comp1 != null && comp1.CanSpawn)
+                return true;
+            CompSpawnerPawn comp2 = b.TryGetComp<CompSpawnerPawn>();
+            return comp2 != null && comp2.pawnsLeftToSpawn != 0 || b.def.building.IsTurret || b.TryGetComp<CompCauseGameCondition>() != null;
+        }
     }
 }

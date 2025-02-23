@@ -168,7 +168,7 @@
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Horror/Blue/BlueHorror</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>2.0</drawSize>
+					<drawSize>1.6</drawSize>
 					<shadowData>
 						<volume>(0.4, 0.8, 0.4)</volume>
 					</shadowData>

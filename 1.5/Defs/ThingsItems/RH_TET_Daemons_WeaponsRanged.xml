@@ -181,7 +181,7 @@
 		</graphicData>
 		<projectile>
 			<damageDef>Burn</damageDef>
-			<damageAmountBase>10</damageAmountBase>
+			<damageAmountBase>8</damageAmountBase>
 			<stoppingPower>0</stoppingPower>
 			<speed>45</speed>
 		</projectile>
@@ -197,7 +197,7 @@
 		</graphicData>
 		<projectile>
 			<damageDef>Burn</damageDef>
-			<damageAmountBase>8</damageAmountBase>
+			<damageAmountBase>6</damageAmountBase>
 			<stoppingPower>0</stoppingPower>
 			<speed>45</speed>
 		</projectile>

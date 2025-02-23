@@ -177,8 +177,8 @@
 		<description>A Blue Horror is a Lesser Daemon of Tzeentch, the Chaos God of change and intrigue, who is the unholy product that results from the destruction of a Pink Horror.\n\nBlue Horrors are sullen and malicious, like evil-tempered children, and sneer and grumble their way through a battle. Once spawned, they add a deeper whining note to the incessant chortling of the group of Horrors as they attempt to grapple with enemies and squeeze the life from them, before inevitably wandering off in search of fresh entertainment.</description>		
 		<statBases>
 			<MoveSpeed>4.5</MoveSpeed>
-			<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.00</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.05</ArmorRating_Sharp>
 		</statBases>
 		<tools>
 			<li>
@@ -206,8 +206,8 @@
 		</tools>
 		<race>
 			<body>RH_TET_Horror</body>
-			<baseBodySize>.75</baseBodySize>
-			<baseHealthScale>.65</baseHealthScale>
+			<baseBodySize>.50</baseBodySize>
+			<baseHealthScale>.50</baseHealthScale>
 			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
 			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>			

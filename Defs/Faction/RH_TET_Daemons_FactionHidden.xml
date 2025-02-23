@@ -103,41 +103,6 @@
 					<!--<RH_TET_Daemons_Daemonhost>.01</RH_TET_Daemons_Daemonhost>-->
 				</options>
 			</li>
-			<!-- Centipede only 
-      <li>
-        
-        <kindDef>Combat</kindDef>
-        <commonality>30</commonality>
-        <options>
-          <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster>
-          <Mech_CentipedeGunner>5</Mech_CentipedeGunner>
-          <Mech_CentipedeBurner>5</Mech_CentipedeBurner>
-        </options>
-      </li>
-	  -->
-			<!-- militor only 
-      <li MayRequire="Ludeon.RimWorld.Biotech">
-        <kindDef>Combat</kindDef>
-        <commonality>30</commonality>
-        <options>
-          <Mech_Militor>10</Mech_Militor>
-        </options>
-      </li>
-	  -->
-			<!-- breach raids 
-      <li>
-        <kindDef>Combat</kindDef>
-        <commonality>1</commonality>
-        <options>
-          <Mech_Pikeman>10</Mech_Pikeman>
-          <Mech_Scyther>10</Mech_Scyther>
-          <Mech_Lancer>10</Mech_Lancer>
-          <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster>
-          <Mech_Termite_Breach>1</Mech_Termite_Breach>
-          <Mech_Militor MayRequire="Ludeon.RimWorld.Biotech">20</Mech_Militor>
-        </options>
-      </li>
-	  -->
 		</pawnGroupMakers>
 		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
 		<allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>
