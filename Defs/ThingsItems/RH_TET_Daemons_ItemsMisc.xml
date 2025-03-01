@@ -67,21 +67,6 @@
 		<tradeTags>
 			<li>ExoticMisc</li>
 		</tradeTags>
-		<!--
-    <comps>
-      <li Class="CompProperties_Usable">
-        <useJob>UseItem</useJob>
-        <useLabel>Use {0_label}</useLabel>
-      </li>
-      <li Class="CompProperties_UseEffect">
-        <compClass>CompUseEffect_FinishRandomResearchProject</compClass>
-      </li>
-      <li Class="CompProperties_UseEffectDestroySelf" />
-    </comps>
-    <thingSetMakerTags>
-      <li>RewardStandardHighFreq</li>
-    </thingSetMakerTags>
-	-->
 	</ThingDef>
 
 </Defs>

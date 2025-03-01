@@ -115,7 +115,7 @@
 		<label>imp</label>
 		<description>An Imp is a Least Daemon, the least of the least, minor Daemons born from loosed emotions. In their "natural" state, they are amorphous things, endlessly cycling through a variety of shapes and forms that seem to reflect the thought or concept that birthed them. It is only when one of the Dark Gods claims an Imp that it becomes something else, its form shifting to match the nature of its new, divine patron.</description>
 		<statBases>
-			<MoveSpeed>3.75</MoveSpeed>
+			<MoveSpeed>4.75</MoveSpeed>
 			<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
 			<MarketValue>250</MarketValue>
@@ -369,7 +369,7 @@
 		<label>juggernaught</label>
 		<description>A Juggernaut, also known as a Blood Crusher, Soul Crusher, Foot of Khorne, Jugger, and Blight of Khorne, is a four-legged Daemon beast that blends the features of canine and bull but is covered in profane armour formed of a fused mass of flesh, bone and metal. Though they may look more machine than beast, beneath this heavy Khorne-marked barding is the slaughter-hungry heart of a vicious Lesser Daemon of the Chaos God of war and murder. These beasts are often used as mounts by Khorne's most favoured Daemonic and mortal champions.</description>
 		<statBases>
-			<MoveSpeed>4.5</MoveSpeed>
+			<MoveSpeed>4.0</MoveSpeed>
 			<MarketValue>1500</MarketValue>
 			<ArmorRating_Blunt>0.49</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.69</ArmorRating_Sharp>
@@ -453,7 +453,7 @@
 		<label>pink horror</label>
 		<description>Pink Horrors, known also as "Whirling Destroyers," "Squealers" or "Spinning Sourguts," are Lesser Daemons of Tzeentch, the Chaos God of change and intrigue. They are the footsoldiers of Tzeentch's Daemonic legions, identified by their luminescent pink skin, and their squeals of high-pitched laughter.</description>
 		<statBases>
-			<MoveSpeed>4.5</MoveSpeed>
+			<MoveSpeed>4.2</MoveSpeed>
 			<ArmorRating_Blunt>0.07</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.20</ArmorRating_Sharp>
 		</statBases>
@@ -512,7 +512,7 @@
 		<label>blue horror</label>
 		<description>A Blue Horror is a Lesser Daemon of Tzeentch, the Chaos God of change and intrigue, who is the unholy product that results from the destruction of a Pink Horror.\n\nBlue Horrors are sullen and malicious, like evil-tempered children, and sneer and grumble their way through a battle. Once spawned, they add a deeper whining note to the incessant chortling of the group of Horrors as they attempt to grapple with enemies and squeeze the life from them, before inevitably wandering off in search of fresh entertainment.</description>
 		<statBases>
-			<MoveSpeed>4.5</MoveSpeed>
+			<MoveSpeed>4.1</MoveSpeed>
 			<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.15</ArmorRating_Sharp>
 		</statBases>
@@ -572,7 +572,7 @@
 		<label>flamer</label>
 		<description>A Flamer, also called the "Pyrodaemons of Tzeentch," a "Fire Daemon," a "Burning Horror," "Keepers of the True Flame of Change," "Bearers of the True Flame of Change," or "Candelabra Mutationi" are Daemonic Beasts of Tzeentch, the Chaos God of change and intrigue. Flamers are amongst the most strange and disturbing of all Tzeentch's Daemons, and their absurd physiologies are more than most mortals can stand.</description>
 		<statBases>
-			<MoveSpeed>4.5</MoveSpeed>
+			<MoveSpeed>4.0</MoveSpeed>
 			<ArmorRating_Blunt>0.07</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.20</ArmorRating_Sharp>
 		</statBases>
@@ -629,7 +629,7 @@
 		<label>juggernaught</label>
 		<description>A Juggernaut, also known as a Blood Crusher, Soul Crusher, Foot of Khorne, Jugger, and Blight of Khorne, is a four-legged Daemon beast that blends the features of canine and bull but is covered in profane armour formed of a fused mass of flesh, bone and metal. Though they may look more machine than beast, beneath this heavy Khorne-marked barding is the slaughter-hungry heart of a vicious Lesser Daemon of the Chaos God of war and murder. These beasts are often used as mounts by Khorne's most favoured Daemonic and mortal champions.</description>
 		<statBases>
-			<MoveSpeed>4.5</MoveSpeed>
+			<MoveSpeed>4.0</MoveSpeed>
 			<MarketValue>1500</MarketValue>
 			<ArmorRating_Blunt>0.49</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.69</ArmorRating_Sharp>
@@ -713,7 +713,7 @@
 		<label>daemonhost</label>
 		<description>A Daemonhost is an unholy creation of foul and dangerous rituals in which a powerful Daemon of Chaos is bound into a living Human, or other mortal host body and enslaved to the will of its creator. An utterly foul act, the creation of a Daemonhost condemns the soul of the host body to eternal torment, and provides a lasting home in the material universe for a Daemon to work its malignant evil.</description>
 		<statBases>
-			<MoveSpeed>4.9</MoveSpeed>
+			<MoveSpeed>4.8</MoveSpeed>
 			<!--TODO: Not found error tossed?<MeleeDoorDamageFactor>1.5</MeleeDoorDamageFactor>-->
 			<ArmorRating_Blunt>0</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0</ArmorRating_Sharp>
