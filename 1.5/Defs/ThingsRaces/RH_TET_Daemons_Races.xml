@@ -16,6 +16,9 @@
 			<ArmorRating_Heat>2.00</ArmorRating_Heat>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
 			<WorkSpeedGlobal MayRequire="Ludeon.Rimworld.Biotech">0.5</WorkSpeedGlobal>
+			
+			<LeatherAmount>0</LeatherAmount>
+			<PainShockThreshold>.99</PainShockThreshold>
 		</statBases>
 		<receivesSignals>true</receivesSignals>
 		<tradeability>None</tradeability>
@@ -60,6 +63,9 @@
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
 			<WorkSpeedGlobal MayRequire="Ludeon.Rimworld.Biotech">0.5</WorkSpeedGlobal>
 			<FilthRate>20</FilthRate>
+			
+			<LeatherAmount>0</LeatherAmount>
+			<PainShockThreshold>.99</PainShockThreshold>			
 		</statBases>
 		<receivesSignals>true</receivesSignals>
 		<tradeability>None</tradeability>
@@ -572,7 +578,7 @@
 		<label>flamer</label>
 		<description>A Flamer, also called the "Pyrodaemons of Tzeentch," a "Fire Daemon," a "Burning Horror," "Keepers of the True Flame of Change," "Bearers of the True Flame of Change," or "Candelabra Mutationi" are Daemonic Beasts of Tzeentch, the Chaos God of change and intrigue. Flamers are amongst the most strange and disturbing of all Tzeentch's Daemons, and their absurd physiologies are more than most mortals can stand.</description>
 		<statBases>
-			<MoveSpeed>4.0</MoveSpeed>
+			<MoveSpeed>3.8</MoveSpeed>
 			<ArmorRating_Blunt>0.07</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.20</ArmorRating_Sharp>
 		</statBases>
