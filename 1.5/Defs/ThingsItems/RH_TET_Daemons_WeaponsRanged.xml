@@ -117,8 +117,8 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>RH_TET_Daemons_Tzeentch_Blue_Proj</defaultProjectile>
-				<warmupTime>0.3</warmupTime>
-				<range>22.9</range>
+				<warmupTime>0.4</warmupTime>
+				<range>15.9</range>
 				<soundCast>RH_TET_Daemons_TzeentchFireSound</soundCast>
 				<soundCastTail>GunTail_Light</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
