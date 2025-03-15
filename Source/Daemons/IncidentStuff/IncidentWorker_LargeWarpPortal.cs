@@ -52,7 +52,7 @@ namespace TheEndTimes_Daemons
 
             riftLord.AddBuilding((Building)innerThing);
 
-            DelayedEffecterSpawnerNonPawn.Spawn(innerThing, riftLocation, map, 10, RH_TET_DaemonsDefOf.RH_TET_Daemons_EmergencePointSustained2X2, RH_TET_DaemonsDefOf.RH_TET_Daemons_EmergencePointComplete2X2, RH_TET_DaemonsDefOf.RH_TET_Pawn_Daemon_Death);
+            SickTools.DelayedEffecterSpawnerNonPawn.Spawn(innerThing, riftLocation, map, 10, RH_TET_DaemonsDefOf.RH_TET_Daemons_EmergencePointSustained2X2, RH_TET_DaemonsDefOf.RH_TET_Daemons_EmergencePointComplete2X2, RH_TET_DaemonsDefOf.RH_TET_Pawn_Daemon_Death);
 
             foreach (Pawn pawn in list)
             {

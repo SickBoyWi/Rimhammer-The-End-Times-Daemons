@@ -97,8 +97,5 @@ namespace TheEndTimes_Daemons
 
         // Effecters
         public static SoundDef RH_TET_Pawn_Daemon_Death;
-
-        // Things Misc
-        public static ThingDef RH_TET_Daemons_DelayedEffecterSpawnerNonPawn;
     } 
 }

@@ -611,14 +611,4 @@
 		</thingCategories>
 	</ThingDef>
 
-	<ThingDef>
-		<defName>RH_TET_Daemons_DelayedEffecterSpawnerNonPawn</defName>
-		<label>delayed effecter spawner</label> <!-- hidden -->
-		<thingClass>TheEndTimes_Daemons.DelayedEffecterSpawnerNonPawn</thingClass>
-		<tickerType>Normal</tickerType>
-		<useHitPoints>false</useHitPoints>
-		<hideInspect>true</hideInspect>
-		<drawerType>None</drawerType>
-	</ThingDef>
-	
 </Defs>

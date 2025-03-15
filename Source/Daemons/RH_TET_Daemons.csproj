@@ -49,6 +49,10 @@
       <HintPath>..\..\..\Rimhammer-The-End-Times-Magic\1.5\Assemblies\RH_TET_Magic.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="SickTools">
+      <HintPath>..\..\..\SickTools\1.5\Assemblies\SickTools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -114,7 +118,6 @@
     <Compile Include="ActionWorkers\DeathActionWorker_Daemon.cs" />
     <Compile Include="RH_TET_DaemonsMod.cs" />
     <Compile Include="RH_TET_DaemonsDefOf.cs" />
-    <Compile Include="Utility\DelayedEffecterSpawnerNonPawn.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
