@@ -118,6 +118,7 @@
     <Compile Include="ActionWorkers\DeathActionWorker_Daemon.cs" />
     <Compile Include="RH_TET_DaemonsMod.cs" />
     <Compile Include="RH_TET_DaemonsDefOf.cs" />
+    <Compile Include="Settings\SettingsController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

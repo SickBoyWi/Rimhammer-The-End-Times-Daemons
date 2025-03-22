@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+  <!-- Settings -->
+  <RH_TET_Daemons_FreeDaemons>Warp Portal Free Spawn?</RH_TET_Daemons_FreeDaemons> 
+  <RH_TET_Daemons_FreeDaemonsInfo>Allow daemonic warp rifts to appear anywhere on the map? This includes inside your base, very close to your base, and underneath overhead mountains potentially. This will only happen once you establish yourself, and reach a higher wealth threshold, but it will be tough to deal with! Turn this one on at your own risk.</RH_TET_Daemons_FreeDaemonsInfo> 
+  
+
   <RH_TET_Daemons_LetterLabelAncientShrineWarning>Daemonic danger</RH_TET_Daemons_LetterLabelAncientShrineWarning>
   <RH_TET_Daemons_AncientShrineWarning>As {PAWN_nameDef} draws near the strange wall, a sense of uncanny foreboding overcomes {PAWN_objective}. {PAWN_pronoun} isn't sure why, but {PAWN_pronoun} feels that this dusty structure may contain great danger.</RH_TET_Daemons_AncientShrineWarning>
   

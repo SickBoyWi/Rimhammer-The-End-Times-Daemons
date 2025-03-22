@@ -266,14 +266,14 @@ namespace TheEndTimes_Daemons
         {
             int rando = RH_TET_DaemonsMod.random.Next(101);
 
-            if (rando < 20)
+            if (Settings.FreeDaemons && rando < 20)
             {
                 // Under Mountain
                 if (InfestationCellFinder.TryFindCell(out location, target))
                     return true;
             }
 
-            if (rando > 75 && points > 2500)
+            if (Settings.FreeDaemons && rando > 75 && points > 2500)
             {
                 // Near
                 if (DropCellFinder.TryFindRaidDropCenterClose(out location, target, false, false, true, -1))
