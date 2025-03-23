@@ -5,11 +5,17 @@
 	<supportedVersions><li>1.4</li><li>1.5</li></supportedVersions>
 	<packageId>SickBoyWi.TheEndTimes.Daemons</packageId>
   <description>
+This mod adds Warhammer themed Daemons into Rimworld. The Chaos Daemons function similar to mechanoids in core RimWorld. They are not a playable faction, but a hidden faction that will always be hostile to the player.
+
+The Rimhammer mods should be placed at the bottom of your mod list. Place the base Rimhammer - The End Times mod at the bottom, followed by the Rimhammer - The End Times: Magic mod, then put the race/faction mods under it (order doesn't matter for the race faction mods, as long as they are loaded after the base Rimhammer and Rimhammer Magic mods).
+
 IF YOU HAVE ISSUES, YOU'LL GET A MUCH FASTER RESPONSE BY POSTING ON MY DISCORD ISSUES-AND-BUGS CHANNEL: https://discord.gg/UCmQbCT
 
-This mod adds Warhammer Daemons into Rimworld. These will start out as a non playable faction that functions similar to the Mechanoids in vanilla. They will be fleshed out to allow summoning and control of them over time.
-
 Dev Notes:
+
+0.0.0.1 2025-03-22
+========================
+First release. 
 
 0.0.0.1 2023-07-01
 ========================
@@ -33,7 +39,7 @@ Development started.
 			<displayName>Vanilla Expanded Framework</displayName>
 			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
 			<downloadUrl />
-		</li>		
+		</li>			
 		<li>
 			<packageId>sickboywi.sicktools</packageId>
 			<displayName>SickTools</displayName>
