@@ -177,6 +177,7 @@
 					<soundCall>Pawn_Megascarab_Call</soundCall>
 					<soundAngry>Pawn_Megascarab_Angry</soundAngry>
 				</li>
+				<!--
 				<li MayRequire="Ludeon.RimWorld.Biotech">
 					<def>RH_TET_DaemonFullyFormed</def>
 					<minAge>100</minAge>
@@ -185,6 +186,7 @@
 					<soundCall>Pawn_Megascarab_Call</soundCall>
 					<soundAngry>Pawn_Megascarab_Angry</soundAngry>
 				</li>
+				-->
 			</lifeStageAges>
 		</race>
 	</ThingDef>
@@ -248,6 +250,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Bloodletter_Call</soundCall>
 				</li>
+				<!--
 				<li MayRequire="Ludeon.RimWorld.Biotech">
 					<def>RH_TET_DaemonFullyFormed</def>
 					<minAge>100</minAge>
@@ -255,6 +258,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Bloodletter_Call</soundCall>
 				</li>
+				-->
 			</lifeStageAges>
 		</race>
 	</ThingDef>
@@ -352,6 +356,7 @@
 					<soundCall>Pawn_Dog_Call</soundCall>
 					<soundAngry>Pawn_Dog_Angry</soundAngry>					
 				</li>
+				<!--
 				<li MayRequire="Ludeon.RimWorld.Biotech">
 					<def>RH_TET_DaemonFullyFormed</def>
 					<minAge>100</minAge>
@@ -360,6 +365,7 @@
 					<soundCall>Pawn_Dog_Call</soundCall>
 					<soundAngry>Pawn_Dog_Angry</soundAngry>	
 				</li>
+				-->
 			</lifeStageAges>
 			<headPosPerRotation>
 				<li>(0.0, 0, 0.3)</li>
@@ -436,6 +442,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Jugger_Call</soundCall>
 				</li>
+				<!--
 				<li MayRequire="Ludeon.RimWorld.Biotech">
 					<def>RH_TET_DaemonFullyFormed</def>
 					<minAge>100</minAge>
@@ -443,6 +450,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Jugger_Call</soundCall>
 				</li>
+				-->
 			</lifeStageAges>
 			<headPosPerRotation>
 				<li>(-0.02, 0, 0.1)</li>
@@ -501,6 +509,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Horror_Call</soundCall>
 				</li>
+				<!--
 				<li MayRequire="Ludeon.RimWorld.Biotech">
 					<def>RH_TET_DaemonFullyFormed</def>
 					<minAge>100</minAge>
@@ -508,6 +517,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Horror_Call</soundCall>
 				</li>
+				-->
 			</lifeStageAges>
 		</race>
 	</ThingDef>
@@ -561,6 +571,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Horror_Call</soundCall>
 				</li>
+				<!--
 				<li MayRequire="Ludeon.RimWorld.Biotech">
 					<def>RH_TET_DaemonFullyFormed</def>
 					<minAge>100</minAge>
@@ -568,6 +579,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Horror_Call</soundCall>
 				</li>
+				-->
 			</lifeStageAges>
 		</race>
 	</ThingDef>
@@ -619,6 +631,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Flamer_Call</soundCall>
 				</li>
+				<!--
 				<li MayRequire="Ludeon.RimWorld.Biotech">
 					<def>RH_TET_DaemonFullyFormed</def>
 					<minAge>100</minAge>
@@ -626,6 +639,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Flamer_Call</soundCall>
 				</li>
+				-->
 			</lifeStageAges>
 		</race>
 	</ThingDef>
@@ -693,6 +707,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Jugger_Call</soundCall>
 				</li>
+				<!--
 				<li MayRequire="Ludeon.RimWorld.Biotech">
 					<def>RH_TET_DaemonFullyFormed</def>
 					<minAge>100</minAge>
@@ -700,6 +715,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Jugger_Call</soundCall>
 				</li>
+				-->
 			</lifeStageAges>
 			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
@@ -776,6 +792,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Daemonhost_Call</soundCall>
 				</li>
+				<!--
 				<li MayRequire="Ludeon.RimWorld.Biotech">
 					<def>RH_TET_DaemonFullyFormed</def>
 					<minAge>100</minAge>
@@ -783,6 +800,7 @@
 					<soundDeath>RH_TET_Pawn_Daemon_Death</soundDeath>
 					<soundCall>RH_TET_Pawn_Daemon_Daemonhost_Call</soundCall>
 				</li>
+				-->
 			</lifeStageAges>
 		</race>
 	</ThingDef>

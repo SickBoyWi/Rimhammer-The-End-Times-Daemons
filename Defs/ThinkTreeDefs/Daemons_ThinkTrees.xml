@@ -13,12 +13,12 @@
           <treeDef>Despawned</treeDef>
         </li>
 
-        <!-- Self-Shutdown -->
+        <!-- Self-Shutdown 
         <li Class="ThinkNode_ConditionalLowEnergy" MayRequire="Ludeon.RimWorld.Biotech">
           <subNodes>
             <li Class="JobGiver_SelfShutdown" />
           </subNodes>
-        </li>
+        </li>-->
 
         <!-- Mental state  TODO - Look into.
         <li Class="ThinkNode_ConditionalMentalState">
