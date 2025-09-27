@@ -13,7 +13,7 @@ namespace TheEndTimes_Daemons
         private HashSet<IntVec3> processed = new HashSet<IntVec3>();
         private const float Chance = 0.8f;
 
-        protected override void ResolveInt(ResolveParams parms)
+        protected override void ResolveInt(SketchResolveParams parms)
         {
             ThingDef daemonColToUse = this.GetRandomDaemonColumn();
 
@@ -51,15 +51,15 @@ namespace TheEndTimes_Daemons
                                 if (!flag || parms.sketch.AnyTerrainAt(new IntVec3(minX, 0, newZ)))
                                     other.AddThing(daemonColToUse, new IntVec3(minX, 0, newZ), Rot4.North, stuff, 1, new QualityCategory?(), new int?(), true);
                             }
-                            ResolveParams parms1 = parms;
+                            SketchResolveParams parms1 = parms;
                             parms1.sketch = other;
-                            ref ResolveParams local1 = ref parms1;
+                            ref SketchResolveParams local1 = ref parms1;
                             int minZ = this.rects[index].minZ;
                             rect = this.rects[index];
                             int num2 = rect.Height / 2;
                             int? nullable1 = new int?(minZ + num2);
                             local1.symmetryOrigin = nullable1;
-                            ref ResolveParams local2 = ref parms1;
+                            ref SketchResolveParams local2 = ref parms1;
                             rect = this.rects[index];
                             bool? nullable2 = new bool?(rect.Height % 2 == 1);
                             local2.symmetryOriginIncluded = nullable2;
@@ -74,15 +74,15 @@ namespace TheEndTimes_Daemons
                                 if (!flag || parms.sketch.AnyTerrainAt(new IntVec3(newX, 0, minZ)))
                                     other.AddThing(daemonColToUse, new IntVec3(newX, 0, minZ), Rot4.North, stuff, 1, new QualityCategory?(), new int?(), true);
                             }
-                            ResolveParams parms1 = parms;
+                            SketchResolveParams parms1 = parms;
                             parms1.sketch = other;
-                            ref ResolveParams local1 = ref parms1;
+                            ref SketchResolveParams local1 = ref parms1;
                             int minX = this.rects[index].minX;
                             rect = this.rects[index];
                             int num2 = rect.Width / 2;
                             int? nullable1 = new int?(minX + num2);
                             local1.symmetryOrigin = nullable1;
-                            ref ResolveParams local2 = ref parms1;
+                            ref SketchResolveParams local2 = ref parms1;
                             rect = this.rects[index];
                             bool? nullable2 = new bool?(rect.Width % 2 == 1);
                             local2.symmetryOriginIncluded = nullable2;
@@ -104,7 +104,7 @@ namespace TheEndTimes_Daemons
                 return RH_TET_DaemonsDefOf.RH_TET_Daemons_Column_Square;
         }
 
-        protected override bool CanResolveInt(ResolveParams parms)
+        protected override bool CanResolveInt(SketchResolveParams parms)
         {
             return true;
         }

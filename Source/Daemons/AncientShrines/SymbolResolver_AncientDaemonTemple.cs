@@ -16,7 +16,7 @@ namespace TheEndTimes_Daemons
         {
             Map map = RimWorld.BaseGen.BaseGen.globalSettings.map;
             CellRect cellRect1 = CellRect.Empty;
-            RimWorld.SketchGen.ResolveParams parms = new RimWorld.SketchGen.ResolveParams();
+            RimWorld.SketchGen.SketchResolveParams parms = new RimWorld.SketchGen.SketchResolveParams();
             parms.sketch = new Sketch();
             parms.monumentOpen = new bool?(false);
             parms.monumentSize = new IntVec2?(new IntVec2(rp.rect.Width, rp.rect.Height));
@@ -34,7 +34,7 @@ namespace TheEndTimes_Daemons
             }
             parms.allowedMonumentThings.SetAllow(ThingDefOf.Drape, false);
             Sketch sketch = RimWorld.SketchGen.SketchGen.Generate(RH_TET_DaemonsDefOf.RH_TET_DaemonMonument, parms);
-            sketch.Spawn(map, rp.rect.CenterCell, (Faction)null, Sketch.SpawnPosType.Unchanged, Sketch.SpawnMode.Normal, true, true, (List<Thing>)null, false, true, (Func<SketchEntity, IntVec3, bool>)null, (Action<IntVec3, SketchEntity>)null);
+            sketch.Spawn(map, rp.rect.CenterCell, (Faction)null, Sketch.SpawnPosType.Unchanged, Sketch.SpawnMode.Normal, true, false, true, (List<Thing>)null, false, true, (Func<SketchEntity, IntVec3, bool>)null, (Action<IntVec3, SketchEntity>)null);
             CellRect cellRect2 = SketchGenUtility.FindBiggestRect(sketch, (Predicate<IntVec3>)(x => sketch.TerrainAt(x) != null && !sketch.ThingsAt(x).Any<SketchThing>((Func<SketchThing, bool>)(y => y.def == ThingDefOf.Wall))), (IEnumerable<IntVec3>)null, 3).MovedBy(rp.rect.CenterCell);
             for (int index = 0; index < sketch.Things.Count; ++index)
             {

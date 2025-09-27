@@ -258,10 +258,13 @@
 				<spawnMessageKey>RH_TET_Daemons_MessageDaemonsSpawned</spawnMessageKey>
 				<noPawnsLeftToSpawnKey>RH_TET_Daemons_Dormant</noPawnsLeftToSpawnKey>
 				<nextSpawnInspectStringKey>RH_TET_Daemons_DaemonsArriveIn</nextSpawnInspectStringKey>	
+			</li>     
+			<li Class="CompProperties_AmbientSound">
+				<sound>CrashedShipPart_Ambience</sound>
+				<disabledOnUnpowered>true</disabledOnUnpowered>
 			</li>			
 		</comps>
 		<building>
-			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
 			<combatPower>1000</combatPower>
 		</building>
 	</ThingDef>
@@ -306,10 +309,13 @@
 				<initialPawnsPoints>100</initialPawnsPoints>
 				<maxSpawnedPawnsPoints>1000</maxSpawnedPawnsPoints>	
 				<shouldJoinParentLord>True</shouldJoinParentLord>			
-			</li>			
+			</li>	     
+			<li Class="CompProperties_AmbientSound">
+				<sound>CrashedShipPart_Ambience</sound>
+				<disabledOnUnpowered>false</disabledOnUnpowered>
+			</li>		
 		</comps>
 		<building>
-			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
 			<combatPower>1000</combatPower>
 		</building>
 	</ThingDef>

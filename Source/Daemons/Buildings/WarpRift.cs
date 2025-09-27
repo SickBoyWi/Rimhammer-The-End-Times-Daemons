@@ -57,7 +57,7 @@ namespace TheEndTimes_Daemons
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             if (!this.Spawned || this.CompDormant.Awake || !this.Position.Fogged(this.Map))

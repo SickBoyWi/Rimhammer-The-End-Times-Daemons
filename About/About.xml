@@ -2,7 +2,7 @@
 <ModMetaData>
   <name>Rimhammer - The End Times - Daemons</name>
   <author>SickBoyWI</author>
-	<supportedVersions><li>1.4</li><li>1.5</li></supportedVersions>
+	<supportedVersions><li>1.5</li><li>1.6</li></supportedVersions>
 	<packageId>SickBoyWi.TheEndTimes.Daemons</packageId>
   <description>
 This mod adds Warhammer themed Daemons into Rimworld. The Chaos Daemons function similar to mechanoids in core RimWorld. They are not a playable faction, but a hidden faction that will always be hostile to the player.

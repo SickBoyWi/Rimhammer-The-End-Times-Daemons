@@ -43,7 +43,7 @@ namespace TheEndTimes_Daemons
         {
             Faction faction = DaemonsUtil.FindPodContentsPawnFaction();
 
-            PawnKindDef kind = DefDatabase<PawnKindDef>.AllDefsListForReading.Where<PawnKindDef>((Func<PawnKindDef, bool>)(x => x.defaultFactionType == faction.def && !x.defaultFactionType.isPlayer)).RandomElement<PawnKindDef>();
+            PawnKindDef kind = DefDatabase<PawnKindDef>.AllDefsListForReading.Where<PawnKindDef>((Func<PawnKindDef, bool>)(x => x.defaultFactionDef == faction.def && !x.defaultFactionDef.isPlayer)).RandomElement<PawnKindDef>();
 
             Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(kind, faction, PawnGenerationContext.NonPlayer, -1, false, false, false, true, false, 1f, false, true, false, true, true, false, true, false, false, 0.0f, 0.0f, (Pawn)null, 1f, (Predicate<Pawn>)null, (Predicate<Pawn>)null, (IEnumerable<TraitDef>)null, (IEnumerable<TraitDef>)null, new float?(), new float?(), new float?(), new Gender?(), (string)null, (string)null, (RoyalTitleDef)null, (Ideo)null, false, false, false, false, (List<GeneDef>)null, (List<GeneDef>)null, (XenotypeDef)null, (CustomXenotype)null, (List<XenotypeDef>)null, 0.0f, DevelopmentalStage.Adult, (Func<XenotypeDef, PawnKindDef>)null, new FloatRange?(), new FloatRange?(), true, false, false, -1, 0, false));
             this.GiveRandomLootInventoryForTombPawn(pawn);

@@ -37,7 +37,7 @@ namespace TheEndTimes_Daemons
         private static List<IntVec3> tmpCellsToCheck = new List<IntVec3>();
         private static List<IntVec3> extraRoots = new List<IntVec3>();
 
-        protected override void ResolveInt(ResolveParams parms)
+        protected override void ResolveInt(SketchResolveParams parms)
         {
             IntVec2 intVec2;
             if (parms.monumentSize.HasValue)
@@ -105,7 +105,7 @@ namespace TheEndTimes_Daemons
                     }
                 }
             }
-            ResolveParams parms1 = parms;
+            SketchResolveParams parms1 = parms;
             parms1.sketch = monument;
             parms1.connectedGroupsSameStuff = new bool?(true);
             parms1.assignRandomStuffTo = ThingDefOf.Wall;
@@ -113,15 +113,15 @@ namespace TheEndTimes_Daemons
             nullable1 = parms.addFloors;
             if ((nullable1.HasValue ? (nullable1.GetValueOrDefault() ? 1 : 0) : 1) != 0)
             {
-                ResolveParams parms2 = parms;
+                SketchResolveParams parms2 = parms;
                 parms2.singleFloorType = new bool?(true);
                 parms2.sketch = monument;
                 parms2.floorFillRoomsOnly = new bool?(!flag);
-                ref ResolveParams local1 = ref parms2;
+                ref SketchResolveParams local1 = ref parms2;
                 nullable1 = parms.onlyStoneFloors;
                 bool? nullable2 = new bool?(!nullable1.HasValue || nullable1.GetValueOrDefault());
                 local1.onlyStoneFloors = nullable2;
-                ref ResolveParams local2 = ref parms2;
+                ref SketchResolveParams local2 = ref parms2;
                 nullable1 = parms.allowConcrete;
                 bool? nullable3 = new bool?(nullable1.HasValue && nullable1.GetValueOrDefault());
                 local2.allowConcrete = nullable3;
@@ -130,7 +130,7 @@ namespace TheEndTimes_Daemons
             }
             if (true)//if (CanUse(ThingDefOf.Column))
             {
-                ResolveParams parms2 = parms;
+                SketchResolveParams parms2 = parms;
                 parms2.rect = new CellRect?(new CellRect(0, 0, width, height));
                 parms2.sketch = monument;
                 parms2.requireFloor = new bool?(true);
@@ -139,7 +139,7 @@ namespace TheEndTimes_Daemons
             this.TryPlaceDaemonFurniture(parms, monument);
             for (int index = 0; index < 2; ++index)
             {
-                ResolveParams parms2 = parms;
+                SketchResolveParams parms2 = parms;
                 parms2.addFloors = new bool?(false);
                 parms2.sketch = monument;
                 parms2.rect = new CellRect?(new CellRect(0, 0, width, height));
@@ -193,13 +193,13 @@ namespace TheEndTimes_Daemons
             return monument.Passable(sketchThing.pos.x, sketchThing.pos.z - 1) && monument.Passable(sketchThing.pos.x, sketchThing.pos.z + 1) && monument.AnyTerrainAt(sketchThing.pos.x, sketchThing.pos.z - 1) != monument.AnyTerrainAt(sketchThing.pos.x, sketchThing.pos.z + 1);
         }
 
-        protected override bool CanResolveInt(ResolveParams parms)
+        protected override bool CanResolveInt(SketchResolveParams parms)
         {
             return true;
         }
 
         private void ApplySymmetry(
-          ResolveParams parms,
+          SketchResolveParams parms,
           bool horizontalSymmetry,
           bool verticalSymmetry,
           Sketch monument,
@@ -208,7 +208,7 @@ namespace TheEndTimes_Daemons
         {
             if (horizontalSymmetry)
             {
-                ResolveParams parms1 = parms;
+                SketchResolveParams parms1 = parms;
                 parms1.sketch = monument;
                 parms1.symmetryVertical = new bool?(false);
                 parms1.symmetryOrigin = new int?(width / 2);
@@ -217,7 +217,7 @@ namespace TheEndTimes_Daemons
             }
             if (!verticalSymmetry)
                 return;
-            ResolveParams parms2 = parms;
+            SketchResolveParams parms2 = parms;
             parms2.sketch = monument;
             parms2.symmetryVertical = new bool?(true);
             parms2.symmetryOrigin = new int?(height / 2);
@@ -226,34 +226,34 @@ namespace TheEndTimes_Daemons
         }
 
         private void TryPlaceDaemonFurniture(
-          ResolveParams parms,
+          SketchResolveParams parms,
           Sketch monument)//, Func<ThingDef, bool> canUseValidator
         {
-            ResolveParams parms1 = parms;
+            SketchResolveParams parms1 = parms;
             parms1.sketch = monument;
             parms1.cornerThing = RH_TET_DaemonsDefOf.RH_TET_Daemons_Brazier;
             parms1.requireFloor = new bool?(true);
             SketchResolverDefOf.AddCornerThings.Resolve(parms1);
 
-            ResolveParams parms2 = parms;
+            SketchResolveParams parms2 = parms;
             parms2.sketch = monument;
             parms2.thingCentral = RH_TET_DaemonsDefOf.RH_TET_Daemons_SacrificialAltar;
             parms2.requireFloor = new bool?(true);
             SketchResolverDefOf.AddThingsCentral.Resolve(parms2);
 
-            ResolveParams parms3 = parms;
+            SketchResolveParams parms3 = parms;
             parms3.sketch = monument;
             parms3.thingCentral = RH_TET_DaemonsDefOf.RH_TET_Daemons_BloodAltar;
             parms3.requireFloor = new bool?(true);
             SketchResolverDefOf.AddThingsCentral.Resolve(parms3);
 
-            ResolveParams parms4 = parms;
+            SketchResolveParams parms4 = parms;
             parms4.sketch = monument;
             parms4.thingCentral = RH_TET_DaemonsDefOf.RH_TET_Daemons_Lectern_Skull;
             parms4.requireFloor = new bool?(true);
             SketchResolverDefOf.AddThingsCentral.Resolve(parms4);
 
-            ResolveParams parms5 = parms;
+            SketchResolveParams parms5 = parms;
                 parms5.sketch = monument;
                 parms5.thingCentral = RH_TET_DaemonsDefOf.RH_TET_Daemons_Lectern;
                 parms5.requireFloor = new bool?(true);
@@ -261,7 +261,7 @@ namespace TheEndTimes_Daemons
 
             if (RH_TET_DaemonsMod.random.Next(0, 3) < 3)
                 return;
-            ResolveParams parms6 = parms;
+            SketchResolveParams parms6 = parms;
             parms6.sketch = monument;
             parms6.wallEdgeThing = RH_TET_DaemonsDefOf.RH_TET_AncientDaemonCursedCryptosleepCasket;
             parms6.requireFloor = new bool?(true);

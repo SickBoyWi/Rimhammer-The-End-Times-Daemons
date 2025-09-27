@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<PawnKindDef Name="RH_TET_BaseDaemonKind" Abstract="True">
+		<defaultFactionDef>RH_TET_Daemons_Faction</defaultFactionDef>
+		<aiAvoidCover>true</aiAvoidCover>
+		<destroyGearOnDrop>true</destroyGearOnDrop>
+		<canStrip>false</canStrip>
+		<minGenerationAge MayRequire="Ludeon.Rimworld.Biotech">200</minGenerationAge>
+	</PawnKindDef>
+
+	<!-- Khorne -->
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Bloodletter</defName>
+		<label>bloodletter</label>
+		<race>RH_TET_Daemon_Bloodletter</race>
+		<combatPower>115</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Bloodletter/Unarmed/Bloodletter</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>0~0</weaponMoney>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags>
+		</weaponTags>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Fleshhound</defName>
+		<label>fleshhound</label>
+		<race>RH_TET_Daemon_Fleshhound</race>
+		<combatPower>70</combatPower>
+		<lifeStages>			
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Fleshhound/Fleshhound</texPath>
+					<drawSize>1.75</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.4, 0.3)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>0~0</weaponMoney>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags>
+		</weaponTags>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Bloodletter_Armed</defName>
+		<label>bloodletter</label>
+		<race>RH_TET_Daemon_Bloodletter</race>
+		<combatPower>195</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Bloodletter/Unarmed/ExaltedBloodletter</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<defendPointRadius>0</defendPointRadius>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>RH_TET_Daemons_Khorne_Bloodletter</li>
+		</weaponTags>
+	</PawnKindDef>
+ 
+	<!-- juggers are intelligent/humanlike, and crushers are animals. -->
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Juggernaught</defName>
+		<label>juggernaught</label>
+		<race>RH_TET_Daemon_Juggernaught</race>
+		<combatPower>280</combatPower>
+		<lifeStages>			
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Jugger/Juggernaut</texPath>
+					<drawSize>3.6</drawSize>
+					<shadowData>
+						<volume>(0.475, 0.2, 0.3)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>0~0</weaponMoney>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags>
+		</weaponTags>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+ 
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Bloodcrusher</defName>
+		<label>juggernaught</label>
+		<race>RH_TET_Daemon_Bloodcrusher</race>
+		<combatPower>280</combatPower>
+		<lifeStages>			
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Jugger/Juggernaut</texPath>
+					<drawSize>3.6</drawSize>
+					<shadowData>
+						<volume>(0.475, 0.2, 0.3)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+	
+	<!-- Tzeentch -->
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Horror_Pink</defName>
+		<label>pink horror</label>
+		<race>RH_TET_Daemon_HorrorPink</race>
+		<combatPower>155</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Horror/Pink/PinkHorror</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<defendPointRadius>0</defendPointRadius>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>RH_TET_Daemons_Tzeentch_Horror_Pink</li>
+		</weaponTags>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Horror_Blue</defName>
+		<label>blue horror</label>
+		<race>RH_TET_Daemon_HorrorBlue</race>
+		<combatPower>50</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Horror/Blue/BlueHorror</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.6</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<defendPointRadius>0</defendPointRadius>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>RH_TET_Daemons_Tzeentch_Horror_Blue</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Flamer</defName>
+		<label>flamer</label>
+		<race>RH_TET_Daemon_Flamer</race>
+		<combatPower>210</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Flamer/Flamer</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.3</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<defendPointRadius>0</defendPointRadius>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>RH_TET_Daemons_Tzeentch_Flamer</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<!-- Undivided -->
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Imp</defName>
+		<label>imp</label>
+		<race>RH_TET_Daemon_Imp</race>
+		<combatPower>40</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Imp/Imp</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.15</drawSize>
+					<shadowData>
+						<volume>(0.2, 0.3, 0.2)</volume>
+						<offset>(0,0,0)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>0~0</weaponMoney>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags/>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="RH_TET_BaseDaemonKind">
+		<defName>RH_TET_Daemons_Daemonhost</defName>
+		<label>daemonhost</label>
+		<race>RH_TET_Daemon_Daemonhost</race>
+		<combatPower>350</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Daemonhost/DaemonhostMale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+				<femaleGraphicData>
+					<texPath>Things/Pawn/Daemonhost/DaemonhostFemale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</femaleGraphicData>				
+			</li>
+		</lifeStages>
+		<weaponMoney>0~0</weaponMoney>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags>
+		</weaponTags>
+		<techHediffsChance>0</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+	
+</Defs>

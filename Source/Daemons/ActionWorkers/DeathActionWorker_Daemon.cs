@@ -27,8 +27,17 @@ namespace TheEndTimes_Daemons
 
         public override void PawnDied(Corpse corpse, Lord prevLord)
         {
+            if (corpse is null)
+                return;
+
             IntVec3 pos = corpse.Position;
             Map map = corpse.Map;
+
+            if (pos == IntVec3.Invalid || map is null)
+                return;
+
+            if (corpse.InnerPawn is null)
+                return;
 
             float combatPower = corpse.InnerPawn.kindDef.combatPower;
             int spawnCount = (int)(Math.Round(combatPower / 100, 0));

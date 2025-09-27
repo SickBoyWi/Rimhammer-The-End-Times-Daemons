@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
-using ResolveParams = RimWorld.SketchGen.ResolveParams;
+using ResolveParams = RimWorld.SketchGen.SketchResolveParams;
 
 namespace TheEndTimes_Daemons
 {
@@ -20,7 +20,7 @@ namespace TheEndTimes_Daemons
         {
         }
 
-        protected override void ResolveInt(ResolveParams parms)
+        protected override void ResolveInt(SketchResolveParams parms)
         {
             CellRect outerRect = parms.rect ?? parms.sketch.OccupiedRect;
             TerrainDef floor1;
@@ -66,7 +66,7 @@ namespace TheEndTimes_Daemons
             }
         }
 
-        protected override bool CanResolveInt(ResolveParams parms)
+        protected override bool CanResolveInt(SketchResolveParams parms)
         {
             return SketchResolver_DaemonsFloorFill.TryFindFloors(out TerrainDef _, out TerrainDef _, parms);
         }
@@ -74,7 +74,7 @@ namespace TheEndTimes_Daemons
         private static bool TryFindFloors(
           out TerrainDef floor1,
           out TerrainDef floor2,
-          ResolveParams parms)
+          SketchResolveParams parms)
         {
             floor1 = RH_TET_DaemonsDefOf.RH_TET_Daemons_BasicFloorSlate;
             floor2 = RH_TET_DaemonsDefOf.RH_TET_Daemons_BasicFloorMarble;

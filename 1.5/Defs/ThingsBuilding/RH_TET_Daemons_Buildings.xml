@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef Name="RH_TET_Daemons_BuildingNaturalBase" Abstract="True">
+		<category>Building</category>
+		<selectable>true</selectable>
+		<drawerType>MapMeshOnly</drawerType>
+		<filthLeaving>RH_TET_Filth_BloodDaemon</filthLeaving>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
+		<building>
+			<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+		</building>
+	</ThingDef>
+  
+	<ThingDef Name="RH_TET_Daemons_WarpRiftBase" ParentName="RH_TET_Daemons_BuildingNaturalBase" Abstract="True">
+		<uiIconScale>0.65</uiIconScale>
+		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>false</rotatable>
+		<fillPercent>0.5</fillPercent>
+		<statBases>
+			<MaxHitPoints>130</MaxHitPoints>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<pathCost>42</pathCost>
+		<receivesSignals>true</receivesSignals>
+		<blockWind>false</blockWind>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<killedLeavings>
+			<RH_TET_Daemons_MagicEssence_Raw>30</RH_TET_Daemons_MagicEssence_Raw>
+			<Gold>25</Gold>
+			<RH_TET_Skaven_Warpstone>30</RH_TET_Skaven_Warpstone>
+		</killedLeavings>
+		<comps>
+			<li Class="CompProperties_CanBeDormant">
+				<startsDormant>true</startsDormant>
+				<canWakeUpFogged>false</canWakeUpFogged>
+			</li>
+			<li Class="CompProperties_WakeUpDormant"/>
+			<li Class="CompProperties_SelfhealHitpoints">
+				<ticksPerHeal>6000</ticksPerHeal><!-- 60k ticks = 1 day, 10 hp per day -->
+			</li>
+			<li Class="TheEndTimes_Daemons.CompProperties_SpawnerRifts"/>
+			<li Class="CompProperties_Spawner">
+				<thingToSpawn>RH_TET_Daemons_MagicEssence_Raw</thingToSpawn>
+				<spawnCount>25</spawnCount>
+				<spawnIntervalRange>26000~30000</spawnIntervalRange>
+				<spawnMaxAdjacent>40</spawnMaxAdjacent>
+				<spawnForbidden>true</spawnForbidden>
+				<!--<saveKeysPrefix>jelly</saveKeysPrefix>-->
+			</li>
+			<!--
+			<li Class="CompProperties_Spawner">
+				<thingToSpawn>GlowPod</thingToSpawn>
+				<spawnCount>1</spawnCount>
+				<spawnIntervalRange>30000~60000</spawnIntervalRange>
+				<spawnMaxAdjacent>1</spawnMaxAdjacent>
+				<saveKeysPrefix>pod</saveKeysPrefix>
+				<inheritFaction>true</inheritFaction>
+			</li>
+			-->
+			<li Class="CompProperties_HeatPusher">
+				<heatPerSecond>6</heatPerSecond>
+				<heatPushMaxTemperature>38</heatPushMaxTemperature>
+			</li>
+			<li Class="CompProperties_SpawnerFilth">
+				<filthDef>RH_TET_Filth_BloodDaemon</filthDef>
+				<spawnCountOnSpawn>10</spawnCountOnSpawn>
+				<spawnMtbHours>4</spawnMtbHours>
+				<spawnRadius>5</spawnRadius>
+			</li>
+			<li Class="CompProperties_Maintainable">
+				<ticksHealthy>60000</ticksHealthy>
+				<ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
+				<damagePerTickRare>10</damagePerTickRare>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="RH_TET_Daemons_WarpRiftBase">
+		<defName>RH_TET_Daemons_RiftKhorne</defName>
+		<label>Khornate warp rift</label>
+		<description>A warp rift into the realm of chaos. It goes to Khorne's realm of the immaterial. If activated, it will spawn additional daemons and rifts over time, as well as valuable warp essence.</description>
+		<graphicData>
+			<texPath>Things/Buildings/Spawners/Rift_to_Khorne</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.6</drawSize>
+		</graphicData>
+		<building>
+			<combatPower>500</combatPower>
+		</building>
+		<comps>
+			<li Class="CompProperties_SpawnerPawn">
+				<spawnablePawnKinds>
+					<li>RH_TET_Daemons_Bloodletter</li>
+					<li>RH_TET_Daemons_Bloodletter_Armed</li>
+					<li>RH_TET_Daemons_Fleshhound</li>
+					<li>RH_TET_Daemons_Juggernaught</li>
+				</spawnablePawnKinds>
+				<lordJob>TheEndTimes_Daemons.LordJob_DefendAndExpandRift</lordJob>
+				<spawnSound>RH_TET_Pawn_Daemon_Death</spawnSound>
+				<initialPawnsPoints>200</initialPawnsPoints>
+				<maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>3</glowRadius>
+				<glowColor>(229,0,0,0)</glowColor>
+			</li>
+		</comps>
+		<thingClass>TheEndTimes_Daemons.WarpRift_Khorne</thingClass>
+	</ThingDef>
+	
+	<ThingDef ParentName="RH_TET_Daemons_WarpRiftBase">
+		<defName>RH_TET_Daemons_RiftTzeentch</defName>
+		<label>Tzeentchian warp rift</label>
+		<description>A warp rift into the realm of chaos. It goes to Tzeentch's realm of the immaterial. If activated, it will spawn additional daemons and rifts over time, as well as valuable warp essence.</description>
+		<graphicData>
+			<texPath>Things/Buildings/Spawners/Rift_to_Tzeentch</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.6</drawSize>
+		</graphicData>
+		<building>
+			<combatPower>500</combatPower>
+		</building>
+		<comps>
+			<li Class="CompProperties_SpawnerPawn">
+				<spawnablePawnKinds>
+					<li>RH_TET_Daemons_Horror_Blue</li>
+					<li>RH_TET_Daemons_Horror_Pink</li>
+					<li>RH_TET_Daemons_Flamer</li>
+				</spawnablePawnKinds>
+				<lordJob>TheEndTimes_Daemons.LordJob_DefendAndExpandRift</lordJob>
+				<spawnSound>RH_TET_Pawn_Daemon_Death</spawnSound>
+				<initialPawnsPoints>200</initialPawnsPoints>
+				<maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>3</glowRadius>
+				<glowColor>(0,207,235,0)</glowColor>
+			</li>
+		</comps>
+		<thingClass>TheEndTimes_Daemons.WarpRift_Tzeentch</thingClass>
+	</ThingDef>
+
+	<!-- ========================= Large Warp Portal Base ========================= -->
+
+	<ThingDef Abstract="True" Name="RH_TET_Daemons_CrashedShipPartBase" ParentName="BuildingBase">
+		<size>(3,3)</size>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>.25</fillPercent>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>false</blockWind>
+		<receivesSignals>true</receivesSignals>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+		<drawerType>MapMeshOnly</drawerType>
+		<repairEffect>Repair</repairEffect>
+		<forceDebugSpawnable>true</forceDebugSpawnable>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<neverMultiSelect>true</neverMultiSelect>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1200</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Beauty>-200</Beauty>
+		</statBases>
+		<killedLeavings>
+			<ChunkSlagSteel>10</ChunkSlagSteel>
+			<Gold>100</Gold>
+			<RH_TET_Skaven_Warpstone>10</RH_TET_Skaven_Warpstone>
+			<RH_TET_Daemons_MagicEssence_Raw>60</RH_TET_Daemons_MagicEssence_Raw>
+		</killedLeavings>
+		<building>
+			<combatPower>250</combatPower>
+			<claimable>false</claimable>
+			<roofCollapseDamageMultiplier>0.2</roofCollapseDamageMultiplier>
+			<destroySound>ChunkRock_Drop</destroySound>
+		</building>
+		<comps>
+			<li Class="CompProperties_SendSignalOnCountdown">
+				<signalTag>CompCanBeDormant.WakeUp</signalTag>
+				<countdownCurveTicks>
+					<points>
+					<!-- Required by Rand.ByCurve -->
+					<li>(5999, 0)</li>
+					<!-- 5d ingame time -->
+					<li>(300000, 1)</li>
+					<!-- 10d ingame time -->
+					<li>(600000, 0.1)</li>
+					<!-- 20d ingame time -->
+					<li>(1200000, 0)</li>
+					</points>
+				</countdownCurveTicks>
+			</li>
+			<li Class="CompProperties_WakeUpDormant"/>
+			<li Class="CompProperties_FleckEmitter">
+				<fleck>ActivatorCountdownFlash</fleck>
+				<emissionInterval>100</emissionInterval>
+				<!--<soundOnEmission>ActivatorCountdown_Ambience</soundOnEmission>-->
+				<saveKeysPrefix>flash</saveKeysPrefix>
+			</li>
+			<li Class="CompProperties_SelfhealHitpoints">
+				<ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
+			</li>
+			<li Class="CompProperties_SpawnerFilth">
+				<filthDef>RH_TET_Filth_BloodDaemon</filthDef>
+				<spawnCountOnSpawn>10</spawnCountOnSpawn>
+				<spawnMtbHours>4</spawnMtbHours>
+				<spawnRadius>5</spawnRadius>
+			</li>
+		</comps>
+	</ThingDef>
+  
+	<!-- ========================= Psychic droner ========================= -->
+	<!-- Note this is a ConditionCauser -->
+
+	<ThingDef ParentName="RH_TET_Daemons_CrashedShipPartBase">
+		<defName>RH_TET_Daemons_KhorneWarpPortal</defName>
+		<label>Khorne warp portal</label>
+		<description>A large portal that attaches real world to the violent realm of Khorne.\n\nThis one emenates a psychic disturbance, that is meant to distract and cause unrest in mortals. It will drive people and animals mad within a wide radius around itself.</description>
+		<!--  The daemons that arrived when the portal opened will awaken if attacked, else they will remain dormant until the portal has enough power to bring more of their kinds to reality.-->
+		<graphicData>
+			<texPath>Things/Buildings/Spawners/Rift_To_Khorne_Large</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData><rect>(0.5, 0.1, 2.5, 1.5)</rect></damageData>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_CausesGameCondition_PsychicEmanation">
+				<conditionDef>PsychicDroner</conditionDef>
+				<compClass>CompCauseGameCondition_PsychicEmanation</compClass>
+				<worldRange>1</worldRange>
+				<droneLevelIncreaseInterval>150000</droneLevelIncreaseInterval>
+				<droneLevel>2</droneLevel>
+			</li>
+			<li Class="CompProperties_AnimalInsanityPulser"/>			
+			<li Class="CompProperties_Glower">
+				<glowRadius>3</glowRadius>
+				<glowColor>(229,0,0,0)</glowColor>
+			</li>
+			<li Class="CompProperties_SpawnerPawn">
+				<spawnablePawnKinds>
+					<li>RH_TET_Daemons_Bloodletter</li>
+					<li>RH_TET_Daemons_Bloodletter_Armed</li>
+					<li>RH_TET_Daemons_Fleshhound</li>
+					<li>RH_TET_Daemons_Juggernaught</li>
+					<li>RH_TET_Daemons_Imp</li>
+				</spawnablePawnKinds>
+				<lordJob>TheEndTimes_Daemons.LordJob_DaemonsDefend</lordJob>
+				<spawnSound>RH_TET_Pawn_Daemon_Death</spawnSound>
+				<initialPawnsPoints>100</initialPawnsPoints>
+				<maxSpawnedPawnsPoints>1000</maxSpawnedPawnsPoints>	
+				<shouldJoinParentLord>True</shouldJoinParentLord>		
+
+				<spawnMessageKey>RH_TET_Daemons_MessageDaemonsSpawned</spawnMessageKey>
+				<noPawnsLeftToSpawnKey>RH_TET_Daemons_Dormant</noPawnsLeftToSpawnKey>
+				<nextSpawnInspectStringKey>RH_TET_Daemons_DaemonsArriveIn</nextSpawnInspectStringKey>	
+			</li>     
+			<li Class="CompProperties_AmbientSound">
+				<sound>CrashedShipPart_Ambience</sound>
+				<disabledOnUnpowered>true</disabledOnUnpowered>
+			</li>			
+		</comps>
+		<building>
+			<combatPower>1000</combatPower>
+		</building>
+	</ThingDef>
+
+	<!-- =============================== Defoliator ship part ============================ -->
+
+	<ThingDef ParentName="RH_TET_Daemons_CrashedShipPartBase">
+		<defName>RH_TET_Daemons_TzeentchWarpPortal</defName>
+		<label>Tzeentch warp portal</label>
+		<description>A large portal that attaches the real world to the insane realm of Tzeentch.\n\nThis one emenates a psychic suppression, that is meant to calm and distract mortals. It will reduce the mental capacity of mortals.\n\nThe portal must continue to pull power from the nightmare realms before opening fully, and will appear dormant while it does so.</description>
+		<!--  The daemons that arrived when the portal opened will awaken if attacked, else they will remain dormant until the portal has enough power to bring more of their kinds to reality.-->
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected><!-- Hack to draw defoliant radius -->
+		<graphicData>
+			<texPath>Things/Buildings/Spawners/Rift_To_Tzeentch_Large</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData><rect>(0.5, 0.1, 2.5, 1.5)</rect></damageData>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_CausesGameCondition">
+				<conditionDef>RH_TET_Daemons_MentalSuppression</conditionDef>
+				<compClass>TheEndTimes_Daemons.CompCauseGameCondition_MentalSuppression</compClass>
+				<worldRange>1</worldRange>
+			</li>
+			<li Class="CompProperties_MoteEmitter">
+				<mote>Mote_PsychicConditionCauserEffect</mote>
+				<emissionInterval>150</emissionInterval>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>3</glowRadius>
+				<glowColor>(0,207,235,0)</glowColor>
+			</li>
+			<li Class="CompProperties_SpawnerPawn">
+				<spawnablePawnKinds>
+					<li>RH_TET_Daemons_Horror_Blue</li>
+					<li>RH_TET_Daemons_Horror_Pink</li>
+					<li>RH_TET_Daemons_Flamer</li>
+					<li>RH_TET_Daemons_Imp</li>
+				</spawnablePawnKinds>
+				<lordJob>TheEndTimes_Daemons.LordJob_DaemonsDefend</lordJob>
+				<spawnSound>RH_TET_Pawn_Daemon_Death</spawnSound>
+				<initialPawnsPoints>100</initialPawnsPoints>
+				<maxSpawnedPawnsPoints>1000</maxSpawnedPawnsPoints>	
+				<shouldJoinParentLord>True</shouldJoinParentLord>			
+			</li>			
+		</comps>
+		<building>
+			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
+			<combatPower>1000</combatPower>
+		</building>
+	</ThingDef>
+  
+</Defs>

@@ -28,6 +28,8 @@ namespace TheEndTimes_Daemons
 
             harmony.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "MakeDowned"), null,
                 new HarmonyMethod(typeof(HarmonyPatches), nameof(Pawn_HealthTracker_MakeDowned_PostFix)), null);
+            harmony.Patch(AccessTools.Method(typeof(Pawn), "TickInterval"), new HarmonyMethod(typeof(HarmonyPatches), nameof(Pawn_TickInterval_PreFix)),
+                null, null);
             harmony.Patch(AccessTools.Method(typeof(PawnFootprintMaker), "TryPlaceFootprint"), 
                 new HarmonyMethod(typeof(HarmonyPatches), nameof(PawnFootprintMaker_TryPlaceFootprint_PreFix)),
                 null, null);
@@ -42,6 +44,22 @@ namespace TheEndTimes_Daemons
                 DamageInfo damageinfo = new DamageInfo(dinfo.Def, 9999, 1.0F, dinfo.Angle, dinfo.Instigator, pawn.health.hediffSet.GetBrain(), dinfo.Weapon, DamageInfo.SourceCategory.ThingOrUnknown, dinfo.IntendedTarget, dinfo.InstigatorGuilty, true);
                 pawn.TakeDamage(damageinfo);
             }
+        }
+
+        private static bool Pawn_TickInterval_PreFix(Pawn __instance)
+        {
+            if (DaemonsUtil.IsDaemonOfGodOrAny(__instance.def))
+            {
+                if (__instance.Downed)
+                {
+                    DamageInfo dinfo = new DamageInfo(DamageDefOf.ExecutionCut, 9999f, 999f, -1f, (Thing)null, __instance.health.hediffSet.GetBrain(), (ThingDef)null, DamageInfo.SourceCategory.ThingOrUnknown, (Thing)null, true, true, QualityCategory.Normal, true);
+                    __instance.TakeDamage(dinfo);
+
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         // Place footprints.

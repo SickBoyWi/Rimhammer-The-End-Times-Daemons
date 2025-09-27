@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="BaseWeapon">
+		<defName>RH_TET_Daemons_Hellblade</defName>
+		<label>daemon hellblade</label>
+		<description>The name "Hellblade" has been used to describe many weapons in the writings of men and other races, but it has been used most often to describe those weapons carried by the Bloodletters, the lower daemon vassals of Khorne. The tales relate that Hellblades are razor-edged and honed on the souls of those who have fallen in battle to the Blood God's own. They are consecrated to Khorne, and the bloody task of slaughtering his enemies, and glow with a power that, so it is said, can drain the very soul from a man and suck dry his shrivelling corpse.\n\nWielding this weapon hurts social interaction skill, as other good or neutral pawns abhor daemonkind and their effects. It does significantly improve slave suppression ability, as the slaves greatly fear the daemonic, and know that there is no remorse or pity to be found in the wielder.</description>
+		<graphicData>
+			<texPath>Things/Item/Weapon/Melee/Hellblade</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.6</drawSize>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<weaponTags>
+			<li>RH_TET_Daemons_Khorne_Bloodletter</li>
+		</weaponTags>
+		<statBases>
+			<Mass>4.0</Mass>
+			<MarketValue>1500</MarketValue>
+		</statBases>
+		<equippedAngleOffset>-135</equippedAngleOffset>
+		<equippedStatOffsets>
+			<SocialImpact>-0.35</SocialImpact>
+			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.35</SlaveSuppressionOffset>
+		</equippedStatOffsets>
+		<thingCategories Inherit="False">
+			<li>RH_TET_Daemons_WeaponsMelee</li>
+		</thingCategories>
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>2.3</cooldownTime>
+			</li>
+			<li>
+				<label>tip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>28</power>
+				<cooldownTime>2.3</cooldownTime>
+			</li>
+			<li>
+				<label>edge</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>38</power>
+				<cooldownTime>2.7</cooldownTime>
+				<armorPenetration>1.2</armorPenetration>
+			</li>
+		</tools>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtWeaponMelee</nameMaker>
+				<descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>			
+			<li Class="SickCompOversizedWeapon.CompProperties_OversizedWeapon">
+				<verticalFlipNorth>true</verticalFlipNorth>
+				<!--
+				<angleAdjustmentWest>-45</angleAdjustmentWest>
+				<angleAdjustmentEast>-30</angleAdjustmentEast>
+				<angleAdjustmentSouth>0</angleAdjustmentSouth>
+				<angleAdjustmentNorth>0</angleAdjustmentNorth>
+				-->
+				<southOffset>(-0.30,0,0.1)</southOffset>
+				<northOffset>(-0.30,0,0.40)</northOffset>
+				<eastOffset>(-0.5,0,0.25)</eastOffset>
+				<westOffset>(0.5,0,0.25)</westOffset>
+			</li>
+		</comps>
+		<weaponClasses>
+			<li>Melee</li>
+			<li>MeleePiercer</li>
+		</weaponClasses>
+		<relicChance>0</relicChance>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+	</ThingDef>
+
+</Defs>

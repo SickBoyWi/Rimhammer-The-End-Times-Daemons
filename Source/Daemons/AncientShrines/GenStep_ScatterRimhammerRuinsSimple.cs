@@ -45,12 +45,12 @@ namespace TheEndTimes_Daemons
             CellRect rect = this.EffectiveRectAt(c).ClipInsideMap(map);
             if (!this.CanPlaceAncientBuildingInRange(rect, map))
                 return;
-            RimWorld.SketchGen.SketchGen.Generate(SketchResolverDefOf.MonumentRuin, new ResolveParams()
+            RimWorld.SketchGen.SketchGen.Generate(SketchResolverDefOf.MonumentRuin, new SketchResolveParams()
             {
                 sketch = new Sketch(),
                 monumentSize = new IntVec2?(new IntVec2(rect.Width, rect.Height)),
                 destroyChanceExp = new float?(this.destroyChanceExp)
-            }).Spawn(map, rect.CenterCell, (Faction)null, Sketch.SpawnPosType.Unchanged, Sketch.SpawnMode.Normal, false, false, (List<Thing>)null, false, false, (Func<SketchEntity, IntVec3, bool>)((entity, cell) =>
+            }).Spawn(map, rect.CenterCell, (Faction)null, Sketch.SpawnPosType.Unchanged, Sketch.SpawnMode.Normal, false, false, false, (List<Thing>)null, false, false, (Func<SketchEntity, IntVec3, bool>)((entity, cell) =>
             {
                 if (this.clearSurroundingArea)
                 {

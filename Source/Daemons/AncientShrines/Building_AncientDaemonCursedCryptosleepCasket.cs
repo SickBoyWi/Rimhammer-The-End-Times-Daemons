@@ -53,7 +53,7 @@ namespace TheEndTimes_Daemons
                 thingList.RemoveDuplicates<Thing>((Func<Thing, Thing, bool>)null);
             }
             base.EjectContents();
-            if (this.ClaimableBy(Faction.OfPlayer, (StringBuilder)null))
+            if (this.ClaimableBy(Faction.OfPlayer))
                 this.SetFaction((Faction)null, (Pawn)null);
             if (num != 0)
                 return;
