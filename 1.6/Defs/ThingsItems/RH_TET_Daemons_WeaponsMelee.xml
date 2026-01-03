@@ -65,7 +65,7 @@
 				<minQualityForArtistic>Excellent</minQualityForArtistic>
 			</li>			
 			<li Class="SickCompOversizedWeapon.CompProperties_OversizedWeapon">
-				<verticalFlipNorth>true</verticalFlipNorth>
+				<verticalFlipNorth>false</verticalFlipNorth>
 				<!--
 				<angleAdjustmentWest>-45</angleAdjustmentWest>
 				<angleAdjustmentEast>-30</angleAdjustmentEast>
