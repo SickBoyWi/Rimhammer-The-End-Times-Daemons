@@ -27,6 +27,8 @@ namespace TheEndTimes_Daemons
 
         public override void PawnDied(Corpse corpse, Lord prevLord)
         {
+            //Log.Warning("RH_TET_Daemons: DeathActionWorker PawDied");
+
             if (corpse is null)
                 return;
 

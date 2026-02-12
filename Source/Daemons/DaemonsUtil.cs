@@ -42,13 +42,13 @@ namespace TheEndTimes_Daemons
                         || def.defName.Equals("RH_TET_Daemon_Fleshhound")))
                 return true;
 
-            else if ((isAny || godCode == RH_TET_DaemonsDefOf.ChaosGods.Tzeentch) 
+            if ((isAny || godCode == RH_TET_DaemonsDefOf.ChaosGods.Tzeentch) 
                     && (def.defName.Equals("RH_TET_Daemon_HorrorPink")
                         || def.defName.Equals("RH_TET_Daemon_HorrorBlue")
                         || def.defName.Equals("RH_TET_Daemon_Flamer")))
                 return true;
             
-            else if ((isAny || allowUndivided || godCode == RH_TET_DaemonsDefOf.ChaosGods.Undivided)
+            if ((isAny || allowUndivided || godCode == RH_TET_DaemonsDefOf.ChaosGods.Undivided)
                     && (def.defName.Equals("RH_TET_Daemon_Imp")
                         || def.defName.Equals("RH_TET_Daemon_Daemonhost")))
                 return true;
@@ -81,6 +81,7 @@ namespace TheEndTimes_Daemons
             // TODO - Add Daemon Race ThingDef Names Here
             if (def.defName.Equals("RH_TET_Daemon_Bloodletter") 
                         || def.defName.Equals("RH_TET_Daemon_Juggernaught")
+                        || def.defName.Equals("RH_TET_Daemon_Bloodcrusher")
                         || def.defName.Equals("RH_TET_Daemon_Fleshhound"))
                 return RH_TET_DaemonsDefOf.ChaosGods.Khorne;
 
@@ -230,7 +231,7 @@ namespace TheEndTimes_Daemons
             WarpRiftSpawner riftSpawner1 = (WarpRiftSpawner)ThingMaker.MakeThing(RH_TET_DaemonsDefOf.RH_TET_Daemons_WarpRiftSpawner, (ThingDef)null);
             Thing thing = GenSpawn.Spawn((Thing)riftSpawner1, loc, map, WipeMode.FullRefund);
 
-            //Log.Warning("JEH: Daemon Points:" + daemonPoints);
+            //Log.Warning("RH_TET: Daemon Points:" + daemonPoints);
             
             if (daemonPoints.HasValue)
                 riftSpawner1.daemonPoints = daemonPoints.Value;

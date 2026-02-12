@@ -28,6 +28,9 @@ namespace TheEndTimes_Daemons
 
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
+            // Make god for spawning stale.
+            WarpRiftSpawner.godForSpawning = RH_TET_DaemonsDefOf.ChaosGods.Any;
+
             Map target = (Map)parms.target;
             parms.points *= IncidentWorker_WarpRift.PointsFactorCurve.Evaluate(parms.points);
             Thing thing = DaemonsUtil.SpawnRifts(Mathf.Max(GenMath.RoundRandom(parms.points / 220f), 1), target, true, parms.infestationLocOverride.HasValue, (string)null, parms.infestationLocOverride, parms.points);

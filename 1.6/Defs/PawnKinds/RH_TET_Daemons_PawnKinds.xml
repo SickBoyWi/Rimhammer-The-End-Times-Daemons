@@ -7,6 +7,11 @@
 		<destroyGearOnDrop>true</destroyGearOnDrop>
 		<canStrip>false</canStrip>
 		<minGenerationAge MayRequire="Ludeon.Rimworld.Biotech">200</minGenerationAge>
+		<!-- This didn't work.
+		<techHediffsRequired>
+			<li>RH_TET_Daemons_DaemonicSpirit</li>
+		</techHediffsRequired>		
+		-->
 	</PawnKindDef>
 
 	<!-- Khorne -->
@@ -14,7 +19,7 @@
 		<defName>RH_TET_Daemons_Bloodletter</defName>
 		<label>bloodletter</label>
 		<race>RH_TET_Daemon_Bloodletter</race>
-		<combatPower>115</combatPower>
+		<combatPower>116</combatPower>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
@@ -64,7 +69,7 @@
 		<defName>RH_TET_Daemons_Bloodletter_Armed</defName>
 		<label>bloodletter</label>
 		<race>RH_TET_Daemon_Bloodletter</race>
-		<combatPower>195</combatPower>
+		<combatPower>196</combatPower>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
@@ -91,7 +96,7 @@
 		<defName>RH_TET_Daemons_Juggernaught</defName>
 		<label>juggernaught</label>
 		<race>RH_TET_Daemon_Juggernaught</race>
-		<combatPower>280</combatPower>
+		<combatPower>285</combatPower>
 		<lifeStages>			
 			<li>
 				<bodyGraphicData>
@@ -116,7 +121,7 @@
 		<defName>RH_TET_Daemons_Bloodcrusher</defName>
 		<label>juggernaught</label>
 		<race>RH_TET_Daemon_Bloodcrusher</race>
-		<combatPower>280</combatPower>
+		<combatPower>285</combatPower>
 		<lifeStages>			
 			<li>
 				<bodyGraphicData>
@@ -136,7 +141,7 @@
 		<defName>RH_TET_Daemons_Horror_Pink</defName>
 		<label>pink horror</label>
 		<race>RH_TET_Daemon_HorrorPink</race>
-		<combatPower>155</combatPower>
+		<combatPower>170</combatPower>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
@@ -162,7 +167,7 @@
 		<defName>RH_TET_Daemons_Horror_Blue</defName>
 		<label>blue horror</label>
 		<race>RH_TET_Daemon_HorrorBlue</race>
-		<combatPower>50</combatPower>
+		<combatPower>60</combatPower>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
@@ -188,7 +193,7 @@
 		<defName>RH_TET_Daemons_Flamer</defName>
 		<label>flamer</label>
 		<race>RH_TET_Daemon_Flamer</race>
-		<combatPower>210</combatPower>
+		<combatPower>240</combatPower>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>

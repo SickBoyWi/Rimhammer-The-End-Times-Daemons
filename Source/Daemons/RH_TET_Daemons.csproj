@@ -98,6 +98,8 @@
     <Compile Include="Comps\CompProperties_SpawnerRifts.cs" />
     <Compile Include="GameConditions\GameCondition_MentalSuppression.cs" />
     <Compile Include="Comps\CompCauseGameCondition_MentalSuppression.cs" />
+    <Compile Include="HeDiffs\HediffComp_DestroyCorpseOnDeath.cs" />
+    <Compile Include="HeDiffs\HediffCompProperties_DestroyCorpseOnDeath.cs" />
     <Compile Include="HeDiffs\HediffComp_MentalSuppression.cs" />
     <Compile Include="IncidentStuff\IncidentWorker_LargeWarpPortal.cs" />
     <Compile Include="IncidentStuff\WarpRiftSpawner.cs" />

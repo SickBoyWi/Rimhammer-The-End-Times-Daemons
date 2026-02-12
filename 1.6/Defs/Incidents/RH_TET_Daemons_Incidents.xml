@@ -27,7 +27,7 @@
 		</targetTags>
 		<workerClass>TheEndTimes_Daemons.IncidentWorker_LargeWarpPortal</workerClass>
 		<letterLabel>Tzeentch Warp Portal</letterLabel>
-		<letterText>A large tear in reality has occurred nearby.\n\nIts mysterious influence will kill all plants in an expanding circle around itself.\n\nDestroy it as soon as possible. But beware - the beasts of the immaterium will probably defend the portal.</letterText>
+		<letterText>A large tear in reality has occurred nearby.\n\nIts mysterious influence will affect the minds of pawns in the area.\n\nDestroy it as soon as possible. But beware - the beasts of the immaterium will probably defend the portal.</letterText>
 		<letterDef>ThreatBig</letterDef>
 		<baseChance>2.0</baseChance>
 		<baseChanceWithRoyalty>0.8</baseChanceWithRoyalty>

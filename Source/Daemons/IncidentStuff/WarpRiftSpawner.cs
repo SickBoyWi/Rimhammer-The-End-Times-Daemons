@@ -14,7 +14,7 @@ namespace TheEndTimes_Daemons
         public bool spawnRift = true;
         public float daemonPoints;
         public bool spawnedByWarpRiftThingComp;
-        public RH_TET_DaemonsDefOf.ChaosGods godForSpawning;
+        public static RH_TET_DaemonsDefOf.ChaosGods godForSpawning;
 
         public override void ExposeData()
         {
@@ -22,13 +22,14 @@ namespace TheEndTimes_Daemons
             Scribe_Values.Look<bool>(ref this.spawnRift, "spawnRift", true, false);
             Scribe_Values.Look<float>(ref this.daemonPoints, "daemonPoints", 0.0f, false);
             Scribe_Values.Look<bool>(ref this.spawnedByWarpRiftThingComp, "spawnedByWarpRiftThingComp", false, false);
-            Scribe_Values.Look<RH_TET_DaemonsDefOf.ChaosGods>(ref this.godForSpawning, "godForSpawning", 0, false);
+            Scribe_Values.Look<RH_TET_DaemonsDefOf.ChaosGods>(ref WarpRiftSpawner.godForSpawning, "godForSpawning", 0, false);
         }
 
         protected override void Spawn(Map map, IntVec3 loc)
         {
-            if (godForSpawning == RH_TET_DaemonsDefOf.ChaosGods.Any)
-                godForSpawning = DaemonsUtil.GetRandomGod();
+            // Set the chaos god for this spawning.
+            if (WarpRiftSpawner.godForSpawning == RH_TET_DaemonsDefOf.ChaosGods.Any)
+                WarpRiftSpawner.godForSpawning = DaemonsUtil.GetRandomGod();
 
             if (this.spawnRift)
             {

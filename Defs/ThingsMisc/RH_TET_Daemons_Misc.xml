@@ -435,8 +435,9 @@
 						<li>WoodLog</li>
 					</thingDefs>
 				</fuelFilter>
-				<initialFuelPercent>1.0</initialFuelPercent>
+				<initialFuelPercent>1.0</initialFuelPercent>			
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<canEjectFuel>true</canEjectFuel>	
 			</li>
 			<li Class="CompProperties_Glower">
 				<glowRadius>10</glowRadius>

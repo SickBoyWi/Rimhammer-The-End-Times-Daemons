@@ -30,4 +30,36 @@
 		</stages>
 	</HediffDef>
 
+	<ThingDef ParentName="BodyPartBase">
+		<defName>RH_TET_Daemons_DaemonicSpirit</defName>
+		<label>daemonic spirit</label>
+		<description>The spirit of the daemon, residing inside a corporeal form.</description>
+		<techLevel>Medieval</techLevel>
+		<statBases>
+			<MarketValue>0</MarketValue>
+		</statBases>
+	</ThingDef>
+  
+	<HediffDef ParentName="ImplantHediffBase">
+		<priceImpact>false</priceImpact>
+		<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+	 
+		<defName>RH_TET_Daemons_DaemonicSpirit</defName>
+		<label>daemonic spirit</label>
+		<labelNoun>daemonic spirit</labelNoun>
+		<description>The spirit of the daemon, inside this corporeal form.</description>
+		<comps>
+			<li Class="TheEndTimes_Daemons.HediffCompProperties_DestroyCorpseOnDeath">
+				<fleck>RH_TET_Daemons_WarpFlame</fleck>
+				<moteCount>6</moteCount>
+				<moteOffsetRange>0.25~0.75</moteOffsetRange>
+				<filth>RH_TET_Filth_BloodDaemon</filth>
+				<sound>RH_TET_Pawn_Daemon_Death</sound>
+				<injuryCreatedOnDeath>Burn</injuryCreatedOnDeath>
+				<injuryCount>3~6</injuryCount>
+			</li>
+		</comps>
+	</HediffDef>
+  
 </Defs>
